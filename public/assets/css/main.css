@@ -1,5 +1,13 @@
-.btn {
-  width: 100%;
+.background-gray {
+  background: #98989C;
+}
+
+.background-gray-lighter {
+  background: black;
+}
+
+.background-gray-lightest {
+  background: #3f3f42;
 }
 
 /*# sourceMappingURL=main.css.map */

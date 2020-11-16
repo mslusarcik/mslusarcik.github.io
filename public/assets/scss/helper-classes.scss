@@ -1,0 +1,9 @@
+.background-gray {
+  background: $base-gray;
+}
+.background-gray-lighter {
+  background: darken($base-gray, 65%)
+}
+.background-gray-lightest {
+  background: darken($base-gray, 35%)
+}
