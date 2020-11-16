@@ -7,7 +7,7 @@
 }
 
 .background-gray-lightest {
-  background: #f3f3f3;
+  background: #e6e6e7;
 }
 
 .list-style-none {
@@ -20,7 +20,7 @@ a {
 }
 
 a:hover {
-  color: black;
+  color: #164970;
   text-decoration: none;
 }
 

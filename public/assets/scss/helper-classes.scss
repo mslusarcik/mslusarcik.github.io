@@ -2,10 +2,10 @@
   background: $base-gray;
 }
 .background-gray-lighter {
-  background: lighten($base-gray, 65%)
+  background: lighten($base-gray, 60%);
 }
 .background-gray-lightest {
-  background: lighten($base-gray, 35%)
+  background: lighten($base-gray, 30%);
 }
 .list-style-none {
   list-style-type: none;
