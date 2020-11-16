@@ -10,4 +10,16 @@
   background: #f3f3f3;
 }
 
+.list-style-none {
+  list-style-type: none;
+}
+
+a {
+  color: #4499db;
+}
+
+a:hover {
+  color: black;
+}
+
 /*# sourceMappingURL=main.css.map */
