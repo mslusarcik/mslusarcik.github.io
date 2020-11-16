@@ -3,4 +3,5 @@ a {
 }
 a:hover {
   color: darken($primary-color, 60%);
+  text-decoration: none;
 }
