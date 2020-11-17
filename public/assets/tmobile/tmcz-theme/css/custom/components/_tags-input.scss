@@ -1,0 +1,75 @@
+/**
+* TAGS INPUT
+*
+*
+*/
+
+/*---------------------------------------------------------------------------*\
+  #TAGS INPUT
+\*---------------------------------------------------------------------------*/
+
+.bootstrap-tagsinput {
+  position: relative;
+  cursor: text;
+  height: auto;
+  min-height: $input-height-base;
+  padding-top: 6px;
+//  overflow: hidden;
+  &.with-btn-taglist {
+    padding-right: ($padding-base-horizontal + $input-border-width + ($padding-base-horizontal * 2) + 30px); // 82px
+  }
+  input {
+    min-width: $tag-input-min-width;
+    border: 0;
+    background: transparent;
+    &:focus {
+      outline: 0;
+    }
+  }
+  input::-ms-clear {
+    display: none;
+  }
+  .tag {
+    display: inline-block;
+    color: $text-color;
+    font-size: $font-size-xlarge;
+    font-weight: $font-weight-medium;
+    margin-top: $tag-margin-top;
+    border-radius: $border-radius-base;
+    // white-space: nowrap;
+    line-height: $line-height-large;
+    span {
+      cursor: pointer;
+      vertical-align: middle;
+      margin-left: 8px;
+      margin-top: -3px;
+    }
+    svg {
+      fill: $magenta;
+      width: 10px;
+      height: 10px;
+    }
+  }
+  .btn-taglist {
+    padding-left: $padding-base-horizontal;
+    padding-right: $padding-base-horizontal;
+    border: 0;
+    height: calc(100% - -#{$input-border-width * 2}); // Compressor is removing spaces inside calc() function. https://github.com/yui/yuicompressor/issues/59#issuecomment-35528166
+    position: absolute;
+    top: -($input-border-width);
+    right: -($input-border-width);
+    z-index: 1;
+    &:focus,
+    &:hover {
+      border-color: $blue;
+      > [class*="ico-"] svg {
+        fill: $black;
+      }
+    }
+    > [class*="ico-"] svg {
+      width: 18px;
+      height: 18px;
+      fill: $gray-dark;
+    }
+  }
+}

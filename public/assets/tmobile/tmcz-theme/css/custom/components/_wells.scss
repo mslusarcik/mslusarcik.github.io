@@ -1,0 +1,43 @@
+.well {
+  box-shadow: none;
+
+  .caption & {
+    color: $text-color;
+    border-color: $well-bg;
+  }
+
+  .caption-inverse & {
+    border-color: $gray;
+  }
+
+  &.background-blue {
+    border-color: $blue;
+  }
+}
+
+.well-like-btn {
+  display: block;
+  border-color: $gray-dark;
+  font-weight: 600;
+  margin-top: round($space-vertical-small / 2);
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    border-color: $gray-darker;
+  }
+  @include onlyIE() {
+    > .v-center {
+      > span {
+        max-width: 90%;
+      }
+    }
+  }
+}
+
+// Sizes
+
+.well-xsm {
+  padding: 4px 9px;
+  border-radius: $border-radius-small;
+  min-height: $well-xsm-min-height;
+}

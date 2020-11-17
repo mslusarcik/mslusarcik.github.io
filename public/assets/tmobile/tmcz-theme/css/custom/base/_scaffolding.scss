@@ -1,0 +1,82 @@
+/**
+* SCAFFOLDING
+*
+* Base styling of elements.
+*
+*/
+
+::selection {
+  color: $white;
+  background: $black;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  color: $white;
+  background: $black;
+  text-shadow: none;
+}
+
+html {
+  background: $page-bg;
+}
+
+body {
+  background: $body-bg;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  .fonts-loaded & {
+    font-family: $font-family-brand;
+  }
+  &.search-active {
+    @media (max-width: $grid-float-breakpoint) {
+      width: 100%;
+      position: fixed;
+    }
+  }
+  &.menu-opened {
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+  }
+  &.overlay-visible {
+    overflow-x: hidden;
+  }
+}
+
+a {
+  @include transition(color $transition-duration-default,
+                      border-color $transition-duration-default,
+                      background $transition-duration-default);
+//  &:active {
+//    outline: 1px dotted;
+//  }
+  &[href^="tel:"] {
+    @include mq(xs, min) { // appear as link only on mobile
+      color: currentColor;
+    }
+  }
+}
+
+b,
+strong {
+  font-weight: 600;
+}
+
+textarea {
+  resize: vertical;
+}
+
+select,
+option {
+  cursor: pointer;
+}
+
+// hide tracking pixel from Google
+img[width="1"][height="1"] {
+  position: absolute;
+}
+
+dt {
+  font-weight: $font-weight-bold;
+}

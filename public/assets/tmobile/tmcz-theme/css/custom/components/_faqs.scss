@@ -1,0 +1,36 @@
+//
+// FAQs
+// --------------------------------------------------
+
+.faq {
+  // .faq-link
+  &-link {
+    padding-top: $space-vertical-default;
+    padding-bottom: $space-vertical-default;
+    @include mq(xxs, max) {
+      font-size: $faq-link-mobile-font-size;
+      padding-top: ceil($space-vertical-small * 1.5);
+      padding-bottom: ceil($space-vertical-small * 1.5);
+    }
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  // .faq-link-small
+  &-link-small {
+    padding-top: $space-vertical-small;
+    padding-bottom: $space-vertical-small;
+  }
+
+  // .faq-heading
+  &-heading {
+    margin: 0;
+  }
+
+  // .faq-message
+  &-message {
+    margin-top: $space-vertical-default;
+  }
+}

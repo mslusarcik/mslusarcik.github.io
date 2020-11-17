@@ -1,0 +1,76 @@
+//
+// Overlay
+// --------------------------------------------------
+
+.js {
+  .overlay {
+    // .overlay-link
+    &-link {
+      @include mq(xs, max) {
+        cursor: pointer;
+      }
+    }
+
+    // .overlay-content
+    &-content {
+      @include mq(xs, max) {
+        display: none;
+      }
+      &.open {
+        display: block;
+        margin: 0;
+      }
+    }
+
+    // .overlay-wrapper
+    &-wrapper {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      right: 0;
+      z-index: $zindex-overlay;
+      overflow: auto;
+      background: $white;
+      opacity: 0;
+      transform: translateX(100%);
+      transition-duration: $transition-duration-fast;
+      transition-property: opacity, transform;
+      &.in {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    // .overlay-header
+    &-header {
+      display: flex;
+      align-items: center;
+      min-height: $navbar-mobile-height;
+      position: relative;
+    }
+
+    // .overlay-title
+    &-title {
+      font-weight: 700;
+      font-size: $font-size-h3;
+      line-height: $font-line-height-h3;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    // .overlay-close
+    &-close {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      right: ($grid-gutter-width / 2);
+      transform: translateY(-50%);
+      svg {
+        fill: $overlay-close-icon-color;
+        width: $overlay-close-icon-size;
+        height: $overlay-close-icon-size;
+      }
+    }
+  }
+}

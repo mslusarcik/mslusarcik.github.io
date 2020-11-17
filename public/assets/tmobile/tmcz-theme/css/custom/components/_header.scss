@@ -1,0 +1,96 @@
+.search-collapse {
+  width: calc(100% - #{$nav-wrapper-left-offset + (2 * $search-horizontal-offset)});
+  position: absolute;
+  top: 100px;
+  left: $search-horizontal-offset;
+  z-index: $search-zindex;
+  .search-close {
+    cursor: pointer;
+    position: absolute;
+    top: round($nav-height - $search-close-icon-size) / 2;
+    right: -#{$search-close-icon-size + $space-horizontal-small};
+    z-index: $search-zindex;
+    &:hover {
+      svg {
+        opacity: $search-close-icon-hover-opacity;
+      }
+    }
+    svg {
+      opacity: 0;
+      fill: $search-close-icon-color;
+      width: $search-close-icon-size;
+      height: $search-close-icon-size;
+      transition-property: opacity;
+      transition-duration: $transition-duration-fast;
+      .navbar-default & {
+        fill: $search-close-icon-color-default;
+      }
+    }
+  }
+  &.in {
+    .search-close {
+      &:hover {
+        svg {
+          opacity: $search-close-icon-hover-opacity;
+        }
+      }
+      svg {
+        opacity: 1;
+      }
+    }
+  }
+  .form-control,
+  .btn {
+    height: $navbar-mobile-height;
+  }
+  .form-group {
+    margin-bottom: 0;
+  }
+  @media (max-width: $grid-float-breakpoint-max) {
+//    .search-active & {
+      width: 100%;
+      height: 100vh;
+      background: $white;
+      position: fixed;
+      top: -($navbar-mobile-height);
+      left: 0;
+      .searchbox {
+        border-bottom: 1px solid $gray;
+        .form-control {
+          border-radius: 0;
+          border: 0;
+          padding: $searchbox-mobile-input-padding;
+        }
+        .search-icon {
+          left: $space-horizontal-small;
+        }
+        .btn {
+          font-size: $font-size-base;
+          padding-left: 0;
+          padding-right: 0;
+          right: 45px;
+        }
+      }
+      .search-close {
+//        top: (($navbar-mobile-height - $search-close-mobile-icon-size) / 2);
+        top: 0;
+        padding: (($navbar-mobile-height - $search-close-mobile-icon-size) / 2) $space-horizontal-small (($navbar-mobile-height - $search-close-mobile-icon-size) / 2) 0;
+//        right: $space-horizontal-small;
+        right: 0;
+        svg {
+          fill: $gray-darker;
+          width: $search-close-mobile-icon-size;
+          height: $search-close-mobile-icon-size;
+        }
+      }
+      .twitter-typeahead {
+        .tt-dropdown-menu {
+          .tt-suggestion {
+            padding-left: ($search-icon-horizontal-offset + $search-icon-size);
+            border-top: 0;
+          }
+        }
+      }
+//    }
+  }
+}

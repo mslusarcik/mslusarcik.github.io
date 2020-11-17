@@ -1,0 +1,355 @@
+/**
+* CUSTOM HELPERS
+*
+* Set of custom helpers.
+*
+*/
+
+.page-overlay {
+  display: none;
+  opacity: 0.3;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 16;
+  background-color: $black;
+  .overlay-visible & {
+    display: block;
+  }
+  @include mq(sm, max) {
+    height: calc(100% - #{$navbar-mobile-height});
+    top: $navbar-mobile-height;
+  }
+  @include mq(md, min) {
+    height: calc(100% - #{$navbar-height});
+    top: $navbar-height;
+  }
+}
+
+.margin-base {
+  margin-top: $space-vertical-default;
+  margin-bottom: $space-vertical-default;
+}
+
+.margin-small {
+  margin-top: $space-vertical-small;
+  margin-bottom: $space-vertical-small;
+}
+
+.margin-large {
+  margin-top: $space-vertical-large;
+  margin-bottom: $space-vertical-large;
+}
+
+.margin-0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.inner {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+html .pt-0 {
+  padding-top: 0;
+}
+
+html .mt-0 {
+  margin-top: 0;
+}
+
+html .mt-base {
+  margin-top: $space-vertical-default;
+}
+
+html .mt-small {
+  margin-top: $space-vertical-small;
+}
+
+html .mt-large {
+  margin-top: $space-vertical-large;
+}
+
+html .mb-base {
+  margin-bottom: $space-vertical-default;
+}
+
+html .mb-small {
+  margin-bottom: $space-vertical-small;
+}
+
+html .mb-large {
+  margin-bottom: $space-vertical-large;
+}
+
+html .mb-0 {
+  margin-bottom: 0;
+}
+
+html .block {
+  display: block;
+}
+
+html .ml-small {
+  margin-left: ($space-horizontal-small);
+}
+
+html .ml-base {
+  margin-left: ($space-horizontal-default);
+}
+
+html .ml-large {
+  margin-left: ($space-horizontal-large);
+}
+
+
+/*---------------------------------------------------------------------------*\
+  #POST CRITICAL CSS STYLES
+\*---------------------------------------------------------------------------*/
+
+body {
+  .js & {
+    &:before,
+    &:after {
+      display: none !important;
+    }
+  }
+}
+
+
+/*---------------------------------------------------------------------------*\
+  #FLOATS
+\*---------------------------------------------------------------------------*/
+
+@each $breakpoint in xxs, xs, sm, md, lg {
+  @each $alignment in left,right {
+    html .pull-#{$alignment}-#{$breakpoint} {
+      @include mq($breakpoint) {
+        float: $alignment;
+      }
+    }
+  }
+}
+
+
+/*---------------------------------------------------------------------------*\
+  #JS RELATED STYLES
+\*---------------------------------------------------------------------------*/
+
+.js-clickable {
+  h2,
+  h3 {
+    a {
+      border-bottom: 1px solid transparent;
+    }
+  }
+}
+
+.js-hover {
+  &,
+  img {
+    cursor: pointer;
+  }
+  a:not(.btn) {
+    text-decoration: underline;
+  }
+  h2,
+  h3 {
+    a:not(.btn) {
+      text-decoration: none;
+      border-bottom-color: currentColor;
+    }
+  }
+  .btn {
+    svg {
+      fill: $magenta-dark;
+    }
+  }
+  .btn-default {
+    color: $magenta-dark;
+    border-color: $magenta-dark;
+  }
+  .btn-primary {
+    border-color: $magenta-dark;
+    background: $magenta-dark;
+  }
+  .btn-secondary {
+    color: $magenta-dark;
+  }
+}
+
+.js .js-hidden {
+  display: none;
+}
+
+
+/*---------------------------------------------------------------------------*\
+  #BACKGROUNDS
+\*---------------------------------------------------------------------------*/
+
+$bg-colors:   "black" $black,
+              "magenta" $magenta,
+              "gray-lighter" $gray-lighter,
+              "blue" $blue,
+              "white" $white,
+              "gray-lightest" $gray-lightest,
+              "green" $green;
+
+@each $color in $bg-colors {
+  html .background-#{nth($color, 1)} {
+    background: #{nth($color, 2)};
+  }
+}
+
+html .no-bold {
+  font-weight: 500;
+}
+
+html .bold {
+  font-weight: 600;
+}
+
+html .ultra-bold {
+  font-weight: 700;
+}
+
+html .v-center,
+html .v-center-large {
+  display: flex;
+  align-items: center;
+  > * {
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  > .right {
+    margin-left: auto;
+  }
+  &.flex-column-xxs {
+    @include mq(xxs) {
+      align-items: flex-start;
+      > * {
+        margin-right: 0;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+html .v-center {
+  > * {
+    margin-right: 5px;
+  }
+  &.flex-column-xxs {
+    @include mq(xxs) {
+      > * {
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+html .v-center-large {
+  > * {
+    margin-right: $space-horizontal-small;
+  }
+  &.flex-column-xxs {
+    @include mq(xxs) {
+      > * {
+        margin-top: $space-vertical-small;
+      }
+    }
+  }
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.wrap {
+  overflow: hidden;
+  white-space: inherit;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+@each $breakpoint in xxs, xs, sm, md, lg {
+  @each $alignment in left, right {
+    @include mq($breakpoint, min) {
+      .indent-#{$alignment}-#{$breakpoint} {
+        padding-#{$alignment}: $grid-gutter-width;
+      }
+    }
+  }
+}
+
+html .rounded {
+  border-radius: $border-radius-base;
+}
+
+html .rounded-top {
+  border-top-left-radius: $border-radius-base;
+  border-top-right-radius: $border-radius-base;
+}
+
+html .rounded-bottom {
+  border-bottom-left-radius: $border-radius-base;
+  border-bottom-right-radius: $border-radius-base;
+}
+
+html .flex-column {
+  display: flex;
+  flex-direction: column;
+
+  // .flex-column-xxs
+  &-xxs {
+    @include mq(xxs) {
+      flex-direction: column;
+    }
+  }
+}
+
+html .border-brand {
+  border: 1px solid $brand-primary;
+}
+
+html .flex {
+  display: flex;
+}
+
+html .inline-flex {
+  display: inline-flex;
+}
+
+html .inline-block {
+  display: inline-block;
+}
+
+// this helper is useful only for IE10+
+.img-responsive-wrapper {
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+html .top-50 {
+  position: relative;
+  transform: translate(0, -50%);
+}
+
+html .border-top {
+  border-top: 1px solid $gray-lighter;
+  padding-top: 15px;
+}
+
+html .relative {
+  position: relative;
+}

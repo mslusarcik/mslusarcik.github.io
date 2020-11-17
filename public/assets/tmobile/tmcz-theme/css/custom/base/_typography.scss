@@ -1,0 +1,145 @@
+/**
+* TYPOGRAPHY
+*
+* Typography related styles
+*
+*/
+
+
+.h0 {
+  font-size: $font-size-h0;
+  line-height: $font-line-height-h0;
+  @include mq(xxs, max) {
+    font-size: $font-size-mobile-h1;
+    line-height: $font-line-height-mobile-h1;
+  }
+}
+
+h1,
+.h1 {
+  line-height: $font-line-height-h1;
+  @include mq(xxs, max) {
+    font-size: $font-size-mobile-h1;
+    line-height: $font-line-height-mobile-h1;
+  }
+}
+
+h2,
+.h2 {
+  line-height: $font-line-height-h2;
+  @include mq(xxs, max) {
+    font-size: $font-size-mobile-h2;
+    line-height: $font-line-height-mobile-h2;
+  }
+}
+
+h3,
+.h3 {
+  line-height: $font-line-height-h3;
+}
+
+h4,
+.h4 {
+  font-weight: 600;
+  line-height: $font-line-height-h4;
+}
+
+h5,
+.h5 {
+  font-weight: 600;
+  line-height: $font-line-height-h5;
+}
+
+p {
+  line-height: $font-line-height-base;
+}
+
+html .text-xsmall {
+  font-size: $font-size-xsmall;
+}
+
+html .text-small {
+  font-size: $font-size-small;
+}
+
+html .text-base {
+  font-size: $font-size-base;
+}
+
+html .text-large {
+  font-size: $font-size-large;
+}
+
+html .text-xlarge {
+  font-size: $font-size-xlarge;
+  line-height: $font-line-height-xlarge;
+}
+
+html .text-xxlarge {
+  font-size: $font-size-xxlarge;
+  line-height: $font-line-height-xxlarge;
+}
+
+html .strikethrough {
+  text-decoration: line-through;
+}
+
+html .text-huge {
+  font-size: $font-size-huge;
+  line-height: $font-line-height-huge;
+  font-weight: $font-weight-ultra;
+}
+
+/*---------------------------------------------------------------------------*\
+  #FONT FACES
+\*---------------------------------------------------------------------------*/
+
+@include font-face(TeleGroteskScreen, TeleGroteskScreen-Ultra, 700, normal);
+@include font-face(TeleGroteskScreen, TeleGroteskScreen-Bold, 600, normal);
+@include font-face(TeleGroteskScreen, TeleGroteskScreen-Medium, 500, normal);
+
+/*---------------------------------------------------------------------------*\
+  #NO FONTS
+\*---------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------*\
+  #TEXT ALIGNMENTS
+\*---------------------------------------------------------------------------*/
+
+@each $breakpoint in xxs, xs, sm, md, lg {
+  @each $alignment in left, center, right {
+    html .text-#{$alignment}-#{$breakpoint} {
+      @include mq($breakpoint) {
+        text-align: $alignment;
+      }
+    }
+  }
+}
+
+
+/*---------------------------------------------------------------------------*\
+  #TEXT-COLORS
+\*---------------------------------------------------------------------------*/
+
+
+$text-colors:   "black" $black $black,
+                "white" $white $white,
+                "blue" $blue $blue,
+                "magenta" $magenta $magenta,
+                "gray" $gray $gray,
+                "gray-dark" $gray-dark $gray-dark,
+                "gray-darker" $gray-darker $gray-darker,
+                "red" $red $red,
+                "orange" $orange $orange,
+                "green" $green $green;
+
+
+/*---------------------------------------------------------------------------*\
+  #TEXT-COLOR-HELPERS
+\*---------------------------------------------------------------------------*/
+
+@each $color in $text-colors {
+  .text-#{nth($color, 1)}{
+    color: #{nth($color, 2)};
+  }
+}

@@ -1,0 +1,17 @@
+//
+// Input groups
+// --------------------------------------------------
+
+.input-group-sm > .form-control,
+.input-group-sm > .input-group-addon,
+.input-group-sm > .input-group-btn > .btn {
+  font-weight: 600;
+}
+
+.input-group-addon {
+  .has-error & {
+    @include box-shadow(0 0 0 1px $red);
+    color: $text-color;
+    background-color: $input-group-addon-bg;
+  }
+}

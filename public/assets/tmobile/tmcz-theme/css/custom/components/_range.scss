@@ -1,0 +1,121 @@
+//
+// Range mixins
+// --------------------------------------------------
+
+@mixin range-track($isSmall: false) {
+  @if $isSmall {
+    height: $range-track-small-size;
+  } @else {
+    height: $range-track-size;
+  }
+  width: 100%;
+  transition: all .2s ease;
+  border: 0;
+  border-radius: $border-radius-base;
+  cursor: pointer;
+}
+
+@mixin range-thumb($isSmall: false) {
+  @if $isSmall {
+    width: $range-thumb-small-size;
+    height: $range-thumb-small-size;
+  } @else {
+    width: $range-thumb-size;
+    height: $range-thumb-size;
+  }
+  background: $range-thumb-color;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px $gray-lightest;
+  cursor: ew-resize;
+}
+
+
+//
+// Range styling
+// --------------------------------------------------
+
+.range {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: ($range-thumb-size / 2) 0;
+  padding: 0;
+  @include onlyIE {
+    margin: 0;
+  }
+  &:focus {
+    outline: 0;
+  }
+  &::-webkit-slider-runnable-track {
+    @include range-track();
+    background: $range-track-color;
+  }
+  &::-webkit-slider-thumb {
+    @include range-thumb();
+    -webkit-appearance: none;
+    margin-top: (($range-track-size - $range-thumb-size) / 2);
+  }
+  &::-moz-range-track {
+    @include range-track();
+    background: $range-track-color;
+  }
+  &::-moz-range-progress {
+    @include range-track();
+    background: $range-track-progress;
+  }
+  &::-moz-range-thumb {
+    @include range-thumb();
+  }
+  &::-moz-focus-outer {
+    border: 0;
+  }
+  &::-ms-track {
+    @include range-track();
+    background: transparent;
+    color: transparent;
+    border: solid transparent;
+    border-width: ($range-thumb-size / 2) 0;
+  }
+  &::-ms-fill-lower {
+    background: $range-track-progress;
+  }
+  &::-ms-fill-upper {
+    background: $range-track-color;
+  }
+  &::-ms-thumb {
+    @include range-thumb();
+    margin-top: 0;
+  }
+
+  // .range-small
+  &-small {
+    margin: ($range-thumb-small-size / 2) 0;
+    @include onlyIE {
+      margin: 0;
+    }
+
+    &::-webkit-slider-runnable-track {
+      @include range-track($isSmall: true);
+    }
+    &::-webkit-slider-thumb {
+      @include range-thumb($isSmall: true);
+      margin-top: (($range-track-small-size - $range-thumb-small-size) / 2);
+    }
+    &::-moz-range-track {
+      @include range-track($isSmall: true);
+    }
+    &::-moz-range-progress {
+      @include range-track($isSmall: true);
+    }
+    &::-moz-range-thumb {
+      @include range-thumb($isSmall: true);
+    }
+    &::-ms-track {
+      height: $range-track-small-size;
+      border-width: ($range-thumb-small-size / 2) 0;
+    }
+    &::-ms-thumb {
+      @include range-thumb($isSmall: true);
+    }
+  }
+}

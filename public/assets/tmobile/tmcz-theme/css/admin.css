@@ -1,0 +1,81 @@
+.aui {
+  .portlet-borderless-bar .portlet-options .dropdown-toggle {
+    background-image: url(../images/portlet/options_borderless.png);
+  }
+  .lfr-admin-panel,
+  .admin-signed-in.page-maximized {
+    .radio input[type="radio"],
+    .radio-inline input[type="radio"],
+    .checkbox input[type="checkbox"],
+    .checkbox-inline input[type="checkbox"] {
+      position: static;
+    }
+    a {
+      border-bottom: 0;
+    }
+  }
+  .dropdown-menu {
+    width: auto;
+  }
+  .collapse {
+    display: block;
+    visibility: visible;
+  }
+  .portlet-borderless-bar,
+  .lfr-meta-actions {
+    a {
+      border-bottom: 0;
+    }
+  }
+  .dockbar {
+    border-bottom: 0;
+  }
+  .navbar.navbar-fixed-top {
+    position: static;
+  }
+  body {
+    &.admin-signed-in.page-maximized {
+      margin-right: auto;
+      margin-left: auto;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}
+
+.modal {
+  display: block;
+}
+
+[data-column-info] {
+  &.yui3-dd-drop-over {
+    &:before {
+      content: attr(data-column-info);
+      font-size: 20px;
+      color: #90989d;
+    }
+  }
+}
+
+.lfr-edit-layout-panel .navbar {
+  position: relative;
+}
+
+.aui .dropdown-menu {
+  z-index: 1001;
+}
+
+.aui .navbar {
+  position: static;
+}
+
+
+html {
+  background: #fff; /* WYSIWYG editor přebírá barvu definovanou v custom.css, tak aby nebyl černý, je potřeba nová definice. */
+}
+
+.dockbar-messages {
+  .footer {
+    background: #fff;
+  }
+}

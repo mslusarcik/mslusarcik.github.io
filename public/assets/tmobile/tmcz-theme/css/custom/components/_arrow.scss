@@ -1,0 +1,19 @@
+.arrow {
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-right: $caption-arrow-size solid transparent;
+    border-left: $caption-arrow-size solid transparent;
+    border-top: ($caption-arrow-size - 4) solid $white;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -($caption-arrow-size);
+  }
+  &-down {
+
+  }
+}

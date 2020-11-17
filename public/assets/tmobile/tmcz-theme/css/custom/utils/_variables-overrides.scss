@@ -1,0 +1,210 @@
+/**
+* CUSTOM VARIABLES OVERRIDES
+*
+* There are variables that overrides default bootstrap variables.
+*
+*/
+
+/*---------------------------------------------------------------------------*\
+  #COLORS
+\*---------------------------------------------------------------------------*/
+
+$black:							#000;
+$white:							#fff;
+$magenta:						#e20074;
+$magenta-dark:			#b0005a;
+$magenta-darker:		#9c005d;
+$blue:							#64b9e4;
+$blue-dark:					#5094b6;
+$blue-light:				#b1dcf1;
+$gray:							#bfbfbf;
+$gray-dark:						#999;
+$gray-darker:					#4a4a4a;
+$gray-light:					#e5e5e5;
+$gray-lighter:				#efefef;
+$gray-lightest:				#f6f6f6;
+$red:									#e20000;
+$red-dark:						#b40000;
+$green:								#6db131;
+$green-dark:					#578d27;
+$orange:							#eda95a;
+$orange-dark:					#bd8748;
+
+$body-bg:						$white;
+$page-bg:						$black;
+
+$brand-primary:     $magenta;
+$brand-success:     $green;
+$brand-info:        $blue;
+$brand-warning:     $orange;
+$brand-danger:      $red;
+$link-hover-color:  $magenta-dark;
+
+/*---------------------------------------------------------------------------*\
+  #SCAFFOLDING
+\*---------------------------------------------------------------------------*/
+
+$text-color:					$black;
+
+/*---------------------------------------------------------------------------*\
+  #TYPOGRAPHY
+\*---------------------------------------------------------------------------*/
+
+$font-size-base:							16px;
+$font-size-h0:								84px;
+$font-size-h1:								62px;
+$font-size-mobile-h1:					38px;
+$font-size-h2:								44px;
+$font-size-mobile-h2:					30px;
+$headings-font-weight:				700;
+$font-size-h3:								24px;
+$font-size-h4:								20px;
+$font-size-h5:								18px;
+
+$font-size-tiny:							10px;
+$font-size-xsmall:						12px;
+$font-size-small:							14px;
+$font-size-large:							$font-size-h5;
+$font-size-xlarge:						$font-size-h4;
+$font-size-xxlarge:						22px;
+$font-size-huge:							34px;
+
+$font-weight-ultra:           700;
+$font-weight-bold:            600;
+$font-weight-medium:          500;
+
+$font-line-height-small:			16px;
+
+$font-line-height-base:				17px;
+$font-line-height-h0:					88px;
+$font-line-height-h1:					62px;
+$font-line-height-mobile-h1:	38px;
+$font-line-height-mobile-h2:	30px;
+$font-line-height-h2:					48px;
+$font-line-height-h3:					25px;
+$font-line-height-h4:					22px;
+$font-line-height-h5:					21px;
+$font-line-height-xlarge:			20px;
+$font-line-height-xxlarge:		22px;
+$font-line-height-huge:				34px;
+
+
+/*---------------------------------------------------------------------------*\
+  #COMPONENTS
+\*---------------------------------------------------------------------------*/
+
+$border-radius-base:			3px;
+
+
+/*---------------------------------------------------------------------------*\
+  #NAVBAR
+\*---------------------------------------------------------------------------*/
+
+$navbar-default-bg:				transparent;
+$nav-link-hover-bg:				transparent;
+
+
+/*---------------------------------------------------------------------------*\
+  #MEDIA-QUERIES-BREAKPOINTS
+\*---------------------------------------------------------------------------*/
+
+$screen-xxs-max:				479px;
+
+
+/*---------------------------------------------------------------------------*\
+  #BUTTONS
+\*---------------------------------------------------------------------------*/
+
+$btn-font-weight:                         700;
+$btn-border-width:                        2px;
+$btn-horizontal-padding:                  35px;
+
+$btn-default-color:                       $brand-primary;
+$btn-default-border:                      $brand-primary;
+$btn-default-bg:                          $white;
+
+$btn-primary-border:                      $brand-primary;
+
+$btn-secondary-color:                     $brand-primary;
+$btn-secondary-bg:                        $white;
+$btn-secondary-border:                    $white;
+
+$btn-sm-font-size:                        17px;
+
+$btn-disabled-border:                     $gray;
+$btn-disabled-bg:                         $gray;
+$btn-disabled-color:                      $gray;
+
+$btn-info-border:                         $brand-info;
+$btn-success-border:                      $brand-success;
+$btn-warning-border:                      $brand-warning;
+$btn-danger-border:                       $brand-danger;
+
+$btn-form-control-color:                  $brand-primary;
+$btn-form-control-border:                 $gray-dark;
+$btn-form-control-bg:                     $white;
+
+$btn-like-tag-color:                      $gray-darker;
+$btn-like-tag-bg:                         $white;
+$btn-like-tag-border:                     $gray-dark;
+$btn-like-tag-active-color:               $white;
+$btn-like-tag-active-bg:                  $blue;
+$btn-like-tag-active-border:              $blue;
+
+/*---------------------------------------------------------------------------*\
+  #TABLES
+\*---------------------------------------------------------------------------*/
+$table-bg-accent:                         $gray-lighter;
+
+/*---------------------------------------------------------------------------*\
+  #CAROUSEL - MULTIBANNER
+\*---------------------------------------------------------------------------*/
+
+$carousel-text-shadow:                              none;
+$carousel-caption-vertical-mobile-indentation:      60px;
+$carousel-caption-vertical-indentation:             100px;
+$carousel-caption-vertical-desktop-indentation:     120px;
+$carousel-h1-font-size:                             $font-size-h0;
+$carousel-h1-mobile-font-size:                      42px;
+$carousel-subheading-font-size:                     28px;
+$carousel-subheading-mobile-font-size:              22px;
+$carousel-indicator-size:                           10px;
+$carousel-active-indicator-size:                    16px;
+$carousel-control-opacity:                          1;
+$carousel-text-shadow:                              none;
+$carousel-control-icon-size:                        20px;
+$carousel-control-font-size:                        0;
+
+
+/*---------------------------------------------------------------------------*\
+  #FORM ELEMENTS
+\*---------------------------------------------------------------------------*/
+
+$input-color:                                       $black;
+$input-border:                                      $gray-dark;
+$input-border-focus:                                $blue;
+$input-color-placeholder:                           $gray-dark;
+$input-border-error:                                $red;
+$input-color-disabled:                              $gray;
+$input-border-disabled:                             $gray;
+
+$input-secondary-color:                             $white;
+$input-secondary-border:                            $white;
+$input-secondary-bg:                                transparent;
+$input-bg-disabled:                                 $gray-lightest;
+$input-border-disabled:                             $gray-lightest;
+
+
+/*---------------------------------------------------------------------------*\
+  #WELLS
+\*---------------------------------------------------------------------------*/
+
+$well-bg:                                           $white;
+$well-border:                                       $gray-lighter;
+
+/*---------------------------------------------------------------------------*\
+  #CLOSE
+\*---------------------------------------------------------------------------*/
+
+$close-color:                                       $gray;
+$close-font-size:                                   34px;

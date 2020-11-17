@@ -1,0 +1,866 @@
+/**
+* CUSTOM VARIABLES
+*
+* Variables for custom modules, mixins, functions, placehodlers etc.
+*
+*/
+
+/*---------------------------------------------------------------------------*\
+  #COMMON
+\*---------------------------------------------------------------------------*/
+
+$custom-font-path:                      "../fonts/";
+
+$transition-duration-default:           .5s;
+$transition-duration-fast:              ($transition-duration-default / 2);
+$transition-duration-slow:              ($transition-duration-default * 1.5);
+
+$space-horizontal-default:              $grid-gutter-width;
+$space-horizontal-small:                ($space-horizontal-default / 2);
+$space-horizontal-large:                ($space-horizontal-default * 2);
+$space-vertical-default:                $line-height-computed;
+$space-vertical-small:                  ($space-vertical-default / 2);
+$space-vertical-large:                  ($space-vertical-default * 2);
+
+
+/*---------------------------------------------------------------------------*\
+  #FONTS - SIZES & LINE HEIGHT
+\*---------------------------------------------------------------------------*/
+
+$font-family-brand:                   "TeleGroteskScreen", sans-serif;
+$fonts-unavailable-ratio:             0.85;
+
+
+/*---------------------------------------------------------------------------*\
+  #TEXTS
+\*---------------------------------------------------------------------------*/
+
+
+
+/*---------------------------------------------------------------------------*\
+  #BUTTONS
+\*---------------------------------------------------------------------------*/
+
+$btn-default-icon-size:                12px;
+$btn-lg-icon-size:                     15px;
+
+
+/*---------------------------------------------------------------------------*\
+  #TRANSITIONS
+\*---------------------------------------------------------------------------*/
+
+//$transition-duration-default:           0.3s;
+
+
+/*---------------------------------------------------------------------------*\
+  #COMPONENTS
+\*---------------------------------------------------------------------------*/
+
+
+/*---------------------------------------------------------------------------*\
+  #FORM ELEMENTS
+\*---------------------------------------------------------------------------*/
+
+$input-height-large:             (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 6);
+$input-border-width:             1px;
+
+
+/*---------------------------------------------------------------------------*\
+  #CAPTION
+\*---------------------------------------------------------------------------*/
+
+$caption-bg:                          $black;
+$caption-color:                       $white;
+$caption-arrow-size:                  22px;
+$caption-inverse-bg:                  $white;
+$caption-inverse-color:               $black;
+$caption-header-height:               332px;
+$caption-header-height-small:         295px;
+
+/*---------------------------------------------------------------------------*\
+  #TILE
+\*---------------------------------------------------------------------------*/
+
+$tile-font-size:                      $font-size-xlarge;
+$tile-font-weight:                    600;
+$tile-min-height:                     140px;
+$tile-border-width:                   2px;
+$tile-slim-border-width:              1px;
+$tile-border-color:                   $gray-lighter;
+$tile-border-hover-color:             $gray;
+$tile-bg:                             $white;
+$tiles-vertical-shifted-space:        220px;
+$tile-gradient-primary-bg:            $magenta;
+$tile-gradient-height:                100px;
+$tile-icon-mobile-size:               40px;
+$tile-icon-size:                      50px;
+$tile-large-icon-size:                60px;
+$tile-strip-height:                   300px;
+$tile-strip-small-height:             168px;
+
+
+/*---------------------------------------------------------------------------*\
+  #FOOTER
+\*---------------------------------------------------------------------------*/
+
+$footer-bg:                          $black;
+$footer-text-color:                  $gray;
+$footer-link-color:                  $white;
+$footer-logo-color:                  $brand-primary;
+$footer-logo-mobile-width:           77px;
+$footer-logo-mobile-height:          38px;
+$footer-logo-width:                  114px;
+$footer-logo-height:                 56px;
+$footer-float-breakpoint:            $screen-sm-min;
+$footer-float-breakpoint-max:        ($footer-float-breakpoint - 1);
+$footer-social-media-icon-size:      26px;
+$footer-collapse-icon-size:          11px;
+$footer-grid-gutter-width:           50px;
+
+
+/*---------------------------------------------------------------------------*\
+  #LOGO
+\*---------------------------------------------------------------------------*/
+
+$logo-color:                          $white;
+$logo-color-default:                  $magenta;
+$logo-width:                          94px;
+$logo-height:                         46px;
+$logo-mobile-width:                   53px;
+$logo-mobile-height:                  26px;
+
+/*---------------------------------------------------------------------------*\
+  #NAVBAR
+\*---------------------------------------------------------------------------*/
+
+$navbar-height:                       92px;
+$navbar-mobile-height:                52px;
+$navbar-bg:                           $magenta;
+
+
+/*---------------------------------------------------------------------------*\
+  #NAV
+\*---------------------------------------------------------------------------*/
+
+$nav-height:                          52px;
+$nav-wrapper-top-offset:              14px;
+$nav-wrapper-left-offset:             $logo-width + $space-horizontal-default;
+$nav-font-size:                       22px;
+$nav-font-weight:                     700;
+$nav-color:                           $white;
+$nav-color-default:                   $gray-darker;
+$nav-font-size-small:                 $font-size-small;
+$nav-active-segment-font-weight:      700;
+$nav-mobile-item-height:              55px;
+$nav-mobile-font-size:                $font-size-large;
+$nav-mobile-item-bg:                  $white;
+$nav-mobile-item-color:               $white;
+$nav-open-item-color:                 $gray-darker;
+$nav-mobile-item-border-color:        $gray;
+$nav-mobile-item-border-width:        1px;
+$nav-slide-up:                        ($space-vertical-small / 2);
+$nav-open-logo-fill:                  $magenta;
+$nav-segments-item-padding:           3px 9px;
+$nav-group-icon-size:                 11px;
+$nav-group-user-info-icon-size:       23px;
+$nav-group-user-info-icon-color:      #808080;
+$nav-group-user-info-btn-padding:     6px $space-horizontal-small;
+$nav-group-user-info-width:           95px;
+$nav-item-padding:                    6px 13px 18px;
+$nav-dropdown-menu-item-padding:      15px;
+$nav-dropdown-menu-item-icon-size:    50px;
+$nav-promo-img-max-width:             300px;
+$nav-dropdown-menu-item-icon-margin:  12px;
+$nav-dropdown-menu-min-height:        275px;
+$nav-custom-tile-width:               290px;
+$nav-item-number-offsetted:           5; // pořadí položky v první úrovni navigace, po kterém se ostatní položky zarovnají doprava
+$nav-segments-icon-size:              14px;
+$nav-items-per-row:                   7; // počet položek na řádce v megamenu při plném zobrazení
+$nav-items-per-row-screen-md:         6; // počet položek na řádce v megamenu při md breakpointu
+$nav-items-per-row-with-banner:       4; // počet položek na řádce v megamenu za přítomnosti banneru
+$nav-item-width:                      (percentage(100 / $nav-items-per-row ) / 100); // = (100 / 7)
+$nav-item-width-screen-md:            (percentage(100 / $nav-items-per-row-screen-md ) / 100); // = (100 / 6)
+
+
+/*---------------------------------------------------------------------------*\
+  #NAVBAR
+\*---------------------------------------------------------------------------*/
+
+$navbar-default-bg:                   $white;
+$navbar-default-link-color:           $gray-darker;
+$navbar-default-link-hover-color:     $magenta;
+$navbar-default-link-hover-bg:        $white;
+$navbar-default-link-active-color:    $magenta;
+$navbar-default-link-active-bg:       $white;
+
+$navbar-transparent-link-color:       $white;
+$navbar-transparent-link-hover-color: $magenta;
+$navbar-transparent-link-hover-bg:    $white;
+
+$navbar-inverse-bg:                   $black;
+$navbar-inverse-link-color:           $white;
+$navbar-inverse-link-hover-color:     $magenta;
+$navbar-inverse-link-hover-bg:        $white;
+$navbar-inverse-link-active-color:    $magenta;
+$navbar-inverse-link-active-bg:       $white;
+
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:               $screen-md-min;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max:           ($grid-float-breakpoint - 1);
+
+
+/*---------------------------------------------------------------------------*\
+  #MINICART
+\*---------------------------------------------------------------------------*/
+
+$minicart-icon-size:                  14px;
+$minicart-count-size:                 13px;
+$minicart-count-mobile-size:          20px;
+
+/*---------------------------------------------------------------------------*\
+  #TOGGLE
+\*---------------------------------------------------------------------------*/
+
+$toggle-width:                          24px;
+$toggle-thickness:                      3px;
+$toggle-space:                          3px;
+$toggle-font-size:                      9px;
+$toggle-font-weight:                    700;
+$toggle-letter-spacing:                 0.5px;
+$toggle-color:                          $white;
+$toggle-color-default:                  $gray-darker;
+$toggle-padding:                        round($space-vertical-default * 0.35);
+$toggle-background-opacity:             0.4;
+$toggle-circle-size:                    56px;
+$toggle-line-bg:                        $white;
+$toggle-line-bg-default:                $gray;
+$toggle-line-offset:                    (($grid-gutter-width / 2) + ($toggle-width / 2) + $toggle-padding);
+$zindex-toggle:                         1070;
+
+/*---------------------------------------------------------------------------*\
+  #MULTIBANNER
+\*---------------------------------------------------------------------------*/
+
+$multibanner-height:                   480px;
+$multibanner-mobile-height:            420px;
+
+/*---------------------------------------------------------------------------*\
+  #NAVBAR & LOGO
+\*---------------------------------------------------------------------------*/
+
+
+
+/*---------------------------------------------------------------------------*\
+  #ICONS
+\*---------------------------------------------------------------------------*/
+
+$icon-base-fill:                      $black;
+
+/*---------------------------------------------------------------------------*\
+  #BREADCRUMBS
+\*---------------------------------------------------------------------------*/
+
+$breadcrumb-padding-vertical:         0;
+$breadcrumb-padding-horizontal:       0;
+$breadcrumb-bg:                       transparent;
+$breadcrumb-icon-size:                10px;
+$breadcrumb-color:                    $gray-dark;
+$breadcrumb-font-size:                $font-size-small;
+$breadcrumb-active-color:             $breadcrumb-color;
+
+
+/*---------------------------------------------------------------------------*\
+  #MEDIA-QUERIES-BREAKPOINTS
+\*---------------------------------------------------------------------------*/
+
+$screen-max-width:            2500px;
+$screen-xxs-max:              479px;
+
+$screen-xlg:                  1366px;
+$screen-xlg-min:              $screen-xlg;
+$screen-lg-max:              ($screen-xlg-min - 1) !default;
+
+
+/*---------------------------------------------------------------------------*\
+  #ALERTS
+\*---------------------------------------------------------------------------*/
+
+$alert-padding-large:             25px;
+$alert-icon-size:                 40px;
+$alert-border-width:              2px;
+$alert-heading-font-size:         $font-size-large;
+
+$alert-success-border:            $green;
+$alert-success-bg:                $white;
+$alert-success-text:              $text-color;
+$alert-success-font-size:         $font-size-xlarge;
+$alert-success-icon-fill:         $blue;
+
+$alert-info-border:               $blue;
+$alert-info-bg:                   $white;
+$alert-info-text:                 $text-color;
+
+$alert-warning-border:            $orange;
+$alert-warning-bg:                $white;
+$alert-warning-text:              $text-color;
+
+$alert-danger-border:             $red;
+$alert-danger-bg:                 $white;
+$alert-danger-text:               $text-color;
+
+$alert-brand-border:              $magenta;
+$alert-brand-bg:                  $white;
+$alert-brand-text:                $text-color;
+
+
+/*---------------------------------------------------------------------------*\
+  #MODALS
+\*---------------------------------------------------------------------------*/
+
+$modal-title-font-size:        $font-size-h3;
+$modal-footer-bg:              $gray-lighter;
+$modal-lg-on-sm:               720px;
+$modal-sm:                     370px;
+
+
+/*---------------------------------------------------------------------------*\
+  #AJAX LOADER
+\*---------------------------------------------------------------------------*/
+
+$preloader-size:                              60px;
+
+
+/*---------------------------------------------------------------------------*\
+  #DROPDOWNS
+\*---------------------------------------------------------------------------*/
+
+$dropdown-link-color:            $black;
+$dropdown-link-hover-color:      $magenta;
+$dropdown-border:                $gray-dark;
+$dropdown-header-color:          $gray-darker;
+
+
+/*---------------------------------------------------------------------------*\
+  #SEARCH
+\*---------------------------------------------------------------------------*/
+
+$search-zindex:                        2;
+$search-close-icon-color:              $white;
+$search-close-icon-color-default:      $gray-darker;
+$search-close-icon-size:               20px;
+$search-close-mobile-icon-size:        20px;
+$search-close-icon-hover-opacity:      0.7;
+$search-horizontal-offset:             76px;
+$search-icon-size:                     24px;
+$search-icon-color:                    $gray-dark;
+$search-icon-horizontal-offset:        20px;
+$searchbox-input-padding:              $padding-large-vertical 105px $padding-large-vertical ($search-icon-horizontal-offset + 42px);
+$searchbox-mobile-input-padding:       $padding-large-vertical 105px $padding-large-vertical ($search-icon-horizontal-offset + $search-icon-size);
+$searchbox-no-button-input-padding:    $padding-large-vertical $padding-large-horizontal $padding-large-vertical ($search-icon-horizontal-offset + 42px);
+
+
+/*---------------------------------------------------------------------------*\
+  #DEVICE LISTING
+\*---------------------------------------------------------------------------*/
+
+$device-name-color:                              $black;
+$device-original-price-color:                    $gray-dark;
+$device-price-color:                             $brand-primary;
+$device-border-hover-color:                      $gray;
+
+$device-listing-side-bg:                         $gray-lightest;
+$device-listing-filter-border:                   $gray-light;
+$device-listing-filter-height:                   55px;
+$device-listing-filter-tooltip-icon-size:        16px;
+
+$device-listing-device-bg:                       $white;
+$device-listing-device-padding:                  20px 25px 16px;
+$device-listing-device-mobile-padding:           20px $space-horizontal-small 16px;
+$device-listing-device-mobile-space:             $space-horizontal-small;
+$device-listing-device-space:                    $space-horizontal-small;
+$device-listing-mobile-hover-scale:              1.1;
+$device-listing-hover-scale:                     1.25;
+$device-listing-device-params-color:             $gray-dark;
+$device-listing-device-params-icon-color:        $black;
+$device-listing-device-params-icon-size:         25px;
+$device-listing-device-params-font-size:         $font-size-tiny;
+$device-listing-device-param-height:             45px;
+$device-listing-device-installments-color:       $gray-dark;
+
+
+/*---------------------------------------------------------------------------*\
+  #EYECATCHERS
+\*---------------------------------------------------------------------------*/
+
+$eyecatcher-font-size:                           $font-size-small;
+$eyecatcher-device-listing-promo-width:          82px;
+$eyecatcher-color:                               $white;
+$eyecatcher-line-height:                         15px;
+
+
+/*---------------------------------------------------------------------------*\
+  #SLICK / SWIPE
+\*---------------------------------------------------------------------------*/
+
+$slick-dot-size:                                 8px;
+$slick-dot-active-size:                          16px;
+$slick-arrow-size:                               20px;
+
+
+/*---------------------------------------------------------------------------*\
+  #LISTS
+\*---------------------------------------------------------------------------*/
+
+$list-custom-bullet-icon-size:                   15px;
+
+
+/*---------------------------------------------------------------------------*\
+  #BILLBOARD
+\*---------------------------------------------------------------------------*/
+
+$billboard-height:                              580px;
+$billboard-mobile-height:                       500px;
+$billboard-zig-zag-min-height:                  470px;
+$billboard-bottom-height:                       400px;
+
+
+/*---------------------------------------------------------------------------*\
+  #ARTICLE
+\*---------------------------------------------------------------------------*/
+
+$article-bg:                                    $gray-lighter;
+$article-text-color:                            $text-color;
+$article-img-height:                            180px;
+$article-vertical-padding:                      ($space-horizontal-small - 1);
+$article-horizontal-padding:                    ($space-horizontal-small + ($space-horizontal-default / 3));
+$article-meta-font-size:                        $font-size-small;
+$article-meta-color:                            $gray-dark;
+$article-large-text-color:                      $white;
+$article-large-height:                          365px;
+$article-large-top-padding:                     50px;
+$article-large-bottom-padding:                  80px;
+$article-large-perex-font-size:                 $font-size-xlarge;
+
+
+/*---------------------------------------------------------------------------*\
+  #COLLAPSE
+\*---------------------------------------------------------------------------*/
+
+$collapse-link-icon-size:                       12px;
+$collapse-link-icon-padding:                    5px;
+
+
+/*---------------------------------------------------------------------------*\
+  #TABS
+\*---------------------------------------------------------------------------*/
+
+$image-tabs-border:                             $gray;
+$image-tabs-active-bg:                          transparent;
+$image-tabs-image-opacity:                      0.6;
+
+
+// RADIO BUTTONS + CHECKBOXES
+
+$checkbox-size:                                 20px;
+$checkbox-icon-size:                            12px;
+$checkbox-border:                               $gray-dark;
+
+$radio-size:                                    20px;
+$radio-border:                                  $gray-dark;
+$radio-icon-size:                               6px;
+
+$label-radio-checkbox-padding:                  30px;
+$radio-checkbox-active-border:                  $blue;
+$radio-checkbox-active-bg:                      $blue;
+$radio-checkbox-disabled-bg:                    $gray-light;
+$radio-checkbox-disabled-border:                $gray-light;
+
+
+/*---------------------------------------------------------------------------*\
+  #FILL-COLORS
+\*---------------------------------------------------------------------------*/
+
+$fill-colors:   "black" $black $black,
+                "white" $white $white,
+                "blue" $blue $blue,
+                "magenta" $magenta $magenta,
+                "gray-dark" $gray-dark $gray-dark,
+                "gray" $gray $gray,
+                "red" $red $red,
+                "green" $green $green,
+                "orange" $orange $orange;
+
+
+//
+// INPUT PREFIX WITH LABEL
+// --------------------------------------------------
+
+$label-prefix-color:                            $gray-dark;
+$label-prefix-focused-font-size:                $font-size-small;
+
+
+//
+// PANELS
+// --------------------------------------------------
+
+$panel-contact-form-bg:                        $gray-lighter;
+$panel-contact-form-heading-font-size:         $font-size-large;
+
+
+//
+// CART
+// --------------------------------------------------
+
+$cart-panel-bg:                                $gray-lighter;
+$cart-banner-bg:                               $magenta;
+
+
+//
+// METRO
+// --------------------------------------------------
+
+$metro-color:                                  $gray-dark;
+$metro-active-color:                           $text-color;
+$metro-font-size:                              $font-size-small;
+$metro-step-size:                              24px;
+$metro-step-font-size:                         $font-size-base;
+$metro-icon-size:                              12px;
+$metro-icon-mobile-size:                       10px;
+$metro-horizontal-space:                       $space-horizontal-small;
+
+//
+// METRO TRACKING
+// --------------------------------------------------
+$metro-tracking-min-height:                    100px;
+$metro-tracking-bg:                            $gray-lighter;
+$metro-tracking-color:                         $gray-darker;
+$metro-tracking-active-bg:                     $magenta;
+$metro-tracking-active-color:                  $white;
+$metro-tracking-icon-size:                     40px;
+$metro-tracking-icon-pending-color:            $orange;
+$metro-tracking-icon-ok-color:                 $green-dark;
+$metro-tracking-icon-remove-color:             $red;
+
+
+//
+// TOOLTIPS
+// --------------------------------------------------
+
+$tooltip-icon-size:                            20px;
+$tooltip-icon-color:                           $white;
+$tooltip-icon-bg:                              $gray;
+$tooltip-icon-light-bg:                        $gray-light;
+$tooltip-icon-light-color:                     $gray-dark;
+$tooltip-icon-hover-bg:                        $blue;
+
+
+//
+// Form states and alerts
+// --------------------------------------------------
+
+$state-danger-text:                            $red;
+$form-error-font-size:                         $font-size-small;
+$form-error-margin:                            5px 0 0;
+
+$form-control-horizontal-padding:              $padding-large-horizontal;
+$form-control-lg-horizontal-padding:           ($padding-large-horizontal + 4);
+
+
+//
+// CART + CHECKOUT
+// --------------------------------------------------
+
+$checkout-bg:                                  $gray-lighter;
+$checkout-float-breakpoint:                    $grid-float-breakpoint;
+$checkout-float-breakpoint-max:                ($checkout-float-breakpoint - 1);
+$checkout-inner-padding:                       ($space-horizontal-small * 3);
+
+$table-cart-summary-wrapper-min-height:        100px;
+$table-cart-summary-thumbnail-mobile-size:     52px;
+$table-cart-summary-thumbnail-size:            64px;
+$table-cart-summary-thumbnail-icon-size:       30px;
+$table-cart-summary-vertical-padding:          ceil($space-vertical-small * 1.5);
+
+$table-payment-summary-font-size:              28px;
+$table-payment-summary-mobile-font-size:       ($font-size-small - 1);
+
+
+//
+// LIST GROUP
+// --------------------------------------------------
+
+$list-group-border:                            $gray-dark;
+$list-group-item-vertical-padding:             13px;
+$list-group-modal-item-min-height:             70px;
+
+
+//
+// SELECTPICKER
+// --------------------------------------------------
+
+$selectpicker-icon-width:                      14px;
+$selectpicker-icon-height:                     8px;
+$selectpicker-icon-mobile-width:               10px;
+$selectpicker-icon-mobile-height:              6px;
+
+
+
+//
+// DATEPICKER
+// --------------------------------------------------
+
+$datepicker-icon-size:                         16px;
+$datepicker-icon-color:                        $gray-dark;
+$datepicker-prev-next-icon-color:              $magenta;
+$datepicker-prev-next-icon-size:               18px;
+$datepicker-active-day-color:                  $white;
+$datepicker-active-day-bg:                     $magenta;
+$datepicker-old-new-day-color:                 $gray;
+$datepicker-cell-hover-bg:                     $gray-light;
+$datepicker-cell-width:                        35px;
+$datepicker-cell-height:                       25px;
+$datepicker-today-color:                       $white;
+$datepicker-today-bg:                          $blue;
+
+
+//
+// OVERLAY
+// --------------------------------------------------
+
+$zindex-overlay:                               ($zindex-popover + 1);
+$overlay-close-icon-color:                     $gray-darker;
+$overlay-close-icon-size:                      20px;
+
+
+//
+// RATING
+// --------------------------------------------------
+
+$star-rating-icon-size:                        12px;
+$star-rating-icon-color:                       $gray-light;
+$star-rating-icon-active-color:                $blue;
+$star-rating-description-color:                $gray-dark;
+
+$rating-bar-height:                            ($space-horizontal-default / 2); // 15px
+$rating-bar-bg:                                $gray-lighter;
+$rating-bar-active-bg:                         $blue;
+$rating-bar-label-font-size:                   $font-size-small;
+$rating-bar-label-color:                       $gray-dark;
+
+
+//
+// POPOVER
+// --------------------------------------------------
+
+$popover-border-color:                         $gray-light;
+$popover-fallback-border-color:                $popover-border-color;
+$popover-arrow-outer-color:                    $popover-border-color;
+$zindex-popover:                               ($zindex-modal-background - 1);
+$popover-footer-bg:                            $gray-lightest;
+
+
+//
+// TABLES
+// --------------------------------------------------
+
+$table-border-color:                           $gray-lighter;
+$table-specs-th-width:                         30%;
+$table-specs-th-mobile-width:                  50%;
+$table-box-content-horizontal-padding:         ($table-cell-padding + 16px); // 24px
+$table-box-content-vertical-padding:           20px;
+
+//
+// DEVICE
+// --------------------------------------------------
+
+$device-detail-heading-font-size:              $font-size-h2;
+$device-detail-heading-line-height:            $font-line-height-h2;
+$device-detail-mobile-heading-font-size:       $font-size-xxlarge;
+$device-detail-bg:                             $white;
+$device-detail-mobile-img-max-width:           90%;
+$device-detail-price-font-size:                $font-size-h3;
+$device-detail-price-font-weight:              $font-weight-ultra;
+$device-detail-price-amount-font-size:         28px;
+$device-detail-price-amount-font-weight:       $font-weight-ultra;
+$device-detail-price-currency-font-size:       22px;
+$device-detail-price-currency-font-weight:     $font-weight-bold;
+$device-detail-preview-thumbnail-size:         85px;
+$device-detail-preview-thumbnail-bg:           $white;
+$device-detail-carousel-indicator-size:        10px;
+$device-detail-carousel-indicator-bg:          $gray-dark;
+$device-detail-carousel-indicator-active-border-width:  2px;
+$device-detail-carousel-control-bg:            $magenta;
+$device-detail-color-size:                     24px;
+$device-detail-color-active-size:              34px;
+$device-detail-color-mobile-size:              18px;
+$device-detail-color-mobile-active-size:       28px;
+$device-detail-color-mobile-size:              18px;
+$device-detail-color-border-width:             1px;
+$device-detail-color-font-size:                $font-size-xsmall;
+$device-detail-color-font-color:               $black;
+$device-detail-eyecatcher-width:               82px;
+$device-detail-color-border-color:             $gray;
+$device-detail-color-active-border-width:      2px;
+$device-detail-color-active-border-color:      $blue;
+$device-detail-color-bg-size:                  30px;
+
+//
+// DIMENSIONS
+// --------------------------------------------------
+$dimensions-font-size:                         $font-size-xsmall;
+$dimensions-font-weight:                       $font-weight-ultra;
+$dimensions-silhouette-small-front-width:      107px;
+$dimensions-silhouette-small-front-height:     200px;
+
+$dimensions-silhouette-small-side-width:       19px;
+$dimensions-silhouette-small-side-height:      200px;
+
+//
+// SERVICE LISTING
+// --------------------------------------------------
+
+$service-listing-thead-font-size:                $font-size-small;
+$service-listing-thead-color:                    $gray-dark;
+$service-listing-service-name-font-size:         28px;
+$service-listing-service-name-mobile-font-size:  34px;
+$service-listing-table-cell-vertical-paddding:   ($table-cell-padding + 10);
+$service-listing-table-cell-horizontal-paddding: ($table-cell-padding + 6);
+$service-listing-service-top-color:              $white;
+$service-listing-service-top-bg:                 $blue;
+$service-listing-service-min-width:              170px;
+$service-name-cell-width:                        60px;
+$service-name-cell-modal-width:                  110px;
+$service-name-cell-left-modal-padding:           ($service-listing-table-cell-horizontal-paddding + 10 + ($table-cell-padding * 2));
+$service-listing-promo-vertical-padding:         8px;
+$service-listing-promo-bg:                       $blue;
+$service-listing-promo-arrow-width:              10px;
+$service-listing-promo-arrow-height:             8px;
+$service-listing-promo-font-size:                $font-size-small;
+$service-listing-service-top-vertical-padding:   4px;
+$service-detail-bg:                              $gray-lightest;
+$service-detail-arrow-width:                     14px;
+$service-detail-arrow-height:                    12px;
+
+
+//
+// BOXES
+// --------------------------------------------------
+
+$box-border:                                    $well-border;
+$box-content-bg:                                $white;
+$box-heading-vertical-padding:                  20px;
+$box-content-vertical-margin:                   30px;
+$box-content-side-padding:                      $table-box-content-horizontal-padding; // 24px
+$box-content-top-padding:                       $space-vertical-default;
+
+//
+// SPECS
+// --------------------------------------------------
+$specs-title-font-weight:                       $font-weight-bold;
+$specs-description-color:                       $gray-dark;
+
+
+//
+// FAQS
+// --------------------------------------------------
+
+$faq-link-mobile-font-size:                    $font-size-base;
+$panel-faq-border:                             $gray;
+
+
+//
+// WELLS
+// --------------------------------------------------
+
+$well-xsm-min-height:                            50px;
+
+
+//
+// SIGNPOST
+// --------------------------------------------------
+
+$signpost-bg:                                   $white;
+
+
+//
+// BANNER
+// --------------------------------------------------
+
+$banner-color:                                  $white;
+$banner-bg:                                     $black;
+$banner-height:                                 223px;
+$banner-mobile-height:                          295px;
+
+
+//
+// PIE GRAPH
+// --------------------------------------------------
+
+$pie-width:                                     180px;
+$pie-height:                                    $pie-width;
+$pie-mobile-width:                              100px;
+$pie-mobile-height:                             $pie-mobile-width;
+$pie-background-color:                          $magenta;
+$pie-indicator-color:                           $gray-light;
+$pie-overlay-color:                             $white;
+$pie-indicator-width:                           6px;
+$pie-value-font-size:                           54px;
+$pie-value-line-height:                         $font-line-height-h1;
+$pie-value-mobile-font-size:                    $font-size-h3;
+$pie-value-mobile-line-height:                  $font-line-height-h3;
+
+
+//
+// PROGRESS BARS
+// --------------------------------------------------
+
+$progress-bg:                                   $gray-light;
+$progress-height:                               18px;
+$progress-height-small:                         10px;
+$progress-striped-bg:                           $gray-lightest;
+
+
+//
+// RANGE
+// --------------------------------------------------
+
+$range-track-size:                              14px;
+$range-track-small-size:                        7px;
+$range-thumb-size:                              26px;
+$range-thumb-small-size:                        18px;
+$range-thumb-color:                             $blue;
+$range-track-color:                             $gray-light;
+$range-track-progress:                          $blue;
+
+
+//
+// Badges
+// --------------------------------------------------
+
+$badge-border-radius:                           $border-radius-small;
+$badge-font-weight:                             $font-weight-ultra;
+$badge-line-height:                             $line-height-computed;
+
+
+//
+// SMS/MMS gate
+// --------------------------------------------------
+
+$gk-leaderboard-width:                       745px;
+
+
+//
+// Tags input
+// --------------------------------------------------
+
+$tag-input-min-width:                        135px;
+$tag-margin-top:                             4px;
+
+
+//
+// Application banner
+// --------------------------------------------------
+
+$app-banner-height:                         84px;

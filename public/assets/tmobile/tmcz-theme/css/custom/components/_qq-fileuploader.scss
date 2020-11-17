@@ -1,0 +1,75 @@
+/**
+* QQ Fileuploader
+*
+* QQ Fileuploader styles.
+*/
+
+/*---------------------------------------------------------------------------*\
+  #QQ FILEUPLOADER
+\*---------------------------------------------------------------------------*/
+
+.qq-uploader-wrapper {
+//  overflow: hidden;
+  &,
+  .qq-uploader {
+    position: relative;
+  }
+  &.qq-uploader-wrapper-disable {
+    .qq-upload-button {
+      color: $gray;
+      border-color: $gray;
+      &,
+      input[type="file"] {
+        pointer-events: none;
+      }
+    }
+  }
+  .qq-uploader {
+    text-align: center;
+  }
+  .qq-upload-list,
+  .qq-uploaded-list {
+    list-style: none;
+  }
+  .qq-uploaded-list {
+    display: -webkit-flex;
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: flex;
+    justify-content: space-around;
+    padding-left: 0;
+    &,
+    li {
+      margin: 0;
+    }
+    .qq-uploaded-list-thumb {
+      position: relative;
+      cursor: pointer;
+      &:hover {
+        .qq-uploaded-list-thumb-close {
+          display: block;
+        }
+      }
+      .qq-uploaded-list-thumb-close {
+        display: none;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        svg {
+          fill: $red;
+        }
+      }
+    }
+  }
+  .qq-upload-drop-area {
+    padding: $padding-large-horizontal;
+    border: 1px dashed $gray-dark;
+    margin-bottom: $space-vertical-default;
+    border-radius: $border-radius-base;
+    transition-property: border, background;
+    transition-duration: $transition-duration-default;
+  }
+  .qq-upload-drop-area-active {
+    border-color: $magenta;
+    background: $gray-lighter;
+  }
+}

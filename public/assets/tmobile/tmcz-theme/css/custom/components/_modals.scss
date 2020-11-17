@@ -1,0 +1,61 @@
+.modal {
+  .container {
+    width: auto;
+  }
+}
+
+.modal-body {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &.no-horizontal-padding {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.modal-content {
+  @include box-shadow(none);
+  border: 0;
+}
+
+.modal-title {
+  font-size: $modal-title-font-size;
+  line-height: $headings-line-height;
+}
+
+.modal-header .close,
+.bootbox-close-button {
+  font-size: $close-font-size;
+  margin-top: -5px;
+  text-shadow: none;
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: $transition-duration-fast;
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+}
+
+.modal-footer {
+  text-align: left;
+  border-top: 0;
+  background: $modal-footer-bg;
+  border-bottom-left-radius: $border-radius-large;
+  border-bottom-right-radius: $border-radius-large;
+  margin: 0 -#{$modal-inner-padding} -#{$modal-inner-padding};
+}
+
+@media (min-width: $screen-sm-min) {
+  .modal-lg {
+    width: $modal-lg-on-sm;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .modal-lg {
+    width: $modal-lg;
+  }
+}

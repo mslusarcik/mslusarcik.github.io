@@ -1,0 +1,249 @@
+.device-detail {
+  @include make-css-grid(58% 1fr, auto auto, $grid-gutter-width);
+  padding: $space-vertical-default 0;
+  @include mq(sm, max) {
+    display: block;
+  }
+  &-with-color-variants {
+    margin-bottom: ($space-vertical-default * 4);
+    @include mq(sm, max) {
+      margin-bottom: 0;
+    }
+    .no-grid & {
+      margin-bottom: 0;
+    }
+  }
+  &-preview,
+  &-title,
+  &-description {
+    padding: $space-vertical-default $space-horizontal-default;
+    background: $device-detail-bg;
+  }
+  &-preview {
+    @include place-item(1,1,1,2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .eyecatchers {
+      z-index: 1;
+      margin-top: $space-vertical-default;
+      .eyecatcher {
+        width: $device-detail-eyecatcher-width;
+        padding: ($space-horizontal-default / 3);
+      }
+    }
+    &.device-detail-with-thumbnails {
+      margin-left: ($device-detail-preview-thumbnail-size + $space-horizontal-default);
+      @include mq(sm, max) {
+        flex-direction: column;
+        margin-left: 0;
+      }
+    }
+    .no-grid & {
+      margin-bottom: ($space-vertical-default * 4.5);
+      @include mq(sm, max) {
+        margin-bottom: 0;
+      }
+    }
+    .carousel-inner {
+      & > .item {
+        &.next,
+        &.left,
+        &.prev,
+        &.right {
+          display: flex;
+          align-items: center;
+          img {
+            margin: 0 auto;
+          }
+        }
+        &.active {
+          display: flex;
+          align-items: center;
+          img {
+            margin: 0 auto;
+          }
+        }
+        img {
+          @include mq(sm, max) {
+            max-width: $device-detail-mobile-img-max-width;
+          }
+        }
+      }
+    }
+    @include mq(sm, max) {
+      padding-bottom: 0;
+    }
+  }
+  .carousel-indicators {
+    @include list-unstyled();
+    position: absolute;
+    left: (($device-detail-preview-thumbnail-size + $space-horizontal-default ) * -1);
+    margin-left: 0;
+    top: 0;
+    width: auto;
+    li {
+      margin: 0 0 ($space-horizontal-default / 2) 0;
+      width: auto;
+      height: auto;
+      display: block;
+      border-radius: 0;
+      border: none;
+      position: relative;
+      text-indent: 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &.active {
+        &:before {
+          display: none;
+        }
+      }
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: ($space-horizontal-default / 6); //5px
+        width: $device-detail-preview-thumbnail-size;
+        height: $device-detail-preview-thumbnail-size;
+        background: $device-detail-preview-thumbnail-bg;
+        img {
+          max-height: 90%;
+        }
+      }
+    }
+    @include mq(sm, max) {
+      left: 0;
+      display: flex;
+      position: relative;
+      margin-left: 0;
+      margin-top: $space-vertical-default;
+      li {
+        width: $device-detail-carousel-indicator-size;
+        height: $device-detail-carousel-indicator-size;
+        background: $device-detail-carousel-indicator-bg;
+        margin-left: $space-horizontal-small;
+        border-radius: 50%;
+        &:first-child {
+          margin-left: 0;
+        }
+        &.active {
+          &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+            background: transparent;
+            width: ($device-detail-carousel-indicator-size * 2);
+            height: ($device-detail-carousel-indicator-size * 2);
+            top: ($device-detail-carousel-indicator-size / -2);
+            left: ($device-detail-carousel-indicator-size / -2);
+            border: $device-detail-carousel-indicator-active-border-width solid $device-detail-carousel-indicator-bg;
+          }
+        }
+        a {
+          display: none;
+        }
+      }
+    }
+  }
+  .carousel-color-variants {
+    @extend %color-variants;
+  }
+  .carousel-control {
+    @extend %carousel-control;
+    display: none;
+    bottom: (($grid-gutter-width * 4) / 1.2);
+    @include mq(sm, max) {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &-title {
+    @include place-item(2,1);
+    h1 {
+      font-size: $device-detail-heading-font-size;
+      line-height: $device-detail-heading-line-height;
+      margin-top: 0;
+
+    }
+    .no-grid & {
+      background: transparent;
+    }
+    @include mq(sm, max) {
+      background: transparent;
+      padding-top: 0;
+      padding-left: 0;
+      padding-right: 0;
+      h1 {
+        font-size: $device-detail-mobile-heading-font-size;
+        line-height: $font-line-height-xxlarge;
+      }
+    }
+  }
+  &-description {
+    @include place-item(2,2);
+  }
+  &-prices {
+    width: 100%;
+    margin: $space-vertical-large 0;
+    tbody {
+      display: flex;
+      flex-direction: column;
+      tr {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        td {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+  &-price {
+    font-size: $device-detail-price-font-size;
+    font-weight: $device-detail-price-font-weight;
+    td {
+      padding: $space-vertical-small 0 0;
+    }
+    &-amount {
+      font-size: $device-detail-price-amount-font-size;
+      font-weight: $device-detail-price-amount-font-weight;
+    }
+    &-currency {
+      font-size: $device-detail-price-currency-font-size;
+      font-weight: $device-detail-price-currency-font-weight;
+    }
+    &-gray {
+      color: $gray-dark;
+    }
+  }
+  &-small {
+    @include make-css-grid(1fr 2fr, auto auto, $grid-gutter-width);
+    .no-grid & {
+      .device-detail-preview {
+        margin-bottom: 0;
+      }
+    }
+    .device-detail-preview {
+      img {
+        max-width: 50%;
+      }
+    }
+    @include mq(sm, max) {
+      display: block;
+    }
+  }
+}
+
+.color-variants {
+  @extend %color-variants;
+  position: static;
+  @include mq(sm, max) {
+    background: transparent;
+    padding-top: 0;
+    height: auto;
+  }
+}

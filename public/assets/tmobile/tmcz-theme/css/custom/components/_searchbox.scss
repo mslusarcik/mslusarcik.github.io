@@ -1,0 +1,32 @@
+.searchbox {
+  position: relative;
+  .search-icon {
+    margin-top: -($search-icon-size / 2);
+    position: absolute;
+    top: 50%;
+    left: $search-icon-horizontal-offset;
+    z-index: $search-zindex;
+    svg {
+      fill: $search-icon-color;
+      width: $search-icon-size;
+      height: $search-icon-size;
+    }
+  }
+  [type="submit"] {
+    color: $magenta;
+    padding-left: $padding-large-horizontal;
+    padding-right: $padding-large-horizontal;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: $search-zindex;
+  }
+  .form-control {
+    padding: $searchbox-input-padding;
+  }
+  &-no-button {
+    .form-control {
+      padding: $searchbox-no-button-input-padding;
+    }
+  }
+}

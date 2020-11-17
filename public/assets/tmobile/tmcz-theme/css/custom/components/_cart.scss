@@ -1,0 +1,199 @@
+/*---------------------------------------------------------------------------*\
+  #CART VARIABLES
+\*---------------------------------------------------------------------------*/
+$cart-panel-padding: 8px;
+$cart-ico-size-desktop: 27px;
+$cart-ico-size-mobile: 21px;
+$thumbnail-width: 64px;
+$thumbnail-height: $thumbnail-width;
+$thumbnail-svg-width-max: 35px;
+$thumbnail-svg-height-max: $thumbnail-svg-width-max;
+$thumbnail-item-ico-size: 100px;
+$thumbnail-margin: $cart-panel-padding;
+$item-ico-size: 56px;
+$item-ico-mobile-size: 35px;
+
+
+/*---------------------------------------------------------------------------*\
+  #CART
+\*---------------------------------------------------------------------------*/
+
+.cart-wrapper {
+  margin-bottom: $space-vertical-large;
+  @include mq(sm) {
+    margin-bottom: ($space-vertical-large + $space-vertical-small);
+  }
+}
+
+.cart {
+  &-panel {
+    @include mq(xs, max) {
+      margin-top: $space-vertical-small;
+    }
+    position: relative;
+    background: $cart-panel-bg;
+    &:before {
+      $arrow-size: 12px;
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: $arrow-size solid transparent;
+      border-right: $arrow-size solid transparent;
+      border-bottom: $arrow-size solid $cart-panel-bg;
+      position: absolute;
+      top: -($arrow-size);
+      left: calc(12% - #{($grid-gutter-width / 2)}); // Compressor is removing spaces inside calc() function. https://github.com/yui/yuicompressor/issues/59#issuecomment-35528166
+      @include mq(sm, min) {
+        left: $space-horizontal-small;
+      }
+    }
+    &-overview {
+      .panel-body {
+        padding: 0;
+        display: flex;
+        position: relative;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .img-thumbnail {
+        width: $thumbnail-width;
+        height: $thumbnail-height;
+        padding: 2px;
+        vertical-align: middle;
+        margin: $thumbnail-margin;
+        border-width: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        border-radius: 0;
+        transition: none;
+        img {
+          height: 100%;
+        }
+        svg{
+          max-width: $thumbnail-svg-width-max;
+          max-height: $thumbnail-svg-height-max;
+        }
+        .cart-item-status {
+          position: absolute;
+          right: 5px;
+          bottom: 5px;
+          svg{
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+      .thumbnail-msg {
+        display: flex;
+        flex-direction: column;
+        margin: $thumbnail-margin;
+        font-size: $font-size-xlarge;
+        span {
+          & + span {
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  }
+  &-item {
+    padding-top: $space-vertical-small;
+    padding-bottom: $space-vertical-small;
+    &.border-top:first-child,
+    &.border-top:first-of-type {
+      border-top: 0;
+    }
+    &-thumbnail {
+      position: relative;
+      @include mq(sm, min) {
+        min-height: $thumbnail-item-ico-size - ($space-vertical-small * 4);
+      }
+      .img-thumbnail {
+        padding: 0;
+        border-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: none;
+        @include mq(sm, min) {
+          position: absolute;
+          width: $thumbnail-item-ico-size;
+          height: $thumbnail-item-ico-size;
+          top: -($space-vertical-small * 2);
+          left: 50%;
+          margin-left: -($thumbnail-item-ico-size / 2);
+        }
+        svg {
+          width: $item-ico-mobile-size;
+          height: $item-ico-mobile-size;
+          @include mq(sm, min) {
+            width: $item-ico-size;
+            height: $item-ico-size;
+          }
+        }
+      }
+    }
+    &.border-top {
+      border-top: 1px solid $gray-light;
+      margin-top: 30px;
+      padding-top: 40px;
+    }
+    .currency {
+      font-weight: 600;
+      font-size: $font-size-base;
+    }
+  }
+  &-remove-ico {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    [class*="ico-"] svg{
+      fill: $gray-dark;
+      max-width: $cart-ico-size-desktop;
+      max-height: $cart-ico-size-desktop;
+    }
+  }
+  &-item-name {
+    @include mq(xs, min) {
+      font-size: $font-size-xlarge;
+      line-height: $font-line-height-xlarge;
+    }
+  }
+  &-item-price {
+    font-size: $font-size-large;
+    @include mq(xs, min) {
+      font-size: $font-size-xlarge;
+      line-height: $font-line-height-xlarge;
+    }
+    float: right;
+    strong {
+      font-weight: 700;
+    }
+  }
+  &-item-price-frequency {
+    font-weight: 600;
+    font-size: $font-size-base;
+    color: $gray-dark;
+  }
+  &-item-info {
+    margin: 0;
+  }
+
+  // .cart-banner
+  &-banner {
+    .well {
+      margin: 0;
+      border: 0;
+      border-radius: 0;
+    }
+  }
+
+  // .cart-banner-bg
+  &-banner-bg {
+    background: rgba($cart-banner-bg, 0.8);
+  }
+}

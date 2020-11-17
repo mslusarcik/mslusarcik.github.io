@@ -1,0 +1,271 @@
+.checkout-page {
+  @media screen and (min-width: $checkout-float-breakpoint) {
+    background-image: -webkit-linear-gradient(left, #fff 50%, $checkout-bg 50%);
+    background-image:         linear-gradient(to right, #fff 50%, $checkout-bg 50%);
+  }
+  .navbar {
+    background: transparent;
+  }
+  .navbar-header {
+    &:after {
+      @include mq(sm, max) {
+        width: 100%;
+        right: 0;
+        position: absolute;
+      }
+    }
+  }
+
+  .row-checkout {
+    @media screen and (min-width: $checkout-float-breakpoint) {
+      @include clearfix;
+      display: block;
+    }
+    @media screen and (min-width: $checkout-float-breakpoint) {
+      // Pro breakpoint md a větší jsem vypnul flex a použil klasické floatování, abych docílil zobrazení dle graf. návrhu.
+      .left-part,
+      .right-part,
+      .bottom-part {
+        position: relative;
+        width: 50%;
+        float: left;
+      }
+      .left-part {
+        right: 50%;
+        float: right;
+      }
+      .right-part {
+        left: 50%;
+      }
+      .bottom-part {
+        left: 50%;
+      }
+    }
+  }
+  .left-part {
+    @media screen and (min-width: $checkout-float-breakpoint) {
+      padding-right: $grid-gutter-width;
+    }
+    @include mq(lg, min) {
+      padding-right: $checkout-inner-padding;
+    }
+  }
+  .right-part {
+    position: relative;
+    background: $checkout-bg;
+    @media screen and (min-width: $checkout-float-breakpoint) {
+      padding-left: $grid-gutter-width;
+    }
+    @include mq(lg, min) {
+      padding-left: $checkout-inner-padding;
+    }
+  }
+  .panel-contact-form {
+    background: $checkout-bg;
+  }
+}
+
+.table-cart-summary {
+  > tbody {
+    > tr {
+      > td {
+        @include mq(xs, min) {
+          padding-top: $table-cart-summary-vertical-padding;
+          padding-bottom: $table-cart-summary-vertical-padding;
+        }
+        &:first-child {
+          .right-part & {
+            padding-left: 0;
+          }
+          width: $table-cart-summary-thumbnail-mobile-size;
+          @include mq(xs, min) {
+            width: $table-cart-summary-thumbnail-size;
+          }
+        }
+      }
+    }
+  }
+  .cart-item-type,
+  .cart-item-name {
+    font-weight: 600;
+  }
+  .cart-item-type {
+    font-size: $font-size-xsmall;
+    color: $gray-dark;
+    display: block;
+    @include mq(xs, min) {
+      font-size: $font-size-small;
+    }
+  }
+  .cart-item-name,
+  .cart-item-price,
+  .cart-item-price-frequency,
+  .cart-item-payment {
+    font-size: $font-size-small;
+    @include mq(xs, min) {
+      font-size: $font-size-base;
+      line-height: $font-line-height-base;
+    }
+  }
+  .cart-item-name,
+  .cart-item-payment {
+    display: block;
+  }
+  .cart-item-name {
+    margin-top: 5px;
+  }
+  .cart-item-price {
+    font-weight: 700;
+  }
+  .img-thumbnail {
+    display: block;
+    position: relative;
+    border-radius: 0;
+    border: 0;
+    width: $table-cart-summary-thumbnail-mobile-size;
+    height: $table-cart-summary-thumbnail-mobile-size;
+    transition: none;
+    @include mq(xs, min) {
+      width: $table-cart-summary-thumbnail-size;
+      height: $table-cart-summary-thumbnail-size;
+    }
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    svg {
+      width: $table-cart-summary-thumbnail-icon-size;
+      height: $table-cart-summary-thumbnail-icon-size;
+    }
+    img {
+      @include img-responsive;
+      @include center-block;
+      max-width: 80%;
+    }
+  }
+  .cart-item-payment {
+    margin-top: $space-vertical-small;
+    @include mq(xs, min) {
+      margin-top: $space-vertical-default;
+    }
+  }
+
+  // .table-cart-summary-wrapper
+  &-wrapper {
+    @media screen and (max-width: $checkout-float-breakpoint-max) {
+      max-height: none !important;
+    }
+    @media screen and (min-width: $checkout-float-breakpoint) {
+      overflow-y: auto;
+      min-height: $table-cart-summary-wrapper-min-height;
+      transition-property: max-height;
+      transition-duration: $transition-duration-fast;
+      &.collapse-content {
+        display: block;
+        height: auto !important;
+      }
+    }
+  }
+}
+
+.table-payment-summary {
+  border-width: 1px 0 1px;
+  border-style: solid;
+  border-color: $gray;
+  .h2,
+  .h3 {
+    font-size: $table-payment-summary-font-size;
+  }
+  > tbody {
+    > tr {
+      th, td {
+        vertical-align: middle;
+      }
+      @media screen and (min-width: $checkout-float-breakpoint) {
+        &:first-child {
+          th, td {
+            padding-top: $space-vertical-large;;
+          }
+        }
+        &:last-child {
+          th, td {
+            padding-bottom: $space-vertical-large;;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $checkout-float-breakpoint-max) {
+    width: auto;
+    margin: ($space-vertical-small - 4px) 0;
+    border: 0;
+    float: right;
+    th,
+    td,
+    strong,
+    span,
+    .h2,
+    .h3 {
+      font-size: $table-payment-summary-mobile-font-size;
+      line-height: $font-line-height-small;
+    }
+    th {
+      color: $gray-dark;
+    }
+    strong {
+      &:before {
+        content: '\00a0';
+      }
+    }
+    > tbody {
+      > tr {
+        th, td {
+          padding: 0;
+          text-align: right;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+
+.collapse-heading-cart-summary {
+  @media screen and (max-width: $checkout-float-breakpoint-max) {
+    margin: 0;
+  }
+}
+
+.collapse-link-cart-summary {
+  transition: none;
+  &,
+  &:active,
+  &:hover,
+  &:focus {
+    color: $text-color;
+  }
+  @media screen and (min-width: $checkout-float-breakpoint) {
+    &,
+    &:active,
+    &:hover,
+    &:focus {
+      outline: 0;
+      cursor: text;
+      text-decoration: none;
+    }
+  }
+  @media screen and (max-width: $checkout-float-breakpoint-max) {
+    font-size: $font-size-small;
+    font-weight: 600;
+    padding: $space-vertical-small 0;
+    white-space: nowrap;
+  }
+}
+
+.map-holder {
+  border-top: 1px solid $gray-dark;
+  .no-js & {
+    display: none;
+  }
+}

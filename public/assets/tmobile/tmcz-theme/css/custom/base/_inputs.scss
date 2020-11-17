@@ -1,0 +1,135 @@
+// Input Sizes
+// --------------------------------------------------
+
+.input-lg {
+  font-size: $font-size-xlarge;
+  border-radius: $border-radius-small;
+  padding-left: $form-control-lg-horizontal-padding;
+  padding-right: $form-control-lg-horizontal-padding;
+}
+
+
+// input prefix text
+// --------------------------------------------------
+
+.input-prefix-text {
+  position: relative;
+  input {
+    padding-left: (4 * $padding-base-horizontal);
+    &[disabled] + span {
+      
+    }
+  }
+  > span {
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    left: $padding-base-horizontal;
+    transform: translate(0, -50%);
+    display: block;
+    z-index: 1;
+  }
+  &-lg {
+    > span {
+      font-size: $font-size-xlarge;
+      left: $padding-large-horizontal;
+    }
+    &.input-prefix-label {
+      > span {
+        font-size: $font-size-base;
+        line-height: 1;
+        top: ($padding-large-vertical + $label-prefix-focused-font-size);
+        transform: none;
+      }
+    }
+    .input-lg {
+      padding-left: (5 * $padding-base-horizontal);
+    }
+  }
+}
+
+
+// input prefix label
+// --------------------------------------------------
+
+.js .input-prefix-label {
+  position: relative;
+  label {
+    @extend %label-inside-form-control; // _placeholders.scss
+  }
+  &.focused,
+  &.input-prefix-text {
+    label {
+      @extend %label-inside-form-control-focused; // _placeholders.scss
+    }
+    .form-control {
+      font-size: $font-size-base;
+      padding-top: ($padding-large-vertical + $label-prefix-focused-font-size);
+      line-height: 0;
+    }
+  }
+  &.input-prefix-text {
+    .form-control {
+      padding-left: floor(4.4 * $padding-base-horizontal);
+    }
+  }
+  &.autofilled {
+    label {
+      opacity: 0;
+    }
+  }
+}
+
+
+// file input
+// --------------------------------------------------
+
+.file-input-wrapper {
+  position: relative;
+
+  input[type="file"] {
+    position: absolute;
+    left: -9999px;
+  }
+  .btn {
+    position: absolute;
+    left: 0px;
+  }
+  .file-input-info {
+    $height: 41px;
+    background: $white;
+    border-radius: $border-radius-base;
+    border: 1px solid $input-border;
+    padding-left: 200px;
+    padding-right: $padding-base-horizontal;
+    width: 100%;
+    height: 100%;
+    line-height: $height;
+    height: $height;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    &.file-selected {
+      color: $blue;
+      border-color: $input-border;
+    }
+  }
+  @include mq(xs, max) {
+    & {
+      .btn {
+        position: relative;
+        width: 100%;
+      }
+      .file-input-info {
+        display: none;
+        text-align: center;
+        padding-left: 0;
+        border-top: none;
+        &.file-selected {
+          display: block;
+          padding: 0 $padding-base-horizontal;
+        }
+      }
+    }
+  }
+}

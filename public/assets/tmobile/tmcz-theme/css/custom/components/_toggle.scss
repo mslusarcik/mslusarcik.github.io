@@ -1,0 +1,156 @@
+@function pi() {
+  @return 3.14159265359;
+}
+
+$circle-size:       51px;
+$circle-path:       round(($circle-size * pi()) + ($circle-size / 2));
+$duration-line:     0.5s;
+$duration-circle:   $transition-duration-default;
+$border-color:      $white;
+$border-width:      1px;
+
+.toggle {
+  position: fixed;
+  top: ($toggle-padding + 1);
+  right: ($grid-gutter-width / 2);
+//  right: (($grid-gutter-width / 2) - $toggle-padding);
+  padding: ($toggle-padding + 2) $toggle-padding ($toggle-padding + 1);
+  background: none;
+  border: none;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $toggle-color;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  z-index: $zindex-toggle;
+  .navbar-default & {
+    color: $toggle-color-default;
+  }
+  .animate & {
+    background: rgba($black, $toggle-background-opacity);
+    .navbar-default & {
+      color: $toggle-color;
+    }
+    .open & {
+      background: transparent;
+    }
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+//    color: $toggle-color;
+    text-decoration: none;
+  }
+  .open.in & {
+    position: static;
+    height: 100%;
+    padding-top: ($toggle-padding * 2);
+  }
+  span {
+    transition-property: opacity, transform;
+    transition-duration: $transition-duration-fast;
+    display: block;
+    width: $toggle-width;
+    height: $toggle-thickness;
+    background: currentColor;
+    & + span {
+      margin-top: $toggle-space;
+    }
+    &:last-of-type {
+      font-size: $toggle-font-size;
+      font-weight: $toggle-font-weight;
+      letter-spacing: $toggle-letter-spacing;
+      height: auto;
+      text-transform: uppercase;
+      background: none;
+      margin-top: 3px;
+      line-height: 1;
+    }
+  }
+  svg {
+    position: absolute;
+    top: -($toggle-padding);
+    left: -($toggle-padding);
+    width: $toggle-circle-size;
+    height: $toggle-circle-size;
+    circle {
+      fill: none;
+      stroke: $toggle-line-bg;
+      stroke-width: 0.4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 39 39;
+      stroke-dashoffset: -39;
+      transition: stroke-dashoffset $transition-duration-default;
+      .navbar-default & {
+        stroke: $toggle-line-bg-default;
+      }
+      .animate & {
+        stroke-dashoffset: 0;
+      }
+    }
+    .open & {
+      display: none;
+    }
+  }
+  .open:not(.out) & {
+    $midpoint: ($toggle-thickness + $toggle-space);
+    span {
+      &:nth-child(1) {
+        transform: translateY($midpoint) rotate(45deg);
+      }
+      &:nth-child(2) {
+        transform: translateY(0) rotate(-45deg);
+      }
+      &:nth-child(3) {
+        opacity: 0;
+      }
+    }
+  }
+  @include mq(md, min) {
+    display: none;
+  }
+}
+
+//.circle {
+//  width: $circle-size;
+//  height: $circle-size;
+//  position: absolute;
+//  top: -3px;
+//  left: -5px;
+//  &:before {
+//    transition-property: transform;
+//    transition-duration: $duration-line;
+//    transition-delay: $duration-circle;
+//    content: '';
+//    position: absolute;
+//    left: 0;
+//    right: 0;
+//    bottom: 0;
+//    height: $border-width;
+//    background: $border-color;
+//    transform-origin: 100% 0;
+//  }
+//  path {
+//    transition-property: stroke-dasharray, stroke-dashoffset;
+//    transition-duration: $duration-circle;
+//    fill: none;
+//    stroke: $border-color;
+//    stroke-width: $border-width;
+//    stroke-dasharray: 0 $circle-path;
+//  }
+//  .animate & {
+//    &:before {
+//      transition-delay: 0s;
+//      transform: scaleX(0);
+//    }
+//    path {
+//      transition-delay: $duration-line;
+//      stroke-dasharray: $circle-path;
+//      stroke-dashoffset: ($circle-size / -2);
+//    }
+//  }
+//}

@@ -1,0 +1,567 @@
+/*Core variables and mixins*/
+/**
+* CUSTOM VARIABLES OVERRIDES
+*
+* There are variables that overrides default bootstrap variables.
+*
+*/
+/*---------------------------------------------------------------------------*\
+  #COLORS
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #SCAFFOLDING
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #TYPOGRAPHY
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #COMPONENTS
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #NAVBAR
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #MEDIA-QUERIES-BREAKPOINTS
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #BUTTONS
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #TABLES
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #CAROUSEL - MULTIBANNER
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #FORM ELEMENTS
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #WELLS
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #CLOSE
+\*---------------------------------------------------------------------------*/
+/**
+* CUSTOM VARIABLES
+*
+* Variables for custom modules, mixins, functions, placehodlers etc.
+*
+*/
+/*---------------------------------------------------------------------------*\
+  #COMMON
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #FONTS - SIZES & LINE HEIGHT
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #TEXTS
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #BUTTONS
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #TRANSITIONS
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #COMPONENTS
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #FORM ELEMENTS
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #CAPTION
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #TILE
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #FOOTER
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #LOGO
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #NAVBAR
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #NAV
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #NAVBAR
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #MINICART
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #TOGGLE
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #MULTIBANNER
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #NAVBAR & LOGO
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #ICONS
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #BREADCRUMBS
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #MEDIA-QUERIES-BREAKPOINTS
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #ALERTS
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #MODALS
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #AJAX LOADER
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #DROPDOWNS
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #SEARCH
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #DEVICE LISTING
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #EYECATCHERS
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #SLICK / SWIPE
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #LISTS
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #BILLBOARD
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #ARTICLE
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #COLLAPSE
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #TABS
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #FILL-COLORS
+\*---------------------------------------------------------------------------*/
+/**
+* MIXINS
+*
+* Custom mixins
+*
+*/
+/*---------------------------------------------------------------------------*\
+  #CSS GRID
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+  #MEDIA-QUERY
+\*---------------------------------------------------------------------------*/
+/**
+* Placeholders
+*
+* Custom placeholders for "DRY"
+*
+*/
+.vcc-container .vcc-options-menu .dropdown-menu:before, .vcc-container .vcc-options-menu .dropdown-menu:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-style: dashed solid;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top: 0; }
+.vcc-container .vcc-options-menu .dropdown-menu:before {
+  border-left-width: 12px;
+  border-right-width: 12px;
+  border-bottom-width: 12px;
+  border-bottom-color: #e5e5e5; }
+.vcc-container .vcc-options-menu .dropdown-menu:after {
+  border-left-width: 10px;
+  border-right-width: 10px;
+  border-bottom-width: 10px;
+  border-bottom-color: #fff; }
+
+.vcc-container .vcc-options-menu .dropdown-menu-right:before {
+  top: -12px;
+  border-bottom-width: 12px;
+  border-bottom-color: #e5e5e5; }
+.vcc-container .vcc-options-menu .dropdown-menu-right:after {
+  top: -10px;
+  border-bottom-width: 10px;
+  border-bottom-color: #fff; }
+
+.vcc-container .vcc-options-menu .dropdown-menu-right:before {
+  right: 11px; }
+.vcc-container .vcc-options-menu .dropdown-menu-right:after {
+  right: 13px; }
+
+/*VCC specific styles*/
+.navbar.navbar-vcc {
+  background-color: #e20074; }
+  .navbar.navbar-vcc .navbar-header:after {
+    background: #fff; }
+  .navbar.navbar-vcc .toggle svg circle {
+    stroke: #fff; }
+@media screen and (min-width: 992px) {
+  .navbar .navbar-nav-vcc {
+    justify-content: flex-start; }
+    .navbar .navbar-nav-vcc > li:nth-child(6) {
+      margin-left: 0; } }
+@media screen and (max-width: 991px) {
+  .navbar .navbar-nav-vcc > li:last-child {
+    position: static; }
+    .navbar .navbar-nav-vcc > li:last-child > a {
+      font-weight: 700; } }
+
+.vcc-container .vcc-options-menu {
+  padding-left: 0; }
+  @media screen and (min-width: 480px) {
+    .vcc-container .vcc-options-menu {
+      padding-right: 0; } }
+  .vcc-container .vcc-options-menu .dropdown-menu {
+    min-width: 240px;
+    border-color: #e5e5e5;
+    padding: 0;
+    margin: 17px 0 0;
+    box-shadow: 0 0 10px 0px #e5e5e5; }
+    .vcc-container .vcc-options-menu .dropdown-menu > li {
+      border-top: 1px solid #e5e5e5; }
+      .vcc-container .vcc-options-menu .dropdown-menu > li:first-child {
+        border-top: 0; }
+      .vcc-container .vcc-options-menu .dropdown-menu > li > a {
+        font-weight: 600;
+        padding-top: 8px;
+        padding-bottom: 8px; }
+  .vcc-container .vcc-options-menu .btn {
+    line-height: 0;
+    padding-left: 8px;
+    padding-right: 8px; }
+    .vcc-container .vcc-options-menu .btn [class*="ico-"] {
+      top: auto; }
+    .vcc-container .vcc-options-menu .btn svg {
+      width: 28px;
+      height: 28px; }
+@media screen and (max-width: 479px) {
+  .vcc-container .vcc-selection-menu {
+    flex-basis: 82%;
+    max-width: 82%; } }
+.vcc-container .vcc-table-offer-detail {
+  padding-left: 60px; }
+  @media screen and (max-width: 479px) {
+    .vcc-container .vcc-table-offer-detail {
+      padding-left: 45px; } }
+.vcc-container .vcc-table-offer tr.collapse-content th,
+.vcc-container .vcc-table-offer tr.collapse-content td {
+  border-top: 0;
+  padding-top: 0; }
+.vcc-container .vcc-table-offer tr .collapse-link:focus {
+  outline: 0; }
+  .vcc-container .vcc-table-offer tr .collapse-link:focus .collapse-icon {
+    background: #e20074; }
+    .vcc-container .vcc-table-offer tr .collapse-link:focus .collapse-icon svg {
+      fill: #fff; }
+.vcc-container .vcc-table-offer tr .collapse-link .collapse-icon {
+  display: block;
+  padding: 5px;
+  border-radius: 3px;
+  transition-property: background;
+  transition-duration: 0.25s; }
+.vcc-container .vcc-table-offer .js-hover .collapse-link .collapse-icon {
+  background: #e20074; }
+  .vcc-container .vcc-table-offer .js-hover .collapse-link .collapse-icon svg {
+    fill: #fff; }
+@media screen and (min-width: 768px) {
+  .vcc-container .vcc-table-offer-three-columns > thead > tr:not(.collapse) > th:first-child,
+  .vcc-container .vcc-table-offer-three-columns > thead > tr:not(.collapse) > td:first-child,
+  .vcc-container .vcc-table-offer-three-columns > tbody > tr:not(.collapse) > th:first-child,
+  .vcc-container .vcc-table-offer-three-columns > tbody > tr:not(.collapse) > td:first-child {
+    width: 40%; } }
+@media screen and (min-width: 992px) {
+  .vcc-container .vcc-table-offer-three-columns > thead > tr:not(.collapse) > th:first-child,
+  .vcc-container .vcc-table-offer-three-columns > thead > tr:not(.collapse) > td:first-child,
+  .vcc-container .vcc-table-offer-three-columns > tbody > tr:not(.collapse) > th:first-child,
+  .vcc-container .vcc-table-offer-three-columns > tbody > tr:not(.collapse) > td:first-child {
+    width: 35%; } }
+.vcc-container .vcc-table-offer-three-columns > thead > tr:not(.collapse) > th[scope="rowgroup"][colspan="3"],
+.vcc-container .vcc-table-offer-three-columns > thead > tr:not(.collapse) > td[scope="rowgroup"][colspan="3"],
+.vcc-container .vcc-table-offer-three-columns > tbody > tr:not(.collapse) > th[scope="rowgroup"][colspan="3"],
+.vcc-container .vcc-table-offer-three-columns > tbody > tr:not(.collapse) > td[scope="rowgroup"][colspan="3"] {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+@media screen and (min-width: 768px) {
+  .vcc-container .vcc-table-offer-two-columns > thead > tr:not(.collapse) > th:first-child,
+  .vcc-container .vcc-table-offer-two-columns > thead > tr:not(.collapse) > td:first-child,
+  .vcc-container .vcc-table-offer-two-columns > tbody > tr:not(.collapse) > th:first-child,
+  .vcc-container .vcc-table-offer-two-columns > tbody > tr:not(.collapse) > td:first-child {
+    width: 50%; } }
+.vcc-container .vcc-table-offer-two-columns > thead > tr:not(.collapse) > th[scope="rowgroup"][colspan="2"],
+.vcc-container .vcc-table-offer-two-columns > thead > tr:not(.collapse) > td[scope="rowgroup"][colspan="2"],
+.vcc-container .vcc-table-offer-two-columns > tbody > tr:not(.collapse) > th[scope="rowgroup"][colspan="2"],
+.vcc-container .vcc-table-offer-two-columns > tbody > tr:not(.collapse) > td[scope="rowgroup"][colspan="2"] {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+.vcc-container .vcc-table-offer-value {
+  margin-top: 6px; }
+.vcc-container .vcc-table-offer .btn-block-group {
+  margin-top: 11px; }
+.vcc-container .vcc-service-btn {
+  min-width: 140px; }
+.vcc-container .tooltip.bubble {
+  display: none;
+  width: 180px;
+  font-size: 16px;
+  z-index: 1025;
+  left: 0;
+  top: 0;
+  opacity: 1; }
+  .fonts-loaded .vcc-container .tooltip.bubble {
+    font-family: "TeleGroteskScreen", sans-serif; }
+  .mobile .vcc-container .tooltip.bubble {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -75%);
+    transition-property: opacity, transform;
+    transition-duration: 0.25s; }
+  .mobile .bubble-visible .vcc-container .tooltip.bubble {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+  .vcc-container .tooltip.bubble .tooltip-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: none;
+    min-height: 180px;
+    color: #000;
+    background-color: #efefef;
+    position: relative; }
+    .mobile .vcc-container .tooltip.bubble .tooltip-inner {
+      background-color: #fff; }
+    .vcc-container .tooltip.bubble .tooltip-inner > p,
+    .vcc-container .tooltip.bubble .tooltip-inner > div {
+      max-width: 164px; }
+    .vcc-container .tooltip.bubble .tooltip-inner a.btn-default {
+      color: #e20074;
+      border-color: #e20074; }
+      .vcc-container .tooltip.bubble .tooltip-inner a.btn-default:hover {
+        color: #b0005a;
+        border-color: #b0005a; }
+    .vcc-container .tooltip.bubble .tooltip-inner a.btn-primary {
+      border-color: #e20074; }
+      .vcc-container .tooltip.bubble .tooltip-inner a.btn-primary:hover {
+        border-color: #b0005a; }
+    .vcc-container .tooltip.bubble .tooltip-inner:before {
+      content: '';
+      width: 0;
+      height: 0;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -12px;
+      border-style: dashed solid;
+      border-color: transparent;
+      border-width: 12px 12px 0 12px;
+      border-top-color: #efefef; }
+      .mobile .vcc-container .tooltip.bubble .tooltip-inner:before {
+        display: none; }
+    .vcc-container .tooltip.bubble .tooltip-inner .tooltip-close {
+      display: none;
+      font-size: 34px;
+      line-height: 25px;
+      color: #bfbfbf;
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer; }
+      .vcc-container .tooltip.bubble .tooltip-inner .tooltip-close:hover, .vcc-container .tooltip.bubble .tooltip-inner .tooltip-close:focus {
+        text-decoration: none; }
+      .mobile .vcc-container .tooltip.bubble .tooltip-inner .tooltip-close {
+        display: block; }
+  .vcc-container .tooltip.bubble.top {
+    margin-top: 0;
+    padding: 0; }
+    .vcc-container .tooltip.bubble.top .tooltip-arrow {
+      border-top-color: #efefef; }
+  .vcc-container .tooltip.bubble.bottom {
+    top: 0; }
+    .vcc-container .tooltip.bubble.bottom .tooltip-arrow {
+      border-bottom-color: #efefef; }
+.vcc-container .bubble-wrapper {
+  position: relative;
+  width: 180px;
+  margin-left: auto;
+  margin-right: auto; }
+  @media screen and (max-width: 479px) {
+    .vcc-container .bubble-wrapper {
+      width: 100px; } }
+  .vcc-container .bubble-wrapper:hover .tooltip.bubble {
+    display: block; }
+    @media screen and (max-width: 479px) {
+      .vcc-container .bubble-wrapper:hover .tooltip.bubble {
+        display: none; } }
+.vcc-container .list-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 20px 0 5px; }
+  .vcc-container .list-members li {
+    margin: 0 0 20px; }
+    .vcc-container .list-members li > a,
+    .vcc-container .list-members li > span {
+      font-size: 18px;
+      display: block;
+      padding: 0 15px;
+      text-align: center;
+      text-decoration: none;
+      border-bottom: 0; }
+      @media screen and (max-width: 479px) {
+        .vcc-container .list-members li > a,
+        .vcc-container .list-members li > span {
+          padding-left: 10px;
+          padding-right: 10px; } }
+      .vcc-container .list-members li > a svg,
+      .vcc-container .list-members li > span svg {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px; }
+        @media screen and (max-width: 767px) {
+          .vcc-container .list-members li > a svg,
+          .vcc-container .list-members li > span svg {
+            width: 40px;
+            height: 40px; } }
+    .vcc-container .list-members li > a span,
+    .vcc-container .list-members li > span span {
+      display: block; }
+    .vcc-container .list-members li > a > span {
+      border-bottom: 1px solid #e20074; }
+@media screen and (min-width: 768px) {
+  .vcc-container .vcc-table-fixed {
+    table-layout: fixed; } }
+.vcc-container .advantage-banner {
+  margin: 22px 0;
+  position: relative;
+  min-height: 350px;
+  text-align: center; }
+  .vcc-container .advantage-banner .btn {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%); }
+.vcc-container .chart {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  stroke: #64b9e4; }
+.vcc-container .chart-canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%; }
+.vcc-container .chart-grid {
+  position: relative;
+  display: flex;
+  padding-left: 0;
+  list-style: none; }
+.vcc-container .chart-month {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  margin: 0; }
+  .vcc-container .chart-month .tooltip.bubble.top {
+    width: 120px;
+    bottom: 55px;
+    left: 50%;
+    margin-left: -60px; }
+    .vcc-container .chart-month .tooltip.bubble.top .tooltip-inner {
+      min-height: 245px; }
+  .vcc-container .chart-month:hover .tooltip.bubble, .vcc-container .chart-month:hover .tooltip-inner:before {
+    display: block; }
+  .vcc-container .chart-month .tooltip a {
+    text-decoration: none; }
+.vcc-container .chart-bar {
+  position: relative;
+  height: 180px;
+  margin: 0 0 20px; }
+  .vcc-container .chart-bar .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -35px;
+    margin-left: -35px; }
+.vcc-container .chart-point {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: #64b9e4;
+  border-radius: 50%;
+  margin-bottom: -10px;
+  margin-left: -10px; }
+.vcc-container .chart-point-magenta {
+  background: #e20074; }
+.vcc-container .chart-point-red {
+  background: #e20000; }
+.vcc-container .chart-label {
+  position: relative;
+  min-height: 94px;
+  border-top: 1px solid #e5e5e5; }
+.vcc-container .chart-label-status {
+  display: block;
+  margin-top: -7px; }
+.vcc-container .chart-label-price {
+  font-size: 30px; }
+
+.bubble-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0;
+  z-index: 1024;
+  transition-property: opacity;
+  transition-duration: 0.25s; }
+  .bubble-visible .bubble-overlay {
+    opacity: 0.4; }
+
+.vcc-language-switch {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  z-index: 1; }
+  @media screen and (min-width: 992px) {
+    .vcc-language-switch {
+      top: 25px; } }
+  .vcc-language-switch .btn {
+    font-weight: 500;
+    color: #4a4a4a;
+    padding-left: 8px;
+    padding-right: 8px; }
+    .vcc-language-switch .btn .caret {
+      margin-left: 2px; }
+  .vcc-language-switch .dropdown-menu {
+    margin-top: -2px; }
+    .vcc-language-switch .dropdown-menu > li > a {
+      padding-left: 8px;
+      padding-right: 8px; }
+

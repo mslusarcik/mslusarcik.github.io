@@ -1,0 +1,305 @@
+/**
+* FORMS
+*
+* Forms common styles.
+*
+*/
+
+/*---------------------------------------------------------------------------*\
+  #COMMON STYLES
+\*---------------------------------------------------------------------------*/
+
+.form-control {
+  padding-left: $form-control-horizontal-padding;
+  padding-right: $form-control-horizontal-padding;
+  -webkit-appearance: none; // disable shadows on iOS
+  // disable webkit up/down arrows
+  &[type=number]::-webkit-inner-spin-button,
+  &[type=number]::-webkit-outer-spin-button,
+  &[type=date]::-webkit-inner-spin-button,
+  &[type=date]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+  }
+  // disable firefox up/down arrow
+  &[type=number] {
+    -moz-appearance: textfield;
+  }
+  &[type=date] {
+    line-height: $line-height-base; // fix vertical alignment in mobile browsers
+  }
+  @include placeholder($gray);
+  &,
+  &:focus {
+    @include box-shadow(none);
+  }
+  &:focus {
+    @include box-shadow(0 0 0 1px $blue);
+  }
+
+  .has-error & {
+    &,
+    &:focus {
+      @include box-shadow(0 0 0 1px $red);
+      border-color: $state-danger-text;
+    }
+  }
+
+  .with-tooltip &:not(.bootstrap-select) {
+    padding-right: ceil($padding-large-horizontal * 3);
+  }
+  &[disabled] {
+    border-color: $input-border-disabled;
+  }
+}
+
+.form-control::-ms-clear {
+  display: none;
+}
+
+label,
+.like-label {
+  font-weight: normal;
+}
+
+.like-label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: floor($space-vertical-small / 2);
+  line-height: $line-height-base;
+}
+
+.form-group {
+  @include clearfix;
+}
+
+.with-tooltip {
+  position: relative;
+}
+
+.form-control-secondary {
+  color: $input-secondary-color;
+  border-color: $input-secondary-border;
+  background-color: $input-secondary-bg;
+}
+
+.no-js select,
+.no-js-select {
+  -webkit-appearance: menulist;
+}
+
+.form-error {
+  font-size: $form-error-font-size;
+  color: $state-danger-text;
+  margin: $form-error-margin;
+}
+
+.fonts-loaded input[type="password"] { // spaces between dots were too big with TeleGrotesk
+  font-family: sans-serif;
+}
+
+
+/*---------------------------------------------------------------------------*\
+  #RADIO BUTTONS + CHECKBOXES
+\*---------------------------------------------------------------------------*/
+
+@mixin like-checkbox-radio {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  background: $white;
+  transition-property: background, border;
+  transition-duration: $transition-duration-fast;
+  &.active {
+    border-color: $radio-checkbox-active-border;
+  }
+  &.like-checkbox-disabled {
+    border-color: $radio-checkbox-disabled-border;
+    background: $white;
+  }
+}
+
+.radio,
+.checkbox {
+  &.disabled {
+    label {
+      &,
+      [class*="text-gray"] {
+        color: $input-color-disabled;
+      }
+    }
+  }
+  label {
+    position: relative;
+    padding-left: $label-radio-checkbox-padding;
+  }
+  .panel-body &:only-child {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .list-group-item &:first-of-type {
+    margin-top: 0;
+  }
+  .list-group-item &:last-of-type {
+    margin-bottom: 0;
+  }
+  .list-group-item & {
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+.radio + .radio,
+.checkbox + .checkbox {
+  margin-top: 10px;
+}
+
+.radio-inline + .radio-inline,
+.checkbox-inline + .checkbox-inline {
+  margin-top: 0;
+  margin-left: 0;
+}
+
+.js .checkbox label input[type="checkbox"],
+.js .radio label input[type="radio"] {
+  left: -9999px;
+}
+
+.checkbox,
+.radio {
+  label {
+    .has-error & {
+      color: $text-color;
+    }
+  }
+}
+
+.checkbox {
+  label {
+    .like-checkbox {
+      @include like-checkbox-radio;
+      width: $checkbox-size;
+      height: $checkbox-size;
+      border: 1px solid $checkbox-border;
+      border-radius: $border-radius-base;
+      svg {
+        width: $checkbox-icon-size;
+        height: $checkbox-icon-size;
+        fill: $white;
+        position: relative;
+        top: 3px;
+        left: 3px;
+        opacity: 0;
+        transform: scale(0.5);
+        transition-property: opacity, transform;
+        transition-duration: $transition-duration-fast;
+      }
+      &.active {
+        background: $radio-checkbox-active-bg;
+        svg {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      &.like-checkbox-disabled {
+        background: $white;
+        svg {
+          fill: $radio-checkbox-disabled-bg;
+        }
+      }
+    }
+  }
+  &.checkbox-vcenter,
+  &.checkbox-v-center {
+    .like-checkbox {
+      top: 50%;
+      margin-top: -($checkbox-size / 2);
+    }
+  }
+}
+
+.radio {
+  label {
+    .like-radio {
+      @include like-checkbox-radio;
+      width: $radio-size;
+      height: $radio-size;
+      border: 1px solid $radio-border;
+      border-radius: 50%;
+      transition-property: background;
+      transition-duration: $transition-duration-fast;
+      &:before {
+        content: '';
+        display: block;
+        width: $radio-icon-size;
+        height: $radio-icon-size;
+        border-radius: 50%;
+        background: $white;
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        opacity: 0;
+        transform: scale(0.2);
+        transition-property: opacity, transform;
+        transition-duration: $transition-duration-fast;
+      }
+      &.active {
+        background: $radio-checkbox-active-bg;
+        &:before {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      &.like-radio-disabled {
+        border-color: $radio-checkbox-disabled-border;
+        &.active {
+          background: $radio-checkbox-disabled-bg;
+          &:before {
+            background: $white;
+          }
+        }
+      }
+    }
+  }
+  &.radio-vcenter,
+  &.radio-v-center {
+    .like-radio {
+      top: 50%;
+      margin-top: -($radio-size / 2);
+    }
+  }
+}
+
+.radio-inline,
+.checkbox-inline {
+  padding-left: 0;
+  margin-top: 0;
+  margin-right: 10px;
+}
+
+.help-block {
+  color: currentColor;
+  margin-top: -5px;
+  margin-bottom: 15px;
+  .radio &,
+  .checkbox & {
+    font-size: $font-size-xsmall;
+    margin: 2px 0 0 $label-radio-checkbox-padding;
+    @include mq(xs, min) {
+      font-size: $font-size-small;
+    }
+  }
+}
+
+.label-inline {
+  margin-bottom: 0;
+  vertical-align: middle;
+  @include mq(md, min) {
+    margin-right: $space-horizontal-default;
+    margin-bottom: 3px;
+    vertical-align: text-bottom;
+  }
+}

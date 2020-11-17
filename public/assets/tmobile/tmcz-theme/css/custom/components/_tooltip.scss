@@ -1,0 +1,76 @@
+[data-toggle="tooltip"] {
+  cursor: help;
+  &.ico-info-sign {
+    background: $tooltip-icon-bg;
+    border-radius: 50%;
+    transition-property: background;
+    transition-duration: $transition-duration-default;
+    svg {
+      fill: $tooltip-icon-color;
+      width: $tooltip-icon-size;
+      height: $tooltip-icon-size;
+    }
+    .with-tooltip & {
+      display: block;
+      margin-top: -($tooltip-icon-size / 2);
+      position: absolute;
+      top: 50%;
+      right: $padding-large-horizontal;
+      z-index: 1;
+    }
+    &.tooltip-light {
+      background: $tooltip-icon-light-bg;
+      svg {
+        fill: $tooltip-icon-light-color;
+      }
+    }
+    .with-tooltip .select-prefix-label ~ &,
+    .with-tooltip .datepicker-wrapper ~ &,
+    .with-tooltip .input-prefix-label-with-datepicker ~ & {
+      right: (round($padding-base-horizontal * 3.5) + 4px);
+      z-index: 3;
+    }
+    .with-tooltip .datepicker-wrapper ~ & {
+      margin-top: 0;
+    }
+  }
+  .v-center &:nth-last-child(2) {
+    margin-right: 0; // pokud je [data-toggle="tooltip"] jako poslední element uvnitř .v-center, pak se při hoveru za něj dynamicky vloží div.tooltip a tím pádem už není :last-child, takže je potřeba mu zrušit pravý margin
+    & + *:not(.tooltip) {
+      margin-left: 5px; // pokud však za [data-toggle="tooltip"] je ještě nějaký jiný element, zrušený pravý margin nasimulujem levým marginem na tom následujícím elementu
+    }
+  }
+  &:hover {
+    &.ico-info-sign {
+      background: $tooltip-icon-hover-bg;
+      svg {
+        fill: $white;
+      }
+    }
+    &.ico-question-sign:not([data-ico-width]) {
+      svg {
+        fill: $blue-dark;
+      }
+    }
+  }
+  &.ico-question-sign:not([data-ico-width]) {
+    svg {
+      fill: $blue;
+      width: ($tooltip-icon-size - 4);
+      height: ($tooltip-icon-size - 4);
+    }
+  }
+}
+
+.tooltip {
+  .nowrap & {
+    white-space: normal;
+  }
+  a {
+    color: $white;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

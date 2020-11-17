@@ -1,0 +1,24 @@
+.specs {
+  display: flex;
+  margin: $space-vertical-default 0;
+  i {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-right: $space-horizontal-small;
+  }
+  &-content {
+    display: flex;
+    flex-direction: column;
+  }
+  &-title {
+    font-weight: $specs-title-font-weight;
+  }
+  &-description {
+    color: $specs-description-color;
+  }
+  &-title,
+  &-description {
+    line-height: 1;
+  }
+}

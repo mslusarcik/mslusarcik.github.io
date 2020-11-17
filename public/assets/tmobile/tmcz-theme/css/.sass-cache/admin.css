@@ -1,0 +1,56 @@
+.aui .portlet-borderless-bar .portlet-options .dropdown-toggle {
+  background-image: url(../images/portlet/options_borderless.png); }
+.aui .lfr-admin-panel .radio input[type="radio"],
+.aui .lfr-admin-panel .radio-inline input[type="radio"],
+.aui .lfr-admin-panel .checkbox input[type="checkbox"],
+.aui .lfr-admin-panel .checkbox-inline input[type="checkbox"],
+.aui .admin-signed-in.page-maximized .radio input[type="radio"],
+.aui .admin-signed-in.page-maximized .radio-inline input[type="radio"],
+.aui .admin-signed-in.page-maximized .checkbox input[type="checkbox"],
+.aui .admin-signed-in.page-maximized .checkbox-inline input[type="checkbox"] {
+  position: static; }
+.aui .lfr-admin-panel a,
+.aui .admin-signed-in.page-maximized a {
+  border-bottom: 0; }
+.aui .dropdown-menu {
+  width: auto; }
+.aui .collapse {
+  display: block;
+  visibility: visible; }
+.aui .portlet-borderless-bar a,
+.aui .lfr-meta-actions a {
+  border-bottom: 0; }
+.aui .dockbar {
+  border-bottom: 0; }
+.aui .navbar.navbar-fixed-top {
+  position: static; }
+.aui body.admin-signed-in.page-maximized {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px; }
+
+.modal {
+  display: block; }
+
+[data-column-info].yui3-dd-drop-over:before {
+  content: attr(data-column-info);
+  font-size: 20px;
+  color: #90989d; }
+
+.lfr-edit-layout-panel .navbar {
+  position: relative; }
+
+.aui .dropdown-menu {
+  z-index: 1001; }
+
+.aui .navbar {
+  position: static; }
+
+html {
+  background: #fff;
+  /* WYSIWYG editor přebírá barvu definovanou v custom.css, tak aby nebyl černý, je potřeba nová definice. */ }
+
+.dockbar-messages .footer {
+  background: #fff; }
+

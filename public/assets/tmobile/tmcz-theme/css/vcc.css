@@ -1,0 +1,12 @@
+/*Core variables and mixins*/
+@import "custom/utils/variables-overrides";
+@import "custom/vendor/bootstrap/variables";
+@import "custom/utils/variables";
+@import "custom/utils/variables-vcc";
+@import "custom/utils/mixins";
+@import "custom/vendor/bootstrap/mixins";
+@import "custom/utils/placeholders";
+@import "custom/utils/functions";
+
+/*VCC specific styles*/
+@import "custom/portlets/vcc";

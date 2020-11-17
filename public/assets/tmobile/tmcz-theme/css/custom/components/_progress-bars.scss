@@ -1,0 +1,113 @@
+.progress {
+  position: relative;
+  height: $progress-height;
+  margin-bottom: $space-vertical-small;
+  overflow: visible;
+
+  &,
+  &-bar {
+    box-shadow: none;
+  }
+
+  // .progress-bar
+  &-bar {
+    width: 100%;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+    border-top-left-radius: $border-radius-base;
+    border-bottom-left-radius: $border-radius-base;
+    &[aria-valuenow="100"],
+    &[style*="width: 100%"] {
+      border-top-right-radius: $border-radius-base;
+      border-bottom-right-radius: $border-radius-base;
+    }
+    &[aria-valuenow="0"] {
+      width: 0;
+    }
+  }
+
+  // .progress-wrapper
+  &-wrapper {
+    padding-bottom: 1px;
+    margin-bottom: $space-vertical-small;
+  }
+
+  // .progress-limit-wrapper
+  &-limit-wrapper {
+    margin-bottom: ($space-vertical-default + 6px);
+  }
+
+  // .progress-title
+  &-title {
+    font-size: $font-size-large;
+    margin-top: 0;
+    // @include mq(xxs) {
+    //   margin-bottom: 0;
+    // }
+  }
+
+  // .progress-small
+  &-small {
+    height: $progress-height-small;
+  }
+
+  // .progress-striped-bg
+  &-striped-bg {
+    background: repeating-linear-gradient(
+      45deg,
+      $progress-striped-bg,
+      $progress-striped-bg 4px,
+      $gray-light 4px,
+      $gray-light 6px
+    );
+  }
+
+  // .progress-bar-limit
+  &-bar-limit {
+    border-right: 4px solid $gray-darker;
+    .progress-bar {
+      &[aria-valuenow="100"],
+      &[style*="width: 100%"] {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+
+  // .progress-bar-limit
+  &-bar-gray-light {
+    background-color: $gray-light;
+  }
+
+  // .progress-min-max
+  &-min-max {
+    margin-top: -5px;
+  }
+
+  > .popover {
+    > .arrow {
+      border-width: 7px;
+      &:after {
+        margin-left: -6px;
+        border-width: 6px;
+      }
+    }
+    &.bottom {
+      margin-top: 0;
+      top: 25px;
+      > .arrow {
+        margin-left: -7px;
+        top: -7px;
+        &:after {
+          margin-left: -6px;
+        }
+      }
+    }
+    &.out-of-container-left,
+    &.out-of-container-right {
+      > .arrow {
+        margin-left: -$popover-arrow-outer-width;
+      }
+    }
+  }
+}

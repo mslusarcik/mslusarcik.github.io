@@ -1,0 +1,437 @@
+.media {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  margin-bottom: $space-vertical-default;
+  @include mq(xs) {
+    display: block; // workaround for IE 11
+    flex-direction: column;
+    .table & {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  @include mq(xs, min) {
+    justify-content: center;
+  }
+  &-figure {
+    display: flex;
+    margin-right: $space-horizontal-default;
+    @include mq(xs) {
+      margin-right: 0;
+      justify-content: center;
+    }
+    .table & {
+      @include mq(xxs) {
+        margin-right: ($space-horizontal-default / 2);
+      }
+    }
+  }
+  &-body {
+    margin: 0;
+    flex: 1; // flex: 1; seems to be universal solution for problems with flexbox in IE 11 :D
+    font-weight: 600;
+  }
+  &-body {
+    @include mq(xxs, max) {
+      flex-grow: 1;
+    }
+  }
+  &-center {
+    display: flex;
+    align-items: center;
+  }
+  .collapse-link {
+    display: flex;
+    align-items: center;
+    @include mq(xs) {
+      flex-direction: column;
+      text-align: center;
+    }
+    &:focus,
+    &:hover {
+      text-decoration: none;
+    }
+    &:hover {
+      .collapse-icon {
+        background: $magenta;
+        svg {
+          fill: $white;
+        }
+        .background-black &,
+        .caption & {
+          background: $white;
+          svg {
+            fill: $magenta;
+          }
+        }
+      }
+    }
+    &:active {
+      outline: 0;
+    }
+    > span {
+      margin-right: $space-horizontal-small;
+      @include mq(xxs, max) {
+        flex-basis: 85%;
+      }
+      @include mq(xs) {
+        margin: floor($space-vertical-small / 2) 0;
+      }
+    }
+    .caption & {
+      color: currentColor;
+    }
+    svg {
+      @include mq(xs, min) {
+        margin: 0 auto;
+      }
+    }
+    .collapse-icon {
+      display: block;
+      padding: $collapse-link-icon-padding;
+      border-radius: $border-radius-base;
+      transition-property: background;
+      transition-duration: $transition-duration-fast;
+    }
+  }
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: -($space-vertical-default);
+    left: ($space-horizontal-default / 3);
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    border-bottom: 0 solid transparent;
+    transition-property: border;
+    transition-duration: $transition-duration-fast;
+    border-bottom-color: $gray-lighter;
+    .caption & {
+      border-bottom-color: currentColor;
+    }
+    .caption-inverse & {
+      border-bottom-color: $gray;
+    }
+    @include mq(xs, min) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  &.active {
+    &:before {
+      display: block;
+      border-bottom-width: 10px;
+    }
+  }
+}
+
+.media-group {
+  text-align: left;
+  > div:not(.collapse) {
+    display: flex;
+  }
+  .media {
+    + .media {
+      margin-left: $space-horizontal-default;
+    }
+  }
+  @include mq(xxs, max) {
+    .media {
+      + .media {
+        margin-top: $space-vertical-small;
+        margin-left: 0;
+      }
+    }
+  }
+  .caption & {
+    margin-top: ($space-vertical-large - 12);
+  }
+
+  // .media-group-vertical
+  &-vertical {
+    .media {
+      flex-direction: column;
+      &.active {
+        &:before {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+      .collapse-link {
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        > span {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          flex-basis: 100%;
+          margin-right: 0;
+          margin-bottom: $space-vertical-small;
+        }
+      }
+      @include onlyIE {
+        display: block;
+        text-align: center;
+        .media-body,
+        .collapse-link {
+          display: block;
+        }
+        .collapse-link {
+          > span {
+            display: block;
+          }
+          .collapse-icon {
+            display: inline-block;
+            svg {
+              @include center-block;
+            }
+          }
+        }
+      }
+    }
+    .media-figure {
+      @include onlyIE {
+        display: block;
+      }
+      margin-right: 0;
+      margin-bottom: ($space-vertical-small + 4);
+    }
+    .media-body {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.media-accordion-3 {
+  @include mq(xxs, max) {
+    > div {
+      &:nth-child(2) {
+        order: 3;
+      }
+      &:nth-child(3) {
+        order: 5;
+      }
+      &:nth-child(4) {
+        order: 2;
+      }
+      &:nth-child(5) {
+        order: 4;
+      }
+      &:nth-child(6) {
+        order: 6;
+      }
+    }
+  }
+}
+
+.media-accordion-4 {
+  @include mq(xxs, max) {
+    > div {
+      &:nth-child(2) {
+        order: 3;
+      }
+      &:nth-child(3) {
+        order: 5;
+      }
+      &:nth-child(4) {
+        order: 7;
+      }
+      &:nth-child(5) {
+        order: 2;
+      }
+      &:nth-child(6) {
+        order: 4;
+      }
+      &:nth-child(7) {
+        order: 6;
+      }
+      &:nth-child(8) {
+        order: 8;
+      }
+    }
+  }
+}
+
+.media-accordion-6 {
+  @include mq(sm, max) {
+    > div {
+      &:nth-child(1) {
+        order: 1;
+      }
+      &:nth-child(2) {
+        order: 2;
+      }
+      &:nth-child(7) {
+        order: 3;
+      }
+      &:nth-child(8) {
+        order: 3;
+      }
+      &:nth-child(3) {
+        order: 4;
+      }
+      &:nth-child(4) {
+        order: 5;
+      }
+      &:nth-child(9) {
+        order: 6;
+      }
+      &:nth-child(10) {
+        order: 6;
+      }
+      &:nth-child(5) {
+        order: 7;
+      }
+      &:nth-child(6) {
+        order: 8;
+      }
+      &:nth-child(11) {
+        order: 9;
+      }
+      &:nth-child(12) {
+        order: 9;
+      }
+    }
+  }
+  @include mq(md) {
+    > div {
+      &:nth-child(1) {
+        order: 1;
+      }
+      &:nth-child(2) {
+        order: 2;
+      }
+      &:nth-child(3) {
+        order: 3;
+      }
+      &:nth-child(7) {
+        order: 4;
+      }
+      &:nth-child(8) {
+        order: 4;
+      }
+      &:nth-child(9) {
+        order: 4;
+      }
+      &:nth-child(4) {
+        order: 5;
+      }
+      &:nth-child(5) {
+        order: 6;
+      }
+      &:nth-child(6) {
+        order: 7;
+      }
+      &:nth-child(10) {
+        order: 8;
+      }
+      &:nth-child(11) {
+        order: 8;
+      }
+      &:nth-child(12) {
+        order: 8;
+      }
+    }
+  }
+}
+
+.media-accordion-5 {
+  @include mq(xxs) {
+    > div {
+      &:nth-child(1) {
+        order: 1;
+      }
+      &:nth-child(2) {
+        order: 3;
+      }
+      &:nth-child(3) {
+        order: 5;
+      }
+      &:nth-child(4) {
+        order: 7;
+      }
+      &:nth-child(5) {
+        order: 9;
+      }
+      &:nth-child(6) {
+        order: 2;
+      }
+      &:nth-child(7) {
+        order: 4;
+      }
+      &:nth-child(8) {
+        order: 6;
+      }
+      &:nth-child(9) {
+        order: 8;
+      }
+      &:nth-child(10) {
+        order: 10;
+      }
+    }
+  }
+  @include mq(xs) {
+    > div {
+      &:nth-child(1) {
+        order: 1;
+      }
+      &:nth-child(2) {
+        order: 2;
+      }
+      &:nth-child(3) {
+        order: 5;
+      }
+      &:nth-child(4) {
+        order: 5;
+      }
+      &:nth-child(5) {
+        order: 7;
+      }
+      &:nth-child(6),
+      &:nth-child(7) {
+        order: 3;
+      }
+      &:nth-child(8),
+      &:nth-child(9) {
+        order: 6;
+      }
+      &:nth-child(10) {
+        order: 8;
+      }
+    }
+  }
+  @media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
+    > div {
+      &:nth-child(1) {
+        order: 1;
+      }
+      &:nth-child(2) {
+        order: 2;
+      }
+      &:nth-child(3) {
+        order: 3;
+      }
+      &:nth-child(4) {
+        order: 5;
+      }
+      &:nth-child(5) {
+        order: 6;
+      }
+      &:nth-child(6),
+      &:nth-child(7),
+      &:nth-child(8) {
+        order: 4;
+      }
+      &:nth-child(9),
+      &:nth-child(10) {
+        order: 7;
+      }
+    }
+  }
+}

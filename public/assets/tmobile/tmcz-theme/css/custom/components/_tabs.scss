@@ -1,0 +1,162 @@
+.nav-image-tabs,
+.nav-material-tabs {
+  display: flex;
+   li {
+    display: flex;
+    margin: 0;
+    position: relative;
+    &:before {
+      content: '';
+      display: block;
+      width: 0;
+      background: $magenta;
+      position: absolute;
+      left: 0;
+      transition-property: width;
+      transition-duration: $transition-duration-default;
+    }
+    &.active {
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.nav-image-tabs {
+  border-bottom-color: $image-tabs-border;
+  &.slick-slider {
+    border-bottom: 0;
+  }
+  li {
+    &:before {
+      height: 4px;
+      bottom: -2px;
+    }
+    &.slick-slide {
+      display: flex;
+      height: auto;
+      margin-top: 0;
+      margin-bottom: ($space-vertical-default);
+      &:before {
+        bottom: -($space-vertical-default + 2px);
+      }
+      a {
+        flex-grow: 1;
+        align-items: center;
+        padding-left: ($space-horizontal-default / 1.5);
+        padding-right: ($space-horizontal-default / 1.5);
+      }
+    }
+    &.active {
+      img {
+        opacity: 1;
+      }
+    }
+    a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: ($space-horizontal-default);
+      padding-right: ($space-horizontal-default);
+      img {
+        @include img-responsive;
+        @include center-block;
+        opacity: $image-tabs-image-opacity;
+        transition-property: opacity;
+        transition-duration: $transition-duration-default;
+      }
+    }
+  }
+  > li {
+    flex: 1;
+    > a {
+      margin: 0;
+      border: 0;
+      border-radius: 0;
+      flex: 1;
+      &:focus,
+      &:active,
+      &:hover {
+        outline: 0;
+        img {
+          opacity: 1;
+        }
+      }
+    }
+    &.active {
+      > a {
+        &,
+        &:hover,
+        &:focus {
+          border: 0;
+          background: $image-tabs-active-bg;
+        }
+      }
+    }
+  }
+
+  .slick-track {
+    display: flex;
+    border-bottom: 1px solid $image-tabs-border;
+    margin-bottom: 1px;
+  }
+
+  & + .tab-content {
+    .panel-body {
+      @include mq(md, min) {
+        padding-top: ceil($space-vertical-large * 1.5);
+      }
+    }
+  }
+}
+
+.nav-material-tabs {
+  flex-wrap: wrap;
+  border-bottom: 1px solid $gray-lighter;
+  background: $white;
+  @include mq(xxs, max) {
+    font-size: $font-size-small;
+  }
+  &.center {
+    justify-content: center;
+  }
+  > li {
+    text-align: center;
+    @include mq(xs, min) {
+      margin-right: 20px;
+    }
+    &:before {
+      height: 3px;
+      bottom: -1px;
+    }
+    &:last-child {
+      @include mq(xs, min) {
+      margin-right: 0;
+    }
+    }
+    > a {
+      color: $gray-dark;
+      padding: ($space-vertical-small + 4) ($space-horizontal-default / 3);
+      @include mq(xxs, max) {
+        padding-top: ($space-vertical-small + 2);
+        padding-bottom: ($space-vertical-small + 2);
+      }
+      &.v-center {
+        display: flex;
+      }
+      svg {
+        fill: $gray-dark;
+      }
+    }
+    &.active {
+      > a {
+        font-weight: 600;
+        color: $text-color;
+        svg {
+          fill: $black;
+        }
+      }
+    }
+  }
+}

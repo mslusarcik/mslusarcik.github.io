@@ -1,0 +1,93 @@
+//
+// Banner
+// --------------------------------------------------
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $banner-color;
+  text-align: center;
+  position: relative;
+  height: $banner-mobile-height;
+  background-color: $banner-bg;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include mq(md, min) {
+    height: $banner-height;
+  }
+
+  h1,
+  .h1 {
+    margin: 0;
+  }
+}
+
+.app-banner-loaded {
+  body {
+    padding-top: $app-banner-height;
+  }
+  .toggle {
+    top: ($toggle-padding + $app-banner-height + 1);
+  }
+  .navbar-header:after {
+    top: ($navbar-mobile-height + $app-banner-height);
+  }
+}
+
+.app-banner,
+.app-banner-inner {
+  height: $app-banner-height;
+}
+
+.app-banner {
+  background: $gray-lighter;
+  border-bottom: 1px solid $gray;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.app-banner-inner {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  .ab-info {
+    display: flex;
+    align-items: flex-start;
+    strong {
+      display: block;
+      color: $black;
+    }
+  }
+  .ab-description {
+    font-size: 13px;
+    display: block;
+    color: #303030;
+  }
+  img,
+  .ab-info {
+    margin-right: 10px;
+  }
+  img {
+    width: 62px;
+  }
+  .ab-button {
+    font-weight: $font-weight-bold;
+    flex-grow: 1;
+    color: #007aff;
+    text-transform: uppercase;
+    padding: $space-vertical-small 0;
+    text-align: right;
+  }
+  .ab-close {
+    font-size: $font-size-h3;
+    line-height: 1;
+    color: $gray-dark;
+    padding: 15px 10px;
+    margin-left: -10px;
+  }
+}

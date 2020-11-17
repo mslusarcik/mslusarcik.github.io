@@ -1,0 +1,480 @@
+.metro {
+  @include list-unstyled;
+  counter-reset: item;
+  margin: $space-vertical-small 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  li {
+    display: flex;
+    align-items: center;
+    font-size: $metro-font-size;
+    @include mq(md, min) {
+      font-size: $font-size-base;
+    }
+    color: $metro-color;
+    margin: $space-vertical-small $metro-horizontal-space $space-vertical-small 0;
+    position: relative;
+    padding-left: 0;
+    em {
+      font-style: normal;
+    }
+    &.active {
+      &,
+      &:before {
+        font-weight: 700;
+        color: $metro-active-color;
+      }
+    }
+    &:before {
+      content: counter(item);
+      counter-increment: item;
+      display: block;
+      position: static;
+      font-weight: 500;
+      color: $metro-color;
+      font-size: $metro-step-font-size;
+      width: $metro-step-size;
+      height: $metro-step-size;
+      margin-right: ($space-horizontal-default / 3);
+      text-align: center;
+      border: 1px solid currentColor;
+      border-radius: 50%;
+    }
+    i {
+      margin-left: $metro-horizontal-space;
+      top: 1px;
+      svg {
+        fill: $metro-color;
+        width: $metro-icon-mobile-size;
+        height: $metro-icon-mobile-size;
+        @include mq(md, min) {
+          width: $metro-icon-size;
+          height: $metro-icon-size;
+        }
+      }
+    }
+  }
+
+  // .metro-top-right
+  &-top-right {
+    @media screen and (max-width: $grid-float-breakpoint-max) {
+      height: $navbar-mobile-height;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: ($zindex-navbar + 1);
+      li {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+
+
+/*---------------------------------------------------------------------------*\
+  #METRO-TRACKING
+\*---------------------------------------------------------------------------*/
+
+
+@mixin metro-tracking-item {
+  & {
+    display: table;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+    &.active {
+      .metro-heading {
+        .inner {
+          left: 20px;
+          right: 20px;
+        }
+        &:before {
+          display: none;
+        }
+      }
+    }
+    &:after {
+      content:'';
+      display: block;
+      width: 133px;
+      left: 0;
+      bottom: 0;
+      position: absolute;
+    }
+    .cssclippath &{
+      &:after {
+        height: 20px;
+        background: $blue;
+        -webkit-clip-path: polygon(100% 5%, 50% 100%, 0 5%, 0 0, 50% 96%, 100% 0);
+        clip-path: polygon(100% 5%, 50% 100%, 0 5%, 0 0, 50% 96%, 100% 0);
+        @include mq(sm,max) {
+          display: none;
+        }
+      }
+      &.active {
+        &:before {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          height: 20px;
+          width: 133px;
+          background: $metro-tracking-bg;
+          top: -20px;
+          left: 0;
+        }
+        .metro-heading {
+          &:before,
+          &:after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            height: 20px;
+            width: 133px;
+            left: 0;
+            -webkit-clip-path: polygon(100% 0, 50% 100%, 0 0, 100% 0);
+            clip-path: polygon(100% 0, 50% 100%, 0 0, 100% 0);
+          }
+          &:before {
+            top: 0;
+            background: $metro-tracking-bg;
+          }
+          &:after {
+            z-index: 1;
+            bottom: -20px;
+            background: $metro-tracking-active-bg;
+          }
+        }
+        &:last-child,
+        &.last {
+          .metro-heading {
+            &:after {
+              display: none;
+            }
+          }
+        }
+        &:first-child {
+          background: red;
+          &:before {
+            display: none;
+          }
+          .metro-heading {
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .no-cssclippath &{
+      &:after {
+        top: 0;
+        border-top:1px solid $blue;
+        width: 133px;
+      }
+      &:first-child {
+        &:after {
+          border-top: 0;
+        }
+      }
+    }
+    &:last-child,
+    &.last {
+      &:after{
+        background: none;
+        clip-path: none;
+        -webkit-clip-path: none;
+      }
+    }
+  }
+  .metro-heading {
+    width: 133px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .metro-content {
+    width: 227px;
+  }
+  .metro-heading,
+  .metro-content {
+    display: table-cell;
+  }
+}
+
+.metro-tracking {
+  @include mq(xxs,max) {
+    width: 290px;
+  }
+  @include mq(sm,max) {
+    margin: $space-vertical-large 0;
+  }
+  > ul {
+    width: 100%;
+    padding: 0;
+    display: table;
+    table-layout: fixed;
+    @include mq(sm,max) {
+      width: 360px;
+      margin: 0 auto;
+    }
+    @include mq(xxs,max) {
+      width: 290px;
+    }
+    margin-left: 0;
+    > li {
+      padding-left: 0;
+      padding-right: 0;
+      display: table-cell;
+      vertical-align: top;
+      .metro-heading {
+        background: $metro-tracking-bg;
+        color: $metro-tracking-color;
+        width: 100%;
+        min-height: $metro-tracking-min-height;
+        position: relative;
+        .inner{
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+          position: absolute;
+          left: 20px;
+          right: 20px;
+          top: 50%;
+          @include mq(sm,max) {
+            top: auto;
+          }
+          .mobile.ie & {
+            top: auto;
+          }
+        }
+        i {
+          position: absolute;
+          right: 0;
+          svg {
+            height: $metro-tracking-min-height;
+            position: absolute;
+            right: -20px;
+            z-index: 1;
+            top: 0;
+            width: 41px;
+            fill: $metro-tracking-active-bg;
+          }
+          @include mq(sm,max) {
+            display: none;
+          }
+        }
+      }
+      .metro-content {
+        padding: ( 2 * $padding-base-horizontal ) ( 3 * $padding-base-vertical );
+        i {
+          padding: (1.5 * $padding-base-horizontal) (1.5 * $padding-base-vertical);
+          margin-top: $space-vertical-default;
+          margin-bottom: $space-vertical-default;
+          svg {
+            width: $metro-tracking-icon-size;
+            height: $metro-tracking-icon-size;
+          }
+        }
+      }
+      .metro-heading,
+      .metro-content {
+        text-align: center;
+      }
+      &.active {
+        .metro-heading {
+          background: $metro-tracking-active-bg;
+          color: $metro-tracking-active-color;
+          font-weight: bold;
+          &:before{
+            height: 100%;
+            width: 20px;
+            content: '';
+            position: absolute;
+            z-index: 1;
+            left: -20px;
+            display: block;
+            background: $metro-tracking-bg;
+          }
+          .ico-triangle-right-big {
+            &.right {
+              right: -10px;
+              z-index: 999;
+            }
+            &.left {
+            left: 10px;
+            right: auto;
+              svg {
+                fill: $metro-tracking-bg;
+              }
+            }
+          }
+          .inner {
+            left: 30px;
+            right: 10px;
+          }
+        }
+        &:first-child {
+          .metro-heading {
+            &:before {
+              display: none;
+            }
+          }
+          .ico-triangle-right-big {
+            &.left{
+              display: none;
+            }
+          }
+        }
+        &:last-child,
+        &.last {
+          .metro-heading {
+            .ico-triangle-right-big {
+              &.right{
+                display: none;
+              }
+            }
+          }
+        }
+        & + li.active {
+          .metro-heading {
+            &:before {
+              display: none;
+            }
+          }
+          @include mq(sm, max) {
+            &:before {
+              display:none;
+            }
+          }
+        }
+      }
+      &:last-child,
+      &.last {
+        .metro-heading {
+          .ico-chevron-right-big {
+            display: none;
+          }
+        }
+      }
+      @include mq(sm,max) {
+        @include metro-tracking-item;
+        width: 360px;
+      }
+      @include mq(xxs,max) {
+        &,
+        &.active {
+          width: 290px;
+          .cssclippath &,
+          .no-cssclippath & {
+            &:before,
+            &:after {
+              width: 105px;
+            }
+            .metro-heading {
+              width: 105px;
+              &:before,
+              &:after {
+                width: 105px;
+              }
+              .inner {
+                left: 10px;
+                right: 10px;
+              }
+            }
+          }
+          .metro-content {
+            width: 185px;
+          }
+        }
+        li.active + li.active {
+          .metro-content {
+            background: red;
+          }
+        }
+      }
+    }
+  }
+
+  // .metro-tracking-vertical
+  &-vertical {
+    > ul {
+      margin-bottom: $line-height-computed;
+      > li {
+        min-height: 120px;
+        .metro-content {
+          position: relative;
+          &:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: $blue;
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            .cssclippath & {
+              bottom: 19px;
+            }
+          }
+        }
+        &:last-child {
+          .metro-content {
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    @include mq(xs, min) {
+      > ul {
+        width: 80%;
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+        > li {
+          @include metro-tracking-item;
+          width: 100%;
+          &:after {
+            z-index: 1;
+            bottom: -5px;
+          }
+          .cssclippath & {
+            &:after {
+              width: 30%;
+              height: 25px;
+              -webkit-clip-path: polygon(100% 3%, 50% 100%, 0 3%, 0 0, 50% 96%, 100% 0);
+              clip-path: polygon(100% 3%, 50% 100%, 0 3%, 0 0, 50% 96%, 100% 0);
+            }
+          }
+          .no-cssclippath & {
+            &:after {
+              width: 30%;
+            }
+          }
+          .metro-heading {
+            width: 30%;
+          }
+          .metro-content {
+            width: 80%;
+            vertical-align: middle;
+            &:after {
+
+            }
+          }
+          .metro-heading {
+            i {
+              display: none;
+            }
+            .inner {
+              top: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

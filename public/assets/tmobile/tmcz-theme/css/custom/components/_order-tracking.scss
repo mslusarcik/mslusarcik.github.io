@@ -1,0 +1,119 @@
+//
+// ORDER TRACKING 2019
+// --------------------------------------------------
+.order-tracking-timeline{
+  margin-bottom: 22px;
+  @include mq(sm, max) {
+    margin-right: 22px;
+    margin-left: 22px;
+  }
+  .timeline-item{
+    border-top: 2px solid $gray-light;
+    padding-top: 14px;
+    color: $gray-dark;
+    position: relative;
+    text-align: center;
+    &:first-child:before,
+    &:last-child:after{
+      content: '';
+      display: block;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      background-color: $gray-light;
+    }
+    &:first-child:before{
+      top: -6px;
+      left: 0;
+    }
+    &:last-child:after{
+      top: -6px;
+      right: 0;
+    }
+    &.info{
+      border-color: $blue;
+      color: $blue;
+      &:before,&:after{background-color: $blue;}
+    }
+    &.sucess{
+      border-color: $green;
+      color: $green;
+      &:before,&:after{background-color: $green;}
+    }
+    &.danger{
+      border-color: $red;
+      color: $red;
+      &:before,&:after{background-color: $red;}
+    }
+    @include mq(sm, max) {
+      font-size: $font-size-xsmall;
+    }
+  }
+}
+
+.list-collapsible{
+  .collapse-link{
+    i[class*="ico-"]{
+      margin-left: 6px;
+      margin-right: 6px;
+    }
+  }
+  .badge{
+    border: 1px solid transparent;
+    &.badge-info{
+      color: $blue;
+      border-color: $blue;
+      svg{
+        fill: $blue;
+      }
+    }
+    &.badge-danger{
+      color: $red;
+      border-color: $red;
+      svg{
+        fill: $red;
+      }
+    }
+    &.badge-sucess{
+      color: $green;
+      border-color: $green;
+      svg{
+        fill: $green;
+      }
+    }
+    @include mq(xs, max) {
+      font-size: $font-size-xsmall;display: block;
+    }
+    @include mq(xxs, max) {
+      display: block;
+    }
+  }
+  .order-tracking-steps{
+    margin-bottom: 11px;
+    .steps-item{
+      i[class*="ico-"]{
+        margin-right: 10px;
+        svg{
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+    .steps-status{
+      position: relative;
+      padding-left: 50px;
+      min-height: 32px;
+      &:before{
+        content: '';
+        display: block;
+        height: 100%;
+        border-left: 2px dashed $gray-light;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 29px;
+      }
+    }
+  }
+}

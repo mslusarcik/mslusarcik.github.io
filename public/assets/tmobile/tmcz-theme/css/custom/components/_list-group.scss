@@ -1,0 +1,36 @@
+.list-group {
+
+  //. list-group-item
+  &-item {
+    padding-top: $list-group-item-vertical-padding;
+    padding-bottom: $list-group-item-vertical-padding;
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  //. list-group-modal
+  &-modal {
+    margin: -($modal-inner-padding) 0 -#{($modal-inner-padding)};
+    .list-group-item {
+      display: flex;
+      align-items: center;
+      min-height: $list-group-modal-item-min-height;
+      border-width: 1px 0 0;
+      border-color: $gray-lighter;
+      margin: 0;
+      &:first-child {
+        border-radius: 0;
+      }
+      &:first-child {
+        border-top: 0;
+      }
+      .radio,
+      .checkbox {
+        label {
+          display: block;
+        }
+      }
+    }
+  }
+}

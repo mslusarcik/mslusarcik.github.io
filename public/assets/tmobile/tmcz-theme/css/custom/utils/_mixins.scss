@@ -1,0 +1,118 @@
+/**
+* MIXINS
+*
+* Custom mixins
+*
+*/
+
+/*---------------------------------------------------------------------------*\
+  #CSS GRID
+\*---------------------------------------------------------------------------*/
+
+@mixin make-css-grid($columns, $rows, $column-gap: 0) {
+  display: -ms-grid;
+  -ms-grid-columns: $columns;
+  -ms-grid-rows: $rows;
+  grid-column-gap: $column-gap;
+  display: grid;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+}
+
+@mixin place-item($column, $row, $colspan: 1, $rowspan: 1) {
+  -ms-grid-column: $column;
+  -ms-grid-row: $row;
+  grid-column-start: $column;
+  grid-row-start: $row;
+  @if $colspan > 1 {
+    -ms-grid-column-span: $colspan;
+    grid-column-end: span $colspan;
+  }
+  @if $rowspan > 1 {
+    -ms-grid-row-span: $rowspan;
+    grid-row-end: span $rowspan;
+  }
+}
+
+
+/*---------------------------------------------------------------------------*\
+  #MEDIA-QUERY
+\*---------------------------------------------------------------------------*/
+
+
+@mixin mq($val, $type: both) {
+  $sizes-min: (
+    xs: $screen-xs-min,
+    sm: $screen-sm-min,
+    md: $screen-md-min,
+    lg: $screen-lg-min,
+    xlg: $screen-xlg-min
+  );
+  $sizes-max: (
+    xxs: $screen-xxs-max,
+    xs: $screen-xs-max,
+    sm: $screen-sm-max,
+    md: $screen-md-max,
+    lg: $screen-lg-max
+  );
+
+  @if $val == xxs {
+    $type: max;
+  } @else if $val == lg {
+    $type: min;
+  }
+
+  @if $type == both {
+    @media screen and (min-width: map-get($sizes-min, $val)) and (max-width: map-get($sizes-max, $val)) {
+      @content;
+    }
+  } @else if $type == min {
+    @media screen and (min-width: map-get($sizes-min, $val)) {
+      @content;
+    }
+  } @else if $type == max {
+    @media screen and (max-width: map-get($sizes-max, $val)) {
+      @content;
+    }
+  }
+}
+
+// link states
+@mixin link-states {
+  &:active,
+  &:focus,
+  &:hover {
+    @content;
+  }
+}
+
+//== Font Face
+
+@mixin font-face($name, $file, $weight, $style, $path: $custom-font-path) {
+  @font-face {
+    font-family: "#{$name}";
+    src: url('#{$path}#{$file}.woff') format('woff');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@mixin button-state($color, $border, $background) {
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $color;
+    border-color: $border;
+    background-color: $background;
+  }
+}
+
+@mixin onlyIE() {
+  @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {  
+    /* IE10+ specific styles go here */
+    @content;
+  }
+}

@@ -1,0 +1,137 @@
+//
+// Rating
+// --------------------------------------------------
+
+.star-rating {
+  svg {
+    fill: $star-rating-icon-color;
+    width: $star-rating-icon-size;
+    height: $star-rating-icon-size;
+  }
+  .active {
+    svg {
+      fill: $star-rating-icon-active-color;
+    }
+  }
+  &-percents {
+    margin-right: ($space-horizontal-small / 2);
+    .ico-star + & {
+      margin-left: ($space-horizontal-small / 2);
+      margin-right: 0;
+    }
+  }
+  &-description {
+    margin-left: ($space-horizontal-small / 2);
+    color: $star-rating-description-color;
+    .star-rating-percents + & {
+      display: block;
+      margin-left: 0;
+    }
+  }
+}
+
+
+.rating {
+  &-group {
+    display: flex;
+    align-items: center;
+  }
+  &-bar {
+    flex-grow: 1;
+    background: $rating-bar-bg;
+    height: $rating-bar-height;
+    margin-right: ($space-horizontal-default * 1.5);
+    position: relative;
+    span {
+      height: 100%;
+      position: absolute;
+      background: $rating-bar-active-bg;
+    }
+    &:before {
+      line-height: 1;
+      content: attr(data-rating) "x";
+      position: absolute;
+      font-size: $rating-bar-label-font-size;
+      right: ($space-horizontal-default * -1.5);
+      color: $rating-bar-label-color;
+    }
+  }
+  .star-rating + &-bar {
+    margin-left: $space-horizontal-default;
+  }
+}
+
+.star-rating-large {
+    display: block;
+    position: relative;
+    max-width: 100%;
+    background: #efefef;
+    text-align: center;
+    text-decoration: inherit;
+    padding: 25px;
+    border-radius: 3px;
+  .exponea-survey * {
+    box-sizing: content-box;
+  }
+  &:hover, .exponea-popup-banner:active {
+    text-decoration: inherit;
+  }
+  span {
+    display: block;
+  }
+  &-comment {
+    font-size: 16px;
+    font-weight: normal;
+    opacity: 0.6;
+    color: #1c1733;
+    margin-bottom: 15px;
+    padding: 10px;
+  }
+  .answers .exponea-input {
+    min-height: 100px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .stars {
+    margin-bottom: 15px;
+  }
+  .stars > div {
+    display: inline-block;
+    width: 22px;
+    height: 21px;
+    cursor: pointer;
+    margin: 0 3px;
+  }
+  .stars .negative {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiAgIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgICB2ZXJzaW9uPSIxLjEiICAgd2lkdGg9IjIyLjAxODk3IiAgIGhlaWdodD0iMjEiICAgdmlld0JveD0iMCAwIDIyLjAxODk3MSAyMSI+ICA8cGF0aCAgICAgZD0ibSAyMi4wMTg5Nyw4LjEzNzk5NTEgYyAwLDAuMTk0MSAtMC4xMTQ2NjgsMC40MDU4IC0wLjM0NDAwNCwwLjYzNTIgbCAtNC44MDM0NTUsNC42ODQyOTk5IDEuMTM3OTc0LDYuNjE2MyBjIDAuMDA4OCwwLjA2MiAwLjAxMzIxLDAuMTQ5OSAwLjAxMzIxLDAuMjY0NiAwLDAuMTg1MyAtMC4wNDg0NCwwLjMzOTYgLTAuMTQ1NDk1LDAuNDYzMyAtMC4wODgyNSwwLjEzMjIgLTAuMjIwNTI4LDAuMTk4MyAtMC4zOTcwMTksMC4xOTgzIC0wLjE2NzUxMywwIC0wLjM0NDAwNCwtMC4wNTMgLTAuNTI5MzAyLC0wLjE1ODcgbCAtNS45NDEzOTYsLTMuMTIzIC01Ljk0MTQxMjQsMy4xMjMgYyAtMC4xOTQwODY5LDAuMTA1OSAtMC4zNzA1MDk2LDAuMTU4NyAtMC41MjkzMDAyLDAuMTU4NyAtMC4xODUyNjQzLDAgLTAuMzI2NDA1OCwtMC4wNjYgLTAuNDIzNDQxOCwtMC4xOTgzIC0wLjA4ODIyOCwtMC4xMjM3IC0wLjEzMjMzNCwtMC4yNzggLTAuMTMyMzM0LC0wLjQ2MzMgMCwtMC4wNTMgMC4wMDg4MiwtMC4xNDExIDAuMDI2NDc0LC0wLjI2NDYgbCAxLjEzNzk5MSwtNi42MTYzIEwgMC4zMzA4MTMzMiw4Ljc3MzE5NTEgQyAwLjExMDI3MTM0LDguNTM0OTk1MSAwLDguMzIzMjk1MSAwLDguMTM3OTk1MSBjIDAsLTAuMzI2NCAwLjI0NzAwNzExLC0wLjUyOTMgMC43NDEwMjMwNSwtMC42MDg3IGwgNi42NDI3NTA2NSwtMC45NjYgMi45NzczMjAzLC02LjAyMDgwMDA0IGMgMC4xNjc2MTYsLTAuMzYxNyAwLjM4Mzc0LC0wLjU0MjQ5OTk5NjI2MjMgMC42NDgzOTEsLTAuNTQyNDk5OTk2MjYyMyAwLjI2NDY1MSwwIDAuNDgwNzc2LDAuMTgwNzk5OTk2MjYyMyAwLjY0ODM5MSwwLjU0MjQ5OTk5NjI2MjMgbCAyLjk3NzMyMSw2LjAyMDgwMDA0IDYuNjQyNzUsMC45NjYgYyAwLjQ5NDA3MiwwLjA3OSAwLjc0MTAyMywwLjI4MjMgMC43NDEwMjMsMC42MDg3IHoiICAgICBzdHlsZT0iZmlsbDojYmZiZmJmOyIgLz48L3N2Zz4=);
+  }
+  .stars .positive {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiAgIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgICB2ZXJzaW9uPSIxLjEiICAgd2lkdGg9IjIyLjAxODk3IiAgIGhlaWdodD0iMjEiICAgdmlld0JveD0iMCAwIDIyLjAxODk3MSAyMSI+ICA8cGF0aCAgICAgZD0ibSAyMi4wMTg5Nyw4LjEzNzk5NTEgYyAwLDAuMTk0MSAtMC4xMTQ2NjgsMC40MDU4IC0wLjM0NDAwNCwwLjYzNTIgbCAtNC44MDM0NTUsNC42ODQyOTk5IDEuMTM3OTc0LDYuNjE2MyBjIDAuMDA4OCwwLjA2MiAwLjAxMzIxLDAuMTQ5OSAwLjAxMzIxLDAuMjY0NiAwLDAuMTg1MyAtMC4wNDg0NCwwLjMzOTYgLTAuMTQ1NDk1LDAuNDYzMyAtMC4wODgyNSwwLjEzMjIgLTAuMjIwNTI4LDAuMTk4MyAtMC4zOTcwMTksMC4xOTgzIC0wLjE2NzUxMywwIC0wLjM0NDAwNCwtMC4wNTMgLTAuNTI5MzAyLC0wLjE1ODcgbCAtNS45NDEzOTYsLTMuMTIzIC01Ljk0MTQxMjQsMy4xMjMgYyAtMC4xOTQwODY5LDAuMTA1OSAtMC4zNzA1MDk2LDAuMTU4NyAtMC41MjkzMDAyLDAuMTU4NyAtMC4xODUyNjQzLDAgLTAuMzI2NDA1OCwtMC4wNjYgLTAuNDIzNDQxOCwtMC4xOTgzIC0wLjA4ODIyOCwtMC4xMjM3IC0wLjEzMjMzNCwtMC4yNzggLTAuMTMyMzM0LC0wLjQ2MzMgMCwtMC4wNTMgMC4wMDg4MiwtMC4xNDExIDAuMDI2NDc0LC0wLjI2NDYgbCAxLjEzNzk5MSwtNi42MTYzIEwgMC4zMzA4MTMzMiw4Ljc3MzE5NTEgQyAwLjExMDI3MTM0LDguNTM0OTk1MSAwLDguMzIzMjk1MSAwLDguMTM3OTk1MSBjIDAsLTAuMzI2NCAwLjI0NzAwNzExLC0wLjUyOTMgMC43NDEwMjMwNSwtMC42MDg3IGwgNi42NDI3NTA2NSwtMC45NjYgMi45NzczMjAzLC02LjAyMDgwMDA0IGMgMC4xNjc2MTYsLTAuMzYxNyAwLjM4Mzc0LC0wLjU0MjQ5OTk5NjI2MjMgMC42NDgzOTEsLTAuNTQyNDk5OTk2MjYyMyAwLjI2NDY1MSwwIDAuNDgwNzc2LDAuMTgwNzk5OTk2MjYyMyAwLjY0ODM5MSwwLjU0MjQ5OTk5NjI2MjMgbCAyLjk3NzMyMSw2LjAyMDgwMDA0IDYuNjQyNzUsMC45NjYgYyAwLjQ5NDA3MiwwLjA3OSAwLjc0MTAyMywwLjI4MjMgMC43NDEwMjMsMC42MDg3IHoiICAgICBzdHlsZT0iZmlsbDojZWRhOTVhOyIgLz48L3N2Zz4=);
+  }
+  .exponea-close, .exponea-survey .exponea-min {
+    color: #323265;
+    border-bottom: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    opacity: 0.7;
+  }
+  .exponea-maxim {
+    margin-left: 266px;
+    display: inline-block;
+  }
+  .exponea-min-max {
+    display: inline-block;
+  }
+  .exponea-min .exponea-min-char {
+    position: relative;
+    bottom: 4px;
+  }
+  .feedback {
+    display: none;
+  }
+  .feedback * {
+    box-sizing: border-box;
+  }
+}

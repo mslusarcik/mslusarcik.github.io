@@ -1,0 +1,182 @@
+//
+// Buttons
+// --------------------------------------------------
+
+.btn {
+  font-size: $font-size-large;
+  padding-left: $btn-horizontal-padding;
+  padding-right: $btn-horizontal-padding;
+  white-space: normal;
+  border-width: $btn-border-width;
+  transition-property: color, border-color, background;
+  transition-duration: $transition-duration-default;
+
+  &.active,
+  &:active,
+  &:focus {
+    @include box-shadow(none);
+  }
+
+  &-sm,
+  &-xs {
+    font-weight: 600;
+  }
+
+  & + .btn {
+    margin-left: $space-horizontal-small;
+  }
+
+  &[disabled],
+  &.disabled {
+    opacity: 1;
+    border-color: $btn-disabled-border;
+    &.btn-primary {
+      background: $btn-disabled-bg;
+    }
+    &.btn-default {
+      color: $btn-disabled-color;
+    }
+  }
+}
+
+
+// Button blocks
+// --------------------------------------------------
+
+.btn-block {
+  &-xs {
+    @include mq(xs) {
+      display: block;
+      width: 100%;
+      & + .btn-block-xs {
+        margin-top: ($space-vertical-small + 4);
+        margin-left: 0;
+      }
+    }
+  }
+  &-xxs {
+    @include mq(xxs) {
+      display: block;
+      width: 100%;
+      & + .btn-block-xxs {
+        margin-top: ($space-vertical-small + 4);
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.btn-block-group {
+  .btn-block + .btn-block {
+    margin-top: $space-vertical-small;
+    margin-left: 0;
+  }
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-lg {
+  font-size: $font-size-xlarge;
+  border-radius: $border-radius-small;
+}
+
+.btn-sm {
+  font-size: $btn-sm-font-size;
+  padding-top: ($padding-small-vertical - 1);
+  padding-bottom: ($padding-small-vertical - 1);
+  line-height: decimal-floor($line-height-base, 1);
+}
+
+.btn-xs {
+  padding-left: $padding-xs-horizontal;
+  padding-right: $padding-xs-horizontal;
+}
+
+.btn-small-padding {
+  padding-left: $padding-large-horizontal;
+  padding-right: $padding-large-horizontal;
+}
+
+.btn-medium-padding {
+  padding-left: ($padding-large-horizontal + 6);
+  padding-right: ($padding-large-horizontal + 6);
+}
+
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-secondary {
+  @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+}
+
+.btn-default {
+  @include button-state($magenta-dark, $magenta-dark, $white);
+}
+
+.btn-primary {
+  @include button-state($white, $magenta-dark, $magenta-dark);
+}
+
+.btn-secondary {
+  @include button-state($magenta-dark, $white, $white);
+}
+
+.btn-info {
+  @include button-state($white, $blue-dark, $blue-dark);
+}
+
+.btn-success {
+  @include button-state($white, $green-dark, $green-dark);
+}
+
+.btn-warning {
+  @include button-state($white, $orange-dark, $orange-dark);
+}
+
+.btn-danger {
+  @include button-state($white, $red-dark, $red-dark);
+}
+
+.btn-form-control {
+  @include button-variant($btn-form-control-color, $btn-form-control-bg, $btn-form-control-border);
+}
+
+.btn-like-tag {
+  @include button-variant($btn-like-tag-color, $btn-like-tag-bg, $btn-like-tag-border);
+  border-width: 1px;
+  @include button-state($btn-like-tag-active-color, $btn-like-tag-active-bg, $btn-like-tag-active-border);
+  &.active {
+    &:focus {
+      outline: 0;
+    }
+  }
+  &:active:focus {
+    outline: 0;
+  }
+}
+
+
+// Special buttons
+// --------------------------------------------------
+
+.btn-settings {
+  display: inline-flex;
+  align-items: center;
+  padding-left: ($space-horizontal-default / 3);
+  padding-right: ($space-horizontal-default / 3);
+  border-width: 1px;
+  i[class*="ico-"] {
+    margin-right: $space-horizontal-small;
+    svg {
+      width: 20px;
+      height: 16px;
+    }
+  }
+}
+
+.btn-form-control {
+  border-width: 1px;
+}

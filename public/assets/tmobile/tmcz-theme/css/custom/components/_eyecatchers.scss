@@ -1,0 +1,52 @@
+.eyecatchers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-left-radius: $border-radius-base;
+  overflow: hidden;
+  &-without-radius {
+    border-top-left-radius: 0;
+  }
+  &-right {
+    right: 0;
+    left: auto;
+  }
+}
+
+.eyecatcher {
+  color: $eyecatcher-color;
+  font-weight: 600;
+  font-size: $eyecatcher-font-size;
+  line-height: $eyecatcher-line-height;
+  text-align: left;
+  position: absolute;
+  .eyecatchers & {
+    position: static;
+  }
+  .device-listing-promo &,
+  .device-listing & {
+    width: $eyecatcher-device-listing-promo-width;
+    padding: ($space-horizontal-default / 3);
+    top: 0;
+    left: 0;
+  }
+  .device-listing & {
+    padding-top: ($space-horizontal-small / 3);
+    padding-bottom: ($space-horizontal-small / 3);
+  }
+  em {
+    font-style: normal;
+  }
+  &-blue {
+    background: $blue;
+  }
+  &-gray-darker {
+    background: $gray-darker;
+  }
+  &-magenta {
+    background: $magenta;
+  }
+  &-orange {
+    background: $orange;
+  }
+}

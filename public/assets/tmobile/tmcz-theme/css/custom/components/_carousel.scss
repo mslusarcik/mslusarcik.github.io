@@ -1,0 +1,23 @@
+.carousel {
+
+  // .carousel-inner
+  &-inner {
+    > .item {
+      &.next,
+      &.left,
+      &.prev,
+      &.right,
+      &.active {
+        > img {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  .carousel-control {
+    @extend %carousel-control;
+    display: flex;
+    align-items: center;
+  }
+}

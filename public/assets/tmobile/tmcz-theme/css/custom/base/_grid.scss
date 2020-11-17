@@ -1,0 +1,59 @@
+/**
+* CUSTOM GRID
+*
+* Grid related styles
+*
+*/
+
+
+/*---------------------------------------------------------------------------*\
+  #GRID
+\*---------------------------------------------------------------------------*/
+
+@media (min-width: $screen-xlg-min) {
+  @include make-grid(xlg);
+}
+
+@include mq(xxs) {
+  @include responsive-invisibility('.hidden-xxs');
+  .col-xxs-12 {
+    flex-basis: 100%;
+    max-width: 100%;
+    float: none;
+    padding-left: ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+  }
+  .col-xxs-offset-0 {
+    margin-left: 0;
+  }
+}
+
+.container-fluid {
+  max-width: $screen-max-width;
+}
+
+// Speciální styl pro layout bs3-grid-flex-mobile-order-layouttpl, kde potřebujeme jeden sloupec na mobilním zobrazení zobrazit výše.
+.portlet-flex-layout {
+  display: flex;
+  flex-direction: column;
+  @include mq(xxs) {
+    .portlet-column-first {
+      order: 1;
+    }
+    .portlet-column-second {
+      order: 3;
+    }
+    .portlet-column-third {
+      order: 2;
+    }
+    .portlet-column-fourth {
+      order: 4;
+    }
+  }
+}
+
+.start-xxxs {
+  @media screen and (max-width: 359px) {
+    justify-content: flex-start;
+  }
+}

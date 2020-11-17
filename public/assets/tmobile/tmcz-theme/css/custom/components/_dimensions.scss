@@ -1,0 +1,48 @@
+.dimensions {
+  position: relative;
+  min-width: ($space-horizontal-default * 2);
+  padding-top: $space-vertical-default;
+  font-size: $dimensions-font-size;
+  font-weight: $dimensions-font-weight;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: $space-vertical-default;
+  &-group {
+    display: flex;
+    @include mq(md, max) {
+      .icon {
+        &.front {
+          width: $dimensions-silhouette-small-front-width;
+          height: $dimensions-silhouette-small-front-height;
+        }
+        &.side {
+          width: $dimensions-silhouette-small-side-width;
+          height: $dimensions-silhouette-small-side-height;
+        }
+      }
+    }
+  }
+  &-right {
+    &,
+    .dimensions-horizontal-label {
+      padding-right: ($space-horizontal-default * 1.6667);
+    }
+  }
+  &-horizontal-label {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    text-align: center;
+  }
+  &-vertical-label {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: ($space-horizontal-default * 1.6667);
+  }
+}

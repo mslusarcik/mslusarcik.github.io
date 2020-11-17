@@ -1,0 +1,75 @@
+/**
+* ICONS
+*
+*
+*/
+
+/*---------------------------------------------------------------------------*\
+  #ICONS
+\*---------------------------------------------------------------------------*/
+
+.icon {
+  fill: $icon-base-fill;
+}
+
+[class*="ico-"] {
+  display: inline-block;
+  position: relative;
+  .btn > & {
+    top: 1px;
+  }
+
+  svg {
+    @include transition(fill $transition-duration-default);
+    display: block;
+    pointer-events: none;
+    a > & {
+      fill: $magenta;
+    }
+    a:hover > & {
+      fill: $link-hover-color;
+      h2 & {
+        fill: $text-color;
+      }
+    }
+    .btn-primary > & ,
+    .btn-primary:hover > &{
+      fill: $white;
+    }
+    .btn & {
+      width: $btn-default-icon-size;
+      height: $btn-default-icon-size;
+    }
+    .btn-lg & {
+      width: $btn-lg-icon-size;
+      height: $btn-lg-icon-size;
+    }
+  }
+
+  &.fill-black {
+    svg {
+      fill: $black;
+    }
+  }
+  &.fill-white {
+    svg {
+      fill: $white;
+    }
+  }
+}
+
+svg {
+  .text-white & {
+    fill: $white;
+  }
+}
+
+/*---------------------------------------------------------------------------*\
+  #ICO-FILL-HELPERS
+\*---------------------------------------------------------------------------*/
+
+@each $color in $fill-colors {
+  .fill-#{nth($color, 1)}{
+    fill: #{nth($color, 2)};
+  }
+}

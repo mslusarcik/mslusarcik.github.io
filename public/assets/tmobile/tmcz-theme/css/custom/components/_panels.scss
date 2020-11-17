@@ -1,0 +1,54 @@
+.panel {
+  box-shadow: none;
+
+  .caption & {
+    border-color: currentColor;
+  }
+
+  // .panel-transparent
+  &-transparent {
+    background: transparent;
+  }
+
+  // .panel-contact-form
+  &-contact-form {
+    @include mq(sm, max) {
+      background: $panel-contact-form-bg;
+      margin-bottom: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      .panel-body {
+        padding-top: ceil($space-vertical-small / 2);
+        padding-bottom: ceil($space-vertical-small / 2);
+      }
+    }
+    .contact-form-heading {
+      display: flex;
+      align-items: center;
+      font-size: $panel-contact-form-heading-font-size;
+      font-weight: 600;
+      margin: 0;
+      padding: ceil($space-vertical-default / 3) 0;
+
+      // .contact-form-heading-icon
+      &-icon {
+        margin-right: $space-horizontal-small;
+      }
+    }
+  }
+
+  // .panel-faq
+  &-faq {
+    margin-bottom: 0;
+    border-top: 1px solid $panel-faq-border;
+    border-radius: 0;
+    &:last-child {
+      border-bottom: 1px solid $panel-faq-border;
+      margin-bottom: $line-height-computed;;
+    }
+    .panel-body {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}

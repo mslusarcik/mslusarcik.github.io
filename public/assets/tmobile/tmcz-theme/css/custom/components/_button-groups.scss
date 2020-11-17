@@ -1,0 +1,64 @@
+//
+// Button groups
+// --------------------------------------------------
+
+.btn-group.open .dropdown-toggle {
+  @include box-shadow(none);
+}
+
+.btn-group:not(.bootstrap-select) {
+  .btn {
+    font-weight: 600;
+    color: $gray-darker;
+    @include mq(xxs, max) {
+      display: block;
+      width: 100%;
+      &:first-child {
+        border-top-right-radius: $border-radius-base;
+        border-bottom-left-radius: 0;
+      }
+      &:last-child {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: $border-radius-base;
+      }
+      & + .btn {
+        margin-left: 0;
+      }
+    }
+    &:hover,
+    &.active {
+      color: $white;
+      background: $blue;
+      svg {
+        fill: $white;
+      }
+    }
+    svg {
+      fill: $gray-dark;
+      width: 22px;
+      height: 22px;
+    }
+  }
+  .btn-default {
+    border-width: 1px;
+    border-color: $gray-dark;
+  }
+  .btn-lg {
+    padding-top: ($padding-large-vertical + 1);
+    padding-bottom: ($padding-large-vertical + 1);
+  }
+  i:not(.caret) {
+    vertical-align: text-bottom;
+    margin-right: 5px;
+  }
+}
+
+.btn-group-like-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  .btn-like-tag {
+    margin: round($space-vertical-small / 2);
+  }
+}

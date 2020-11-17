@@ -1,0 +1,47 @@
+//
+// VCC options/dropdown menu
+// --------------------------------------------------
+
+$vcc-options-menu-min-width:                    240px;
+$vcc-options-menu-btn-icon-size:                28px;
+$vcc-options-menu-btn-padding:                  8px;
+$vcc-options-menu-item-vertical-padding:        8px;
+
+
+//
+// VCC service button
+// --------------------------------------------------
+
+$vcc-service-btn-min-width:                     140px;
+
+
+//
+// VCC bubble tooltip + chart
+// --------------------------------------------------
+
+$vcc-bubble-wrapper-width:                      $pie-width;
+$vcc-bubble-wrapper-mobile-width:               $pie-mobile-width;
+$vcc-bubble-tooltip-min-height:                 $pie-height;
+$vcc-bubble-tooltip-mobile-min-height:          $pie-mobile-height;
+$vcc-bubble-tooltip-bg:                         $gray-lighter;
+$vcc-bubble-tooltip-arrow-width:                12px;
+$vcc-bubble-transition-duration:                $transition-duration-fast;
+$vcc-chart-bar-height:                          180px;
+$vcc-chart-tooltip-min-height:                  245px;
+$vcc-chart-label-price:                         30px;
+
+
+//
+// VCC list members (Magenta 1)
+// --------------------------------------------------
+
+$list-members-icon-width:   60px;
+$list-members-icon-height:  60px;
+
+
+//
+// VCC navbar
+// --------------------------------------------------
+
+$navbar-vcc-bg:                                 $magenta;
+$navbar-vcc-line-bg:                            $white;

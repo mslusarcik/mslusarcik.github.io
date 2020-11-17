@@ -1,0 +1,563 @@
+//
+// VCC navbar
+// --------------------------------------------------
+
+.navbar {
+  &.navbar-vcc {
+    background-color: $navbar-vcc-bg;
+    .navbar-header {
+      &:after {
+        background: $navbar-vcc-line-bg;
+      }
+    }
+    .toggle {
+      svg {
+        circle {
+          stroke: $navbar-vcc-line-bg;
+        }
+      }
+    }
+  }
+  .navbar-nav-vcc {
+    @include mq(md, min) {
+      justify-content: flex-start;
+      > li:nth-child(#{$nav-item-number-offsetted + 1}) {
+        margin-left: 0;
+      }
+    }
+    @include mq(sm, max) {
+      > li:last-child {
+        position: static;
+        > a {
+          font-weight: $font-weight-ultra;
+        }
+      }
+    }
+  }
+}
+
+.vcc-container {
+
+  //
+  // VCC options/dropdown menu
+  // --------------------------------------------------
+  .vcc-options-menu {
+    padding-left: 0;
+    @include mq(xs, min) {
+      padding-right: 0;
+    }
+    .dropdown-menu {
+      @extend %popup-arrow;
+      min-width: $vcc-options-menu-min-width;
+      border-color: $gray-light;
+      padding: 0;
+      margin: ceil($space-vertical-small * 1.5) 0 0;
+      box-shadow: 0 0 10px 0px rgba($gray-light, 1);
+      > li {
+        border-top: 1px solid $gray-light;
+        &:first-child {
+          border-top: 0;
+        }
+        > a {
+          font-weight: $font-weight-bold;
+          padding-top: $vcc-options-menu-item-vertical-padding;
+          padding-bottom: $vcc-options-menu-item-vertical-padding;
+        }
+      }
+    }
+    .dropdown-menu-right {
+      @extend %popup-arrow-top;
+      @extend %popup-arrow-top-right;
+    }
+    .btn {
+      line-height: 0;
+      padding-left: $vcc-options-menu-btn-padding;
+      padding-right: $vcc-options-menu-btn-padding;
+      [class*="ico-"] {
+        top: auto;
+      }
+      svg {
+        width: $vcc-options-menu-btn-icon-size;
+        height: $vcc-options-menu-btn-icon-size;
+      }
+    }
+  }
+
+  .vcc-selection-menu {
+    @include mq(xxs) {
+      $max-width: 82%;
+      flex-basis: $max-width;
+      max-width: $max-width;
+    }
+  }
+
+
+  //
+  // VCC offer table
+  // --------------------------------------------------
+  .vcc-table-offer {
+    // .vcc-table-offer-detail
+    &-detail {
+      padding-left: ($space-horizontal-default * 2);
+      @include mq(xxs) {
+        padding-left: ($space-horizontal-small + $space-horizontal-default);
+      }
+    }
+    tr {
+      &.collapse-content {
+        th,
+        td {
+          border-top: 0;
+          padding-top: 0;
+        }
+      }
+      .collapse-link {
+        &:focus {
+          outline: 0;
+          .collapse-icon {
+            background: $magenta;
+            svg {
+              fill: $white;
+            }
+          }
+        }
+        .collapse-icon {
+          display: block;
+          padding: $collapse-link-icon-padding;
+          border-radius: $border-radius-base;
+          transition-property: background;
+          transition-duration: $transition-duration-fast;
+        }
+      }
+    }
+    .js-hover {
+      .collapse-link {
+        .collapse-icon {
+          background: $magenta;
+          svg {
+            fill: $white;
+          }
+        }
+      }
+    }
+
+    // .vcc-table-offer-three-columns
+    &-three-columns {
+      > thead,
+      > tbody {
+        > tr:not(.collapse) {
+          > th,
+          > td {
+            &:first-child {
+              @include mq(sm, min) {
+                width: 40%;
+              }
+              @include mq(md, min) {
+                width: 35%;
+              }
+            }
+            &[scope="rowgroup"][colspan="3"] {
+              padding-top: ($table-box-content-vertical-padding / 2);
+              padding-bottom: ($table-box-content-vertical-padding / 2);
+            }
+          }
+        }
+      }
+    }
+
+    // .vcc-table-offer-two-columns
+    &-two-columns {
+      > thead,
+      > tbody {
+        > tr:not(.collapse) {
+          > th,
+          > td {
+            &:first-child {
+              @include mq(sm, min) {
+                width: 50%;
+              }
+            }
+            &[scope="rowgroup"][colspan="2"] {
+              padding-top: ($table-box-content-vertical-padding / 2);
+              padding-bottom: ($table-box-content-vertical-padding / 2);
+            }
+          }
+        }
+      }
+    }
+
+    // .vcc-table-offer-value
+    &-value {
+      margin-top: ceil($space-vertical-small / 2);
+    }
+
+    .btn-block-group {
+      margin-top: $space-vertical-small;
+    }
+  }
+
+
+  //
+  // VCC service button
+  // --------------------------------------------------
+  .vcc-service-btn {
+    min-width: $vcc-service-btn-min-width;
+  }
+
+
+  //
+  // VCC bubble tooltip
+  // --------------------------------------------------
+  .tooltip.bubble {
+    .fonts-loaded & {
+      font-family: $font-family-brand;
+    }
+    display: none;
+    width: $vcc-bubble-wrapper-width;
+    font-size: $font-size-base;
+    z-index: 1025;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    .mobile & {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      transform: translate(-50%, -75%);
+      transition-property: opacity, transform;
+      transition-duration: $vcc-bubble-transition-duration;
+    }
+    .mobile .bubble-visible & {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+    .tooltip-inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: none;
+      min-height: $vcc-bubble-tooltip-min-height;
+      color: $text-color;
+      background-color: $vcc-bubble-tooltip-bg;
+      position: relative;
+      .mobile & {
+        background-color: $white;
+      }
+      > p,
+      > div {
+        max-width: ($vcc-bubble-wrapper-width - 16px);
+      }
+      a {
+        &.btn-default {
+          color: $magenta;
+          border-color: $magenta;
+          &:hover {
+            color: $magenta-dark;
+            border-color: $magenta-dark;
+          }
+        }
+        &.btn-primary {
+          border-color: $magenta;
+          &:hover {
+            border-color: $magenta-dark;
+          }
+        }
+      }
+      &:before {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -($vcc-bubble-tooltip-arrow-width);
+        border-style: dashed solid;
+        border-color: transparent;
+        border-width: $vcc-bubble-tooltip-arrow-width $vcc-bubble-tooltip-arrow-width 0 $vcc-bubble-tooltip-arrow-width;
+        border-top-color: $vcc-bubble-tooltip-bg;
+        .mobile & {
+          display: none;
+        }
+      }
+      .tooltip-close {
+        display: none;
+        font-size: $close-font-size;
+        line-height: $font-line-height-h3;
+        color: $close-color;
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+        }
+        .mobile & {
+          display: block;
+        }
+      }
+    }
+    &.top {
+      margin-top: 0;
+      padding: 0;
+      .tooltip-arrow {
+        border-top-color: $vcc-bubble-tooltip-bg;
+      }
+    }
+    &.bottom {
+      top: 0;
+      .tooltip-arrow {
+        border-bottom-color: $vcc-bubble-tooltip-bg;
+      }
+    }
+  }
+
+  .bubble-wrapper {
+    position: relative;
+    width: $vcc-bubble-wrapper-width;
+    margin-left: auto;
+    margin-right: auto;
+    @include mq(xxs) {
+      width: $vcc-bubble-wrapper-mobile-width;
+    }
+    &:hover .tooltip.bubble {
+      display: block;
+      @include mq(xxs) {
+        display: none;
+      }
+    }
+  }
+
+
+  //
+  // VCC Magenta 1 list
+  // --------------------------------------------------
+  .list-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 20px 0 5px;
+    li {
+      margin: 0 0 20px;
+      > a,
+      > span {
+        font-size: $font-size-large;
+        display: block;
+        padding: 0 ($grid-gutter-width / 2);
+        text-align: center;
+        text-decoration: none;
+        border-bottom: 0;
+        @include mq(xxs) {
+          padding-left: ($grid-gutter-width / 3);
+          padding-right: ($grid-gutter-width / 3);
+        }
+        svg {
+          @include center-block;
+          width: $list-members-icon-width;
+          height: $list-members-icon-height;
+          @include mq(xs, max) {
+            width: ceil($list-members-icon-width / 1.5);
+            height: ceil($list-members-icon-height / 1.5);
+          }
+          margin-bottom: 10px;
+        }
+      }
+      > a,
+      > span {
+        span {
+          display: block;
+        }
+      }
+      > a {
+        > span {
+          border-bottom: 1px solid $magenta;
+        }
+      }
+    }
+  }
+
+
+  .vcc-table-fixed {
+    @include mq(sm, min) {
+      table-layout: fixed;
+    }
+  }
+
+
+  //
+  // VCC advantages
+  // --------------------------------------------------
+  .advantage-banner {
+    margin: $space-vertical-default 0;
+    position: relative;
+    min-height: 350px;
+    text-align: center;
+    .btn {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+
+  //
+  // VCC chart
+  // --------------------------------------------------
+  .chart {
+    position: relative;
+    background-color: $white;
+    width: 100%;
+    stroke: $blue;
+  }
+
+  .chart-canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .chart-grid {
+    position: relative;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .chart-month {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    margin: 0;
+    .tooltip.bubble.top {
+      width: 120px;
+      bottom: 55px;
+      left: 50%;
+      margin-left: -60px;
+      .tooltip-inner {
+        min-height: $vcc-chart-tooltip-min-height;
+      }
+    }
+    &:hover .tooltip.bubble,
+    &:hover .tooltip-inner:before {
+      display: block;
+    }
+    .tooltip {
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .chart-bar {
+    position: relative;
+    height: $vcc-chart-bar-height;
+    margin: 0 0 20px;
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -35px;
+      margin-left: -35px;
+    }
+  }
+
+  .chart-point {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: $blue;
+    border-radius: 50%;
+    margin-bottom: -10px;
+    margin-left: -10px;
+  }
+
+  .chart-point-magenta {
+    background: $magenta;
+  }
+  .chart-point-red {
+    background: $red;
+  }
+
+  .chart-label {
+    position: relative;
+    min-height: 94px;
+    border-top: 1px solid $gray-light;
+  }
+
+  .chart-label-status {
+    display: block;
+    margin-top: -7px;
+  }
+
+  .chart-label-price {
+    font-size: $vcc-chart-label-price;
+  }
+
+}
+
+.bubble-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $black;
+  opacity: 0;
+  z-index: 1024;
+  transition-property: opacity;
+  transition-duration: $vcc-bubble-transition-duration;
+  .bubble-visible & {
+    opacity: 0.4;
+  }
+}
+
+//
+// VCC language switch for landing pages
+// --------------------------------------------------
+
+.vcc-language-switch {
+  position: absolute;
+  top: 5px;
+  right: ($grid-gutter-width / 2);
+  z-index: 1;
+  @include mq(md, min) {
+    top: 25px;
+  }
+  .btn {
+    font-weight: $font-weight-medium;
+    color: $gray-darker;
+    padding-left: 8px;
+    padding-right: 8px;
+    .caret {
+      margin-left: 2px;
+    }
+  }
+  .dropdown-menu {
+    margin-top: -2px;
+    > li {
+      > a {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+    }
+  }
+  // .no-js & {
+  //   margin-top: $space-vertical-default;
+  //   position: static;
+  //   .dropdown-menu {
+  //     display: block;
+  //     position: static;
+  //     float: none;
+  //   }
+  // }
+
+}

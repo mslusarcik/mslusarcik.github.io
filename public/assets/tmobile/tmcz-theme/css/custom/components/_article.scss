@@ -1,0 +1,123 @@
+.articles {
+  margin: $space-vertical-default 0;
+  @include mq(md, min) {
+    margin-top: ($space-vertical-large + 16);
+  }
+  > .row {
+    > div {
+      margin-bottom: $space-vertical-default;
+      &.slick-list {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: left;
+  color: $article-text-color;
+  background-color: $article-bg;
+  padding: 0 $article-horizontal-padding $article-vertical-padding;
+  border-radius: $border-radius-base;
+  transform-style: preserve-3d;
+  @include mq(xxs, max) {
+    padding-left: $space-horizontal-small;
+    padding-right: $space-horizontal-small;
+  }
+  h2,
+  h3 {
+    margin: ($space-vertical-small + 4) 0 $space-vertical-small;
+    a {
+      color: $article-text-color;
+    }
+  }
+  .perex {
+    flex-grow: 1;
+    margin-bottom: $space-vertical-default;
+  }
+  .meta {
+    font-size: $article-meta-font-size;
+    font-weight: $font-weight-bold;
+    color: $article-meta-color;
+    margin-top: (floor($space-vertical-small / 2) * -1);
+    .date {
+      margin-right: ($space-horizontal-default / 3);
+    }
+  }
+
+  // .article-img
+  &-img {
+    height: $article-img-height;
+    position: relative;
+    overflow: hidden;
+    margin: 0 ($article-horizontal-padding * -1);
+    border-top-left-radius: $border-radius-base;
+    border-top-right-radius: $border-radius-base;
+    @include mq(xxs, max) {
+      margin-left: -($space-horizontal-small);
+      margin-right: -($space-horizontal-small);
+    }
+    img {
+      margin: auto;
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+      bottom: -9999px;
+      right: -9999px;
+      transition-duration: $transition-duration-default;
+      transition-property: transform;
+    }
+  }
+  .btn {
+    i {
+      margin-left: 6px;
+    }
+  }
+  &.js-hover {
+    .article-img {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  // .article-large
+  &-large {
+    color: $article-large-text-color;
+    min-height: $article-large-height;
+    position: relative;
+    overflow: hidden;
+    @include mq(sm, min) {
+      padding-top: $article-large-top-padding;
+      padding-bottom: $article-large-bottom-padding;
+    }
+    @include mq(xs, max) {
+      justify-content: center;
+    }
+    h2,
+    h3 {
+      a {
+        color: $article-large-text-color;
+      }
+    }
+    .perex {
+      font-weight: $font-weight-bold;
+      font-size: $article-large-perex-font-size;
+      line-height: $font-line-height-xlarge;
+      @include mq(xs, max) {
+        flex-grow: 0;
+      }
+    }
+    .article-img {
+      height: auto;
+      overflow: visible;
+      position: static;
+    }
+    > *:not(.article-img) {
+      position: relative;
+    }
+  }
+}

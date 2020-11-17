@@ -1,0 +1,59 @@
+//
+// Popover
+// --------------------------------------------------
+
+.popover {
+  font-family: inherit;
+  border-radius: $border-radius-base;
+  box-shadow: 0 0 10px 0px rgba($gray-light, 1);
+
+  &.active {
+    z-index: ($zindex-popover + 1);
+  }
+
+  // .popover-inline
+  &-inline {
+    position: relative;
+    display: block;
+  }
+
+  > .arrow {
+    &:before {
+      display: none;
+    }
+  }
+
+  // .popover-content
+  &-content {
+    padding: 6px 12px;
+  }
+
+  // .popover-large
+  &-large {
+    max-width: 370px;
+    width: 370px;
+    @include mq(xxs) {
+      max-width: 290px;
+      width: 290px;
+    }
+    .popover-content {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .popover-footer {
+      margin-left: -21px;
+      margin-right: -21px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  // .popover-footer
+  &-footer {
+    margin: 0 -13px -7px;
+    padding: 10px 14px;
+    background-color: $popover-footer-bg;
+    border-bottom-left-radius: $border-radius-base;
+    border-bottom-right-radius: $border-radius-base;
+  }
+}

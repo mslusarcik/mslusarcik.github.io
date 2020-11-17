@@ -1,0 +1,233 @@
+//
+// Selectpicker for Bootstrap
+// --------------------------------------------------
+
+.bs-select-hidden {
+  &,
+  .input-group & {
+    display: none;
+  }
+}
+
+.bootstrap-select {
+  display: block;
+  height: auto;
+  border: 0;
+  padding: 0;
+  &.open {
+    .dropdown-toggle {
+      .ico-chevron-down {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+  .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: $font-size-base;
+    font-weight: 500;
+    color: $input-color;
+    border-width: 1px;
+    border-color: $input-border;
+    float: none;
+    padding-left: $form-control-horizontal-padding;
+    padding-right: round($padding-base-horizontal * 3.5);
+    white-space: nowrap;
+    .with-tooltip & {
+      padding-right: (round($padding-base-horizontal * 3.5) + $tooltip-icon-size + $padding-base-horizontal);
+    }
+    &.btn-default {
+      color: $text-color;
+      &,
+      &:hover {
+        border-color: $input-border;
+      }
+      &:focus:hover {
+        border-color: $input-border-focus;
+      }
+    }
+    &.btn-lg {
+      height: $input-height-large;
+      padding-left: $form-control-lg-horizontal-padding;
+    }
+    .has-error & {
+      border-color: $input-border-error;
+      &:hover {
+        border-color: $input-border-error;
+      }
+    }
+    &.disabled {
+      opacity: 1;
+      color: $input-color-disabled;
+      border-color: $input-border-disabled;
+      .ico-chevron-down {
+        svg {
+          fill: $gray;
+        }
+      }
+    }
+    &:focus {
+      @include box-shadow(0 0 0 1px $blue);
+      border-color: $input-border-focus;
+    }
+    .ico-chevron-down {
+      border: 0;
+      margin-top: -($selectpicker-icon-height / 2);
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: rotate(0);
+      transition-property: transform;
+      transition-duration: $transition-duration-fast;
+      svg {
+        display: block;
+        width: $selectpicker-icon-width;
+        height: $selectpicker-icon-height;
+        fill: $magenta;
+      }
+    }
+  }
+  .dropdown-menu {
+    &.inner {
+      position: static;
+      border: 0;
+      margin: 0;
+    }
+    > li {
+      margin: 0;
+      &.divider {
+        margin: ceil($space-vertical-small / 2) 0;
+      }
+      > a {
+        padding: ceil($space-vertical-small / 2) $padding-base-horizontal;
+        &:active,
+        &:focus {
+          outline: 0;
+        }
+      }
+    }
+  }
+  &.input-lg {
+    .dropdown-menu {
+      > li {
+        > a {
+          padding-left: $padding-large-horizontal;
+          padding-right: $padding-large-horizontal;
+        }
+      }
+    }
+  }
+  .dropdown-toggle {
+    .filter-option {
+      @include text-overflow;
+      width: 100%;
+      text-align: left;
+    }
+  }
+  &.text-small {
+    .dropdown-toggle {
+      font-size: $font-size-small;
+    }
+  }
+
+  &.select-like-tabs {
+    background: transparent;
+    .dropdown-toggle {
+      font-size: $font-size-small;
+      font-weight: 600;
+      border: 0;
+      background: transparent;
+      padding-left: 0;
+      padding-right: $padding-large-horizontal;
+      .ico-chevron-down {
+        right: 3px;
+        svg {
+          width: $selectpicker-icon-mobile-width;
+          height: $selectpicker-icon-mobile-height;
+        }
+      }
+    }
+    .dropdown-menu {
+      max-height: none !important;
+      min-height: 0 !important;
+    }
+    @include mq(md, min) {
+      .dropdown-toggle {
+        display: none;
+      }
+      .dropdown-menu {
+        overflow: visible !important;
+        float: none;
+        background: transparent;
+        padding: 0;
+        > li {
+          margin-right: 20px;
+          min-height: $space-vertical-large;
+          > a {
+            color: $gray-dark;
+            text-align: center;
+            position: relative;
+            padding-left: ($padding-base-horizontal - 1);
+            padding-right: ($padding-base-horizontal - 1);
+            &:hover,
+            &:focus {
+              color: $black;
+              background: none;
+            }
+            &:before {
+              content: '';
+              display: block;
+              height: 3px;
+              width: 0;
+              background: $magenta;
+              position: absolute;
+              left: 0;
+              bottom: -9px;
+              transition-property: width;
+              transition-duration: $transition-duration-default;
+            }
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+          &.selected {
+            > a {
+              font-weight: 600;
+              color: $black;
+              &:before {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+      > .dropdown-menu {
+        display: block;
+        position: static;
+        margin: 0;
+        border: 0;
+        .dropdown-menu {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  &.select-inline {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+.js .select-prefix-label {
+  position: relative;
+  label {
+    @extend %label-inside-form-control; // _placeholders.scss
+    @extend %label-inside-form-control-focused; // _placeholders.scss
+  }
+  .filter-option {
+    transform: translateY(7px);
+  }
+}

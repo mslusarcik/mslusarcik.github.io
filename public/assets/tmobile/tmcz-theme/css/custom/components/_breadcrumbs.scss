@@ -1,0 +1,60 @@
+//
+// Breadcrumbs
+// --------------------------------------------------
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: $breadcrumb-font-size;
+  margin-bottom: 0;
+  > li {
+    display: flex;
+    align-items: center;
+    margin-right: ($space-horizontal-default / 3);
+    padding-left: 0;
+    &:before {
+      display: none;
+    }
+    a {
+      color: $breadcrumb-color;
+    }
+    i {
+      margin-left: ($space-horizontal-default / 3);
+      svg {
+        fill: $breadcrumb-color;
+        width: $breadcrumb-icon-size;
+        height: $breadcrumb-icon-size;
+      }
+    }
+  }
+  .caption & {
+    margin-top: -($space-vertical-default);
+    margin-bottom: $space-vertical-small;
+    > li {
+      a {
+        color: $caption-color;
+      }
+      i {
+        svg {
+          fill: $caption-color;
+        }
+      }
+    }
+  }
+  .caption-inverse & {
+    > li {
+      a {
+        color: $breadcrumb-color;
+      }
+      i {
+        svg {
+          fill: $breadcrumb-color;
+        }
+      }
+    }
+  }
+  .caption-header & {
+    margin-top: -($space-vertical-small);
+    margin-bottom: 0;
+  }
+}

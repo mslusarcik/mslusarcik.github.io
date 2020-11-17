@@ -1,0 +1,9 @@
+.portlet-borderless-container {
+  position: static;
+  min-height: 0;
+  .dockbar-ready &,
+  .staging-ready & {
+    position: relative;
+    min-height: 2.5em;
+  }
+}

@@ -1,0 +1,59 @@
+/**
+* LOADER
+*
+* Loader related styles
+*/
+
+/*---------------------------------------------------------------------------*\
+  #LOADER
+\*---------------------------------------------------------------------------*/
+
+@keyframes rotation {
+  from {
+    $degrees: 0deg;
+    -webkit-transform: rotate($degrees);
+            transform: rotate($degrees);
+  }
+  to {
+    $degrees: 360deg;
+    -webkit-transform: rotate($degrees);
+            transform: rotate($degrees);
+  }
+}
+
+@-webkit-keyframes rotation {
+  from {
+    $degrees: 0deg;
+    -webkit-transform: rotate($degrees);
+            transform: rotate($degrees);
+  }
+  to {
+    $degrees: 360deg;
+    -webkit-transform: rotate($degrees);
+            transform: rotate($degrees);
+  }
+}
+
+.box-overlaid {
+  position: relative;
+  min-height: $preloader-size;
+  .box-overlay-loading {
+    @include opacity(0.8);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 14;
+    background-color: $white;
+  }
+  .loader {
+    @extend %ajax-loader;
+  }
+}
+.box-btn-loading{
+  position: relative;
+  .loader {
+    @extend %ajax-loader;
+  }
+}

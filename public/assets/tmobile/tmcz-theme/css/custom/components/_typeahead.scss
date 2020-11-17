@@ -1,0 +1,46 @@
+/**
+* TYPEAHEAD
+*
+*
+*/
+
+/*---------------------------------------------------------------------------*\
+  #TYPEAHEAD
+\*---------------------------------------------------------------------------*/
+
+.twitter-typeahead {
+  display: block;
+  width: 100%;
+  .tt-dropdown-menu {
+    width: 100%;
+    margin-top: 6px;
+    border: 0;
+    background: $input-bg;
+    border-radius: $border-radius-base;
+    overflow: hidden;
+    .tt-suggestion {
+      color: $text-color;
+      text-align: left;
+      border-top: 1px solid $gray-light;
+      padding: $padding-small-vertical $padding-base-horizontal;
+      @include transition(background-color $transition-duration-default);
+      &:hover {
+        background: $gray-lighter;
+        cursor: pointer;
+      }
+      &:active,
+      &:focus {
+        outline: 0;
+      }
+      &:first-child {
+        border-top: none;
+      }
+      &.tt-cursor {
+        background: $gray-lighter;
+      }
+      p {
+        margin: 5px 0;
+      }
+    }
+  }
+}
