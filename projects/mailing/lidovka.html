@@ -1,0 +1,262 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
+  <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+
+  <style>
+  /* Some resets and issue fixes */
+    #outlook a {
+      padding: 0;
+    }
+
+    body {
+      width: 100% !important;
+      -webkit-text;
+      size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    table td {
+      border-collapse: collapse;
+    }
+
+    /* End reset */
+
+    /* These are our tablet/medium screen media queries */
+    @media screen and (max-width: 630px) {
+
+      /* Display block allows us to stack elements */
+      *[class="mobile-column"] {
+        display: block;
+      }
+
+      /* Some more stacking elements */
+      *[class="mob-column"] {
+        float: none !important;
+        width: 100% !important;
+      }
+
+      /* Hide stuff */
+      *[class="hide-xs"] {
+        display: none !important;
+      }
+
+      /* This sets elements to 100% width and fixes the height issues too, a god send */
+      *[class="100p"] {
+        width: 100% !important;
+      }
+
+      /* For the 2x2 stack */
+      *[class="condensed"] {
+        padding-bottom: 40px !important;
+        display: block;
+      }
+
+      /* Centers content on mobile */
+      *[class="center"] {
+        text-align: center !important;
+        width: 100% !important;
+        height: auto !important;
+      }
+
+      /* 100percent width section with 20px padding */
+      *[class="100pad"] {
+        width: 100% !important;
+        padding: 20px;
+      }
+
+      /* 100percent width section with 20px padding left & right */
+      *[class="100padleftright"] {
+        width: 100% !important;
+        padding: 0 20px 0 20px;
+      }
+
+      /* 100percent width section with 20px padding top & bottom */
+      *[class="100padtopbottom"] {
+        width: 100% !important;
+        padding: 20px 0px 20px 0px;
+      }
+
+      *[class="show-xs"] {
+        display: block !important;
+      }
+
+      .layout {
+        padding-left: 17px !important;
+        padding-right: 17px !important;
+      }
+    }
+  </style>
+
+  <title>Lidovka mailing template</title>
+</head>
+
+<body style="background-color: #F5F5F9;">
+  <table align="center" cellpadding="0" cellspacing="0"
+    style="width: 100%;background-color: #F5F5F9;border-spacing: 0;text-align: center;font-family: Arial, Helvetica, sans-serif;">
+    <tr>
+      <td>
+        <table border="0" cellpadding="0" cellspacing="0" width="602"
+          style="margin: 0 auto 0 auto; width: 602px; border-spacing: 0; text-align: left;background-color: #ffffff;font-family:Arial;color: #000000;height: auto" class="100p">
+          <!-- top heading -->
+          <tr>
+            <td style="padding: 16px 0 12px 0;background-color: #F5F5F9">
+              <table style="padding: 0; border-collapse: collapse;width: 602px;" class="100p">
+                <tr>
+                  <td align="left" style="white-space: nowrap;" valign="top">
+                    <p
+                      style="font-size:12px; line-height:18px; font-family:Arial,Helvetica,sans-serif; color: #515151;margin: 0;">
+                      Akční tarif 5 GB a 200 minut i SMS za 375 Kč.
+                    </p>
+                    <p
+                      style="font-size:12px; line-height:18px; font-family:Arial,Helvetica,sans-serif; color: #989898;margin: 0;">
+                      Pokud se Vám e-mail nezobrazuje správně, klikněte <a href="{{ email.view }}" style="color: #e20074; text-decoration: underline;">zde</a>.
+                    </p>
+                  </td>
+                  <!-- top text datum -->
+                  <td align="right" style="white-space: nowrap;vertical-align:bottom" class="hide-xs">
+                    <a href="https:www.t-mobile.cz/"
+                      style="font-family: Verdana; font-size: 14px; color: #e20074;text-decoration: none;">T-Mobile.cz</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- top heading end -->
+        </table>
+        <table border="0" cellpadding="0 " width="602" cellspacing="0"
+          style="margin: 0 auto; width: 602px; border-spacing: 0;background-color: #ffffff;" class="100p">
+          <tr>
+            <td style="border-collapse: collapse;padding: 0;" valign="top">
+              <table align="left" border="0" cellpadding="0" cellspacing="0"
+                style="border-collapse: collapse;">
+                <tr>
+                  <td style="text-align: left;padding: 30px 30px 30px 30px;" valign="top">
+                    <img src="/public/assets/images/mailing/lidovka/t-mobile-logo.png" alt="T-Mobile logo">
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- INTRO -->
+          <tr>
+            <td style="border-collapse: collapse;padding: 0;" valign="top">
+              <table align="center" border="0" cellpadding="0" cellspacing="0"
+                style="border-collapse: collapse; padding: 0;">
+                <tr>
+                  <td style=" mso-line-height-rule:exactly;" valign="top">
+                    <img src="/public/assets/images/mailing/lidovka/main-banner.jpg" width="600" class="100p">
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- INTRO text - end -->
+
+          <!-- BANNER 2 (cloud) -->
+          <tr style="border-collapse: collapse;">
+            <td align="left" class="banner layout"
+              style="text-align:left; font-size: 14px; font-family: arial; text-decoration: none; color: #4a4a4a; border: none; padding: 35px 55px 7px 55px; border-collapse: collapse; position: relative;"
+              valign="top">
+              <p style="line-height: 22px;margin: 0;">
+                Dobrý den,
+              </p>
+            </td>
+          </tr>
+          <!-- BANNER 2 (cloud) - end -->
+          <tr style="border-collapse: collapse;">
+            <td align="left"
+              style="text-align:left; font-size: 14px; font-family: arial; text-decoration: none; color: #4a4a4a; border: none; padding: 11px 55px 10px 55px; border-collapse: collapse; position: relative;"
+              valign="top" class="layout">
+              <p style="line-height: 22px;margin: 0;">
+                podzim se hlásí o slovo a s ním i nový akční tarif s <b>5 GB a 200 volnými minutami i SMS</b>. Získejte za <b>375 Kč</b> měsíčně super tarif s porcí dat, která vám dopřeje hodně volnosti.
+              </p>
+            </td>
+          </tr>
+          <tr style="border-collapse: collapse;">
+            <td align="left"
+              style="text-align:left; font-size: 14px; font-family: arial; text-decoration: none; color: #4a4a4a; border: none; padding: 11px 55px 10px 55px; border-collapse: collapse; position: relative;"
+              valign="top" class="layout">
+              <p style="line-height: 22px;margin: 0;">
+                Užijte si navíc s novým tarifem <b>měsíc neomezených možností</b> a zaposlouchejte se do nekonečného playlistu, sjíždějte nejnovější videa a buďte online kdykoli a kdekoli.
+              </p>
+            </td>
+          </tr>
+          <tr style="border-collapse: collapse;">
+            <td align="left"
+              style="text-align:left; font-size: 14px; font-family: arial; text-decoration: none; color: #4a4a4a; border: none; padding: 11px 55px 10px 55px; border-collapse: collapse; position: relative;"
+              valign="top" class="layout">
+              <p style="line-height: 22px;margin: 0;">
+                Stačí pořídit tarif u nás na webu a získáte <b>30 dní neomezeného datování zdarma</b>.
+              </p>
+            </td>
+          </tr>
+          <tr style="border-collapse: collapse;">
+            <td style="mso-line-height-rule:exactly;padding: 45px 0 55px 0;" valign="top">
+              <table border="0" cellpadding="0" cellspacing="0" width="175"
+                style="margin: 0 auto 0 auto;width: 175px;">
+                <tr>
+                  <td
+                    style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 16px;padding: 11px 25px 11px 25px;background-color: #e20074;border-radius: 3px;" class="layout">
+                    <a href="#" style="display: block;color: #ffffff;text-decoration: none;">
+                      Chci akční tarif
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr style="border-collapse: collapse;">
+            <td align="left"
+              style="text-align:left; font-size: 14px; font-family: arial; text-decoration: none; color: #4a4a4a; border: none; padding: 11px 55px 10px 55px; border-collapse: collapse; position: relative;"
+              valign="top" class="layout">
+              <p style="line-height: 22px;margin: 0;">
+                Přejeme vám podzim plný zábavy!
+              </p>
+            </td>
+          </tr>
+          <tr style="border-collapse: collapse;">
+            <td align="left"
+              style="text-align:left; font-size: 14px; font-family: arial; text-decoration: none; color: #4a4a4a; border: none; padding: 11px 55px 45px 55px; border-collapse: collapse; position: relative;"
+              valign="top" class="layout">
+              <p style="line-height: 22px;margin: 0;">
+                Váš T-Mobile
+              </p>
+            </td>
+          </tr>
+          
+          <!-- footer  -->
+          <tr style="background-color: #F5F5F9;">
+            <td style="padding: 21px 0 21px 0;">
+              <table style="padding: 0; border-collapse: collapse; width: 602px;" class="100p">
+                <tr>
+                  <!-- Logo -->
+                  <td align="center">
+                    <img src="/public/assets/images/mailing/lidovka/t-mobile-logo-small.png">
+                  </td>
+                  <td align="center" style="padding: 0 0 0 50px">
+                    <p style="font-size: 12px;color: #666666; text-align: left; line-height: 16px;margin: 0;">
+                      Toto je obchodní sdělení společnosti T-Mobile Czech Republic a. s. a
+                      odesílá se automaticky. Prosím neodpovídejte na tento e-mail. Pokud si
+                      nepřejete dostávat tyto emaily, klikněte prosím <a
+                        href="{{ email.unsubscribe }}" style="color: #e10074;">zde</a>.</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+</body>
+
+</html>
