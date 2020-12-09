@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="11.075" height="11.1" viewBox="0 0 11.075 11.1">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Shape" d="M5.55,0,.286,5.369a1,1,0,0,0,0,1.4L.3,6.782a.98.98,0,0,0,1.4,0L5.55,2.862,9.4,6.783a.98.98,0,0,0,1.4,0l.013-.013a1,1,0,0,0,0-1.4Z" transform="translate(-1 9.6) rotate(-90)" fill="rgba(0,0,0,0.7)"/>
+    </clipPath>
+  </defs>
+  <g id="Group_588" data-name="Group 588" transform="translate(-1249.116 -76.377)">
+    <g id="Group_566" data-name="Group 566" transform="translate(0 2)">
+      <g id="Icon" transform="translate(1255.191 83.977) rotate(180)">
+        <g id="Group_49" data-name="Group 49">
+          <path id="Shape-3" data-name="Shape" d="M5.55,0,.286,5.369a1,1,0,0,0,0,1.4L.3,6.782a.98.98,0,0,0,1.4,0L5.55,2.862,9.4,6.783a.98.98,0,0,0,1.4,0l.013-.013a1,1,0,0,0,0-1.4Z" transform="translate(-1 9.6) rotate(-90)" fill="rgba(0,0,0,0.7)"/>
+          <g id="Mask_Group_49" data-name="Mask Group 49" clip-path="url(#clip-path)">
+            <g id="Color" transform="translate(-4.769 -4.045)">
+              <rect id="Rectangle" width="15.782" height="16.054" fill="rgba(0,0,0,0.7)"/>
+            </g>
+            <path id="Shape-4" data-name="Shape" d="M5.55,0,.286,5.369a1,1,0,0,0,0,1.4L.3,6.782a.98.98,0,0,0,1.4,0L5.55,2.862,9.4,6.783a.98.98,0,0,0,1.4,0l.013-.013a1,1,0,0,0,0-1.4Z" transform="translate(6.076 -1.5) rotate(90)" fill="rgba(0,0,0,0.7)"/>
+          </g>
+        </g>
+      </g>
+      <g id="Icon-2" data-name="Icon" transform="translate(1254.115 75.877)">
+        <g id="Group_49-2" data-name="Group 49">
+          <path id="Shape-5" data-name="Shape" d="M5.55,0,.286,5.369a1,1,0,0,0,0,1.4L.3,6.782a.98.98,0,0,0,1.4,0L5.55,2.862,9.4,6.783a.98.98,0,0,0,1.4,0l.013-.013a1,1,0,0,0,0-1.4Z" transform="translate(-1 9.6) rotate(-90)" fill="rgba(0,0,0,0.7)"/>
+          <g id="Mask_Group_49-2" data-name="Mask Group 49" clip-path="url(#clip-path)">
+            <g id="Color-2" data-name="Color" transform="translate(-4.769 -4.045)">
+              <rect id="Rectangle-2" data-name="Rectangle" width="15.782" height="16.054" fill="rgba(0,0,0,0.7)"/>
+            </g>
+            <path id="Shape-6" data-name="Shape" d="M5.55,0,.286,5.369a1,1,0,0,0,0,1.4L.3,6.782a.98.98,0,0,0,1.4,0L5.55,2.862,9.4,6.783a.98.98,0,0,0,1.4,0l.013-.013a1,1,0,0,0,0-1.4Z" transform="translate(6.076 -1.5) rotate(90)" fill="rgba(0,0,0,0.7)"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test - display</title>
+  <style>
+    .container {
+      width:100%;
+      padding-left:25px;
+      padding-right:25px;
+    }
+    @media (min-width:1200px) {
+      .container {
+        width:1170px;
+      }
+    }
+    body {
+      font-family:Arial;
+    }
+      
+    .h-menu {
+      list-style-type: none;
+      background:darkgoldenrod;
+      padding-left:0px;
+      position: relative;
+    }
+    .h-menu .h-menu-item {
+      display:inline-block;
+    }
+    .h-menu .h-menu-link {
+      display:block;
+      text-decoration: none;
+      color:floralwhite;
+      font-size:14px;
+      padding:18px 20px;
+    }
+    .h-menu .h-menu-link:hover {
+      background-color:#7b6122;
+    }
+    .v-menu {
+      list-style-type: none;
+      background:darkgoldenrod;
+      padding-left:0px;
+      max-width:25%;
+    }
+    .v-menu .v-menu-item {
+      display:block;
+    }
+    .v-menu .v-menu-link {
+      display:block;
+      text-decoration: none;
+      color:floralwhite;
+      font-size:14px;
+      padding:18px 20px;
+      border-bottom:1px solid #7b6122;
+    }
+    .v-menu .v-menu-item:last-child .v-menu-link {
+      border-bottom:none;
+    }
+    .v-menu .v-menu-link:hover {
+      background-color:#7b6122;
+    }
+    .signature {
+      position:absolute;
+      right:10px;
+      top:18px;
+      font-size:18px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <h2>Horizontální menu</h2>
+  <ul class="h-menu">
+    <li class="h-menu-item"><a href="#" class="h-menu-link">Domů</a></li>
+    <li class="h-menu-item"><a href="#" class="h-menu-link">Novinky</a></li>
+    <li class="h-menu-item"><a href="#" class="h-menu-link">Blog</a></li>
+    <li class="h-menu-item"><a href="#" class="h-menu-link">Kontakt</a></li>
+    <span class="signature">made by ####</span>
+  </ul>
+
+  <h2>Vertikální menu</h2>
+  <ul class="v-menu">
+    <li class="v-menu-item"><a href="#" class="v-menu-link">Domů</a></li>
+    <li class="v-menu-item"><a href="#" class="v-menu-link">Novinky</a></li>
+    <li class="v-menu-item favorite"><a href="#" class="v-menu-link">Blog</a></li>
+    <li class="v-menu-item"><a href="#" class="v-menu-link">Kontakt</a></li>
+  </ul>
+  </div>
+</body>
+</html>

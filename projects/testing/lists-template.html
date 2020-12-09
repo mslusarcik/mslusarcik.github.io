@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test - display</title>
+  <style>
+    .container {
+      width:100%;
+      padding-left:25px;
+      padding-right:25px;
+    }
+    @media (min-width:1200px) {
+      .container {
+        width:1170px;
+      }
+    }
+    body {
+      font-family:Arial;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <h2>Horizontální menu</h2>
+  <ul class="h-menu">
+    <li class="h-menu-item"><a href="#" class="h-menu-link">Domů</a></li>
+    <li class="h-menu-item"><a href="#" class="h-menu-link">Novinky</a></li>
+    <li class="h-menu-item"><a href="#" class="h-menu-link">Blog</a></li>
+    <li class="h-menu-item"><a href="#" class="h-menu-link">Kontakt</a></li>
+    <span class="badge">HORIZONTAL</span>
+  </ul>
+
+  <h2>Vertikální menu</h2>
+  <ul class="v-menu">
+    <li class="v-menu-item"><a href="#" class="v-menu-link">Domů</a></li>
+    <li class="v-menu-item"><a href="#" class="v-menu-link">Novinky</a></li>
+    <li class="v-menu-item"><a href="#" class="v-menu-link">Blog</a></li>
+    <li class="v-menu-item"><a href="#" class="v-menu-link">Kontakt</a></li>
+  </ul>
+  </div>
+</body>
+</html>
