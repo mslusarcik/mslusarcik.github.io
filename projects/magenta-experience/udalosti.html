@@ -104,9 +104,9 @@
         </div>
     </header>
     <main role="main" class="overflow-hidden">
-        <div class="calendar-iframe-wrap" style="width: 100%;overflow: hidden;">
+        <div class="calendar-iframe-wrap">
             <iframe data-basic-src="https://magenta.eventito.com/events"
-                class="calendar-iframe js-calendar-iframe"></iframe>
+                class="calendar-iframe js-calendar-iframe" frameborder="0" id="calendar" height="600"></iframe>
         </div>
         <script type="text/javascript">
             $(document).ready(function () {
@@ -127,69 +127,82 @@
                     $(".js-calendar-iframe").attr("src", iframeBasic)
                 }
             });
+
+            // assign variables with references to the DOM nodes we will be interacting with
+            const iframe = document.getElementById('calendar')
+            // onload send an init message in order to calendar to know the origin
+            // otherwise inside of iframe dont know what is outside
+            iframe.onload = function () {
+                iframe.contentWindow.postMessage('init', '*')
+            }
+
+            // This event listener will run when the embedded page sends us a message
+            window.addEventListener('message', (event) => {
+                // extract the data from the message event
+                const {
+                    data
+                } = event
+                // set iframe height
+                iframe.height = `${data}px`
+            })
         </script>
     </main>
-    <footer class="website-footer py-5 pos-relative bg-black">
-        <div class="container pt-3 pb-2">
+    <footer class="website-footer pos-relative pt-5 bg-black">
+        <div class="container">
             <div class="row text-center">
-                <div class="col-12 col-md-6 col-lg-3 order-2 order-lg-1 text-md-left">
-                    <a href="https://www.t-mobile.cz/osobni">
-                        <svg viewBox="0 0 94 46" width="86" height="43" xmlns="http://www.w3.org/2000/svg"
-                            class="footer-logo">
-                            <path fill="#e20074"
-                                d="M9.4 21.663H0v9.284h9.4zm20.367 9.284h9.4v-9.284h-9.4zm26.633 0h9.4v-9.284h-9.4zm28.2 0H94v-9.284h-9.4zM.473.002L.002 16.377l2.49.427c.47-4.821 1.75-8.405 3.853-10.74 2.207-2.445 5.256-3.724 9.163-3.833V36.49c0 2.997-.423 4.94-1.306 5.837-.75.764-2.021 1.236-3.812 1.41-.533.04-1.437.061-2.721.061v2.623h23.204v-2.621c-1.283 0-2.189-.024-2.718-.062-1.793-.174-3.063-.645-3.817-1.41-.883-.897-1.311-2.836-1.311-5.836V2.228c3.915.112 6.962 1.39 9.174 3.834 2.101 2.335 3.38 5.919 3.846 10.74l2.496-.425L38.07 0H.473z">
-                            </path>
-                        </svg>
-                    </a>
+                <div class="col-6 col-lg-3 order-2 order-lg-1 text-left">
+                    <svg viewBox="0 0 94 46" width="86" height="43" xmlns="http://www.w3.org/2000/svg" class="footer-logo">
+                        <path fill="#e20074" d="M9.4 21.663H0v9.284h9.4zm20.367 9.284h9.4v-9.284h-9.4zm26.633 0h9.4v-9.284h-9.4zm28.2 0H94v-9.284h-9.4zM.473.002L.002 16.377l2.49.427c.47-4.821 1.75-8.405 3.853-10.74 2.207-2.445 5.256-3.724 9.163-3.833V36.49c0 2.997-.423 4.94-1.306 5.837-.75.764-2.021 1.236-3.812 1.41-.533.04-1.437.061-2.721.061v2.623h23.204v-2.621c-1.283 0-2.189-.024-2.718-.062-1.793-.174-3.063-.645-3.817-1.41-.883-.897-1.311-2.836-1.311-5.836V2.228c3.915.112 6.962 1.39 9.174 3.834 2.101 2.335 3.38 5.919 3.846 10.74l2.496-.425L38.07 0H.473z">
+                        </path>
+                    </svg>
                 </div>
-                <div class="col-12 col-md-12 col-lg-6 order-1 order-lg-2 mb-5 pb-3 pb-md-0 mb-md-4 mb-lg-0 mt-lg-2 pt-lg-1">
-                    <ul
-                        class="d-flex flex-wrap flex-md-nowrap justify-content-around align-items-center font-medium text-center mb-2 pb-1">
-                        <li class="w-100 w-md-auto mb-4 mb-md-0">
+                <div class="col-12 col-md-12 col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0 mt-lg-2 pt-lg-1">
+                    <ul class="d-flex flex-wrap flex-md-nowrap justify-content-around align-items-center font-medium text-center mb-2 pb-1 fs-xs-12">
+                        <li class="mb-0">
                             <a href="udalosti.html" class="color-white hover-text-no-underline" target="_blank">
                                 Události
                             </a>
                         </li>
-                        <li class="w-100 w-md-auto mb-4 mb-md-0">
+                        <li class="mb-0">
                             <a href="galerie.html" class="color-white hover-text-no-underline" target="_blank">
                                 Galerie
                             </a>
                         </li>
-                        <li class="w-100 w-md-auto mb-4 mb-md-0">
+                        <li class="mb-0">
                             <a href="blog.html" class="color-white hover-text-no-underline">
-                                Blog
+                                Novinky
                             </a>
                         </li>
-                        <li class="w-100 w-md-auto mb-0">
+                        <li class="mb-0">
                             <a href="kudy-k-nam.html" class="color-white hover-text-no-underline">
                                 Kudy k nám
                             </a>
                         </li>
-                        <li class="w-100 w-md-auto mb-0">
+                        <li class="mb-0">
                             <a href="index.html#partneri" class="color-white hover-text-no-underline">
                                 Partneři
                             </a>
                         </li>
                     </ul>
-                    <p class="fs-13 lh-24 tex-center color-grey-v2 mb-0">
-                        ©2020 Experience centrum od T-Mobile Czech Republic a. s.
+                    <p class="fs-xs-11 fs-13 lh-24 tex-center color-grey-v2 mb-0">
+                        ©2021 Experience centrum od T-Mobile Czech Republic a. s.
                     </p>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 order-3 order-lg-3 text-md-right mt-3 m-md-0">
+                <div class="col-6 col-lg-3 order-3 order-lg-3 text-md-right">
                     <ul class="d-flex justify-content-end">
-                        <li class="mr-4 pr-2">
-                            <a href="#TODO" class="d-flex">
-                                <i class="ico-youtube fill-grey-v3 pos-relative" style="top: -2px;" data-ico-width="30" data-ico-height="30"></i>
+                        <li class="mr-3 mr-md-4 pr-md-2">
+                            <a href="https://www.youtube.com/user/tmobilecz" class="d-flex">
+                                <i class="ico-youtube fill-grey-v3 pos-relative" style="top: -2px;" data-ico-width="30" data-ico-height="30" data-ico-width-xs="15" data-ico-height-xs="15"></i>
                             </a>
                         </li>
-                        <li class="mr-4 pr-2">
+                        <li class="mr-3 mr-md-4 pr-md-2">
                             <a href="https://www.instagram.com/magenta_experience_center/" class="d-flex">
-                                <i class="ico-instagram fill-grey-v3" data-ico-width="24" data-ico-height="24"></i>
+                                <i class="ico-instagram fill-grey-v3" data-ico-width="24" data-ico-height="24" data-ico-width-xs="13" data-ico-height-xs="13"></i>
                             </a>
                         </li>
                         <li>
                             <a href="https://www.facebook.com/Magenta-Experience-Center-119051753342573" class="d-flex">
-                                <i class="ico-facebook fill-white" data-ico-width="12" data-ico-height="24"></i>
+                                <i class="ico-facebook fill-white" data-ico-width="12" data-ico-height="24" data-ico-width-xs="6" data-ico-height-xs="13"></i>
                             </a>
                         </li>
                     </ul>
@@ -197,8 +210,7 @@
             </div>
         </div>
         <div class="morf-5-magenta-container pos-absolute overflow-hidden d-none d-lg-block">
-            <div class="morf-5-magenta pos-absolute js-lazy-load" data-bg="img/morf-magenta/morf-5-magenta.png"
-                data-bg-hidpi="img/morf-magenta/morf-5-magenta@2x.png">
+            <div class="morf-5-magenta pos-absolute js-lazy-load" data-bg="img/morf-magenta/morf-5-magenta.png" data-bg-hidpi="img/morf-magenta/morf-5-magenta@2x.png">
 
             </div>
         </div>
