@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html class="ltr no-js no-svg no-fonts" dir="ltr" lang="cs-CZ">
+
+<head>
+  <title>Appka redesign</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="no" name="msapplication-tap-highlight" />
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <meta name="robots" content="noindex, nofollow">
+  <link href="http://localhost:80/public/assets/tmobile/tmcz-theme/images/favicon.ico" rel="Shortcut Icon" />
+  <link href="http://localhost:80/tmobile" rel="canonical" />
+  <link href="http://localhost:80/cs/tmobile" hreflang="cs-CZ" rel="alternate" />
+  <link href="http://localhost:80/tmobile" hreflang="x-default" rel="alternate" />
+  <link href="http://localhost:80/tmobile" hreflang="en-US" rel="alternate" />
+  <script type="module">
+    import { Workbox } from 'https://storage.googleapis.com/workbox-cdn/releases/4.0.0/workbox-window.prod.mjs';
+  </script>
+  <!-- <script>
+  // Check that service workers are registered
+  if ('serviceWorker' in navigator) {
+    // Use the window load event to keep the page load performant
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js');
+      console.log('LOADED');
+    });
+  }
+  </script> -->
+  <script src="../../public/assets/tmobile/shared-libs-theme/js/jquery/jquery-1.11.2.js"></script>
+  <script src="../../public/assets/tmobile/tmcz-theme/js/libs.js"></script>
+  <script>
+    var Liferay = { on: function () { }, Portlet: { ready: function () { } }, Browser: { acceptsGzip: function () { return true }, getMajorVersion: function () { return 26 }, getRevision: function () { return "26.0" }, getVersion: function () { return "26.0" }, isAir: function () { return false }, isChrome: function () { return true }, isFirefox: function () { return false }, isGecko: function () { return false }, isIe: function () { return false }, isIphone: function () { return false }, isLinux: function () { return false }, isMac: function () { return false }, isMobile: function () { return false }, isMozilla: function () { return true }, isOpera: function () { return false }, isRtf: function () { return true }, isSafari: function () { return false }, isSun: function () { return false }, isWap: function () { return false }, isWapXhtml: function () { return false }, isWebKit: function () { return false }, isWindows: function () { return true }, isWml: function () { return false } }, Data: { NAV_SELECTOR: "#navigation", isCustomizationView: function () { return false }, notices: [null] }, ThemeDisplay: { getLayoutId: function () { return "2" }, getLayoutURL: function () { return "http://localhost:8080/web/guest/testovaci" }, getParentLayoutId: function () { return "0" }, isPrivateLayout: function () { return "false" }, isVirtualLayout: function () { return false }, getBCP47LanguageId: function () { return "en-US" }, getCDNBaseURL: function () { return "http://localhost:8080" }, getCDNDynamicResourcesHost: function () { return "" }, getCDNHost: function () { return "" }, getCompanyId: function () { return "10157" }, getCompanyGroupId: function () { return "10197" }, getDefaultLanguageId: function () { return "en_US" }, getDoAsUserIdEncoded: function () { return "" }, getLanguageId: function () { return "en_US" }, getParentGroupId: function () { return "10184" }, getPathContext: function () { return "" }, getPathImage: function () { return "/image" }, getPathJavaScript: function () { return "/html/js" }, getPathMain: function () { return "/c" }, getPathThemeImages: function () { return "http://localhost:8080/tmcz-theme/images" }, getPathThemeRoot: function () { return "/tmcz-theme" }, getPlid: function () { return "11010" }, getPortalURL: function () { return "http://localhost:8080" }, getPortletSetupShowBordersDefault: function () { return false }, getScopeGroupId: function () { return "10184" }, getScopeGroupIdOrLiveGroupId: function () { return "10184" }, getSessionId: function () { return "" }, getSiteGroupId: function () { return "10184" }, getURLControlPanel: function () { return "/group/control_panel?refererPlid=11010" }, getURLHome: function () { return "http\x3a\x2f\x2flocalhost\x3a8080\x2fweb\x2fguest" }, getUserId: function () { return "10161" }, getUserName: function () { return "" }, isAddSessionIdToURL: function () { return false }, isFreeformLayout: function () { return false }, isImpersonated: function () { return false }, isSignedIn: function () { return false }, isStateExclusive: function () { return false }, isStateMaximized: function () { return false }, isStatePopUp: function () { return false } }, PropsValues: { NTLM_AUTH_ENABLED: false } }; var themeDisplay = Liferay.ThemeDisplay; Liferay.AUI = { getAvailableLangPath: function () { return "available_languages.jsp?browserId=firefox&themeId=tmobilethemefull_WAR_tmobiletheme&colorSchemeId=01&minifierType=js&languageId=en_US&b=6200&t=1383330666000" }, getCombine: function () { return true }, getComboPath: function () { return "/combo/?browserId=firefox&minifierType=&languageId=en_US&b=6200&t=1383330666000&" }, getFilter: function () { return "min" }, getJavaScriptRootPath: function () { return "/html/js" }, getLangPath: function () { return "aui_lang.jsp?browserId=firefox&themeId=tmobilethemefull_WAR_tmobiletheme&colorSchemeId=01&minifierType=js&languageId=en_US&b=6200&t=1383330666000" } }; Liferay.authToken = "7fJwxDFg"; Liferay.currentURL = "\x2fweb\x2fguest\x2ftestovaci"; Liferay.currentURLEncoded = "%2Fweb%2Fguest%2Ftestovaci";
+  </script>
+  <script
+    src="https://static2.t-mobile.cz/html/js/barebone.jsp?browserId=other&amp;themeId=tmcz_WAR_tmcztheme&amp;colorSchemeId=01&amp;minifierType=js&amp;minifierBundleId=javascript.barebone.files&amp;languageId=cs_CZ&amp;b=6201&amp;t=1605184626000"
+    type="text/javascript"></script>
+  <link class="lfr-css-file"
+    href="../../public/assets/tmobile/tmcz-theme/css/aui.css&#x3f;browserId&#x3d;other&#x26;themeId&#x3d;tmobile_WAR_tmobiletheme&#x26;languageId&#x3d;cs_CZ&#x26;b&#x3d;6201&#x26;t&#x3d;1421683557000"
+    rel="stylesheet" type="text/css" />
+  <link href="../../public/assets/tmobile/tmcz-theme/css/main.css" rel="stylesheet" type="text/css" />
+  <link class="lfr-css-file" href="../../public/assets/tmobile/tmcz-theme/css/custom.css" rel="stylesheet"
+    type="text/css" />
+</head>
+
+<body class="yui3-skin-sam controls-visible guest-site signed-in public-page site"
+  data-theme-images-folder="/tmcz-theme/images">
+  <div class="header">
+    <div class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/tmobile/tmcz/" class="logo">
+            <svg class="icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use>
+            </svg>
+            <noscript>
+              <img src="../../public/assets/tmobile/tmcz-theme/images/custom/logo-magenta.svg" class="logo-white"
+                alt="T-Mobile" />
+            </noscript>
+          </a>
+          <button type="button" class="toggle js-toggle">
+            <span></span>
+            <span></span>
+            <span>Menu</span>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" preserveAspectRatio="none">
+              <circle cx="8" cy="8" r="6.29" transform="rotate(90 8 8)"></circle>
+            </svg>
+            <!--  <div class="circle">-->
+            <!--    <svg xmlns="http://www.w3.org/2000/svg" width="51" height="51.06" viewBox="0 0 51 51"><path class="a" d="M50,50.5v-25a25,25,0,1,0-50-.37A25,25,0,0,0,50,26.5" transform="translate(0.5 0.25)"/></svg>-->
+            <!--     <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46.5" viewBox="0 0 46 46.5"><path d="M50.5,50.8v-23a23,23,0,1,0-46-.3,23,23,0,0,0,46,1.3" transform="translate(-4.5 -4.6)"/></svg>-->
+            <!--  </div>-->
+          </button>
+        </div>
+        <div class="nav-wrapper">
+          <div class="nav-group">
+
+            <!-- WELCOME PORTLET -->
+            <div
+              class="portlet-boundary portlet-boundary_welcomeportlet_WAR_navigationportlet_ portlet-static portlet-static-end portlet-borderless"
+              id="p_p_id_welcomeportlet_WAR_navigationportlet_">
+              <div class="portlet-borderless-container">
+                <div class="portlet-body">
+                  <div class="dropdown user-info">
+                    <button class="dropdown-toggle" type="button" data-toggle="dropdown" title="Robert Blecha"
+                      aria-haspopup="true" aria-expanded="false">
+                      <i class="ico-user"></i>
+                      <span>Robert Blecha</span>
+                      <i class="ico-chevron-down like-caret"></i>
+                    </button>
+                    <a href="" class="btn btn-primary visible-xs visible-sm">Můj T-Mobile</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="">T-Box</a></li>
+                      <li><a href="">Osobní nastavení</a></li>
+                      <li><a href="">Odhlásit se</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- /WELCOME PORTLET -->
+
+            <!-- RVCC / NAVIGATION PORTLET -->
+            <div id="nav">
+              <div id="navsettings">
+                <ul class="nav navbar-nav" role="navigation">
+                  <li>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Volání <i
+                        class="ico-chevron-down"></i></a>
+                    <ul class="dropdown-menu with-banner rows-1">
+                      <li><a href=""><i class="ico-tariff-summary"></i>Přehled tarifů</a></li>
+                      <li><a href=""><i class="ico-sim-2"></i>Předplacená karta</a></li>
+                      <li><a href=""><i class="ico-roaming-2"></i>Roaming</a></li>
+                      <li><a href=""><i class="ico-suitcase-2"></i>Do zahraničí</a></li>
+                      <li class="promo-item"><a href=""><img
+                            src="https://www.t-mobile.cz/dcpublic/megamenu-akvizicni-tarif-410x275.jpg" alt="" /></a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Internet <i
+                        class="ico-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a href=""><i class="ico-sim-2"></i>Na doma</a></li>
+                      <li><a href=""><i class="ico-roaming-2"></i>Do tabletu a notebooku</a></li>
+                      <li><a href=""><i class="ico-tariff-summary-2"></i>Do mobilu</a></li>
+                      <li><a href=""><i class="ico-suitcase-2"></i>Roaming</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="">Televize</a></li>
+                  <li>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Zařízení <i
+                        class="ico-chevron-down"></i></a>
+                    <ul class="dropdown-menu with-banner rows-2">
+                      <li><a href=""><i class="ico-smartphone-2"></i>Telefony</a></li>
+                      <li><a href=""><i class="ico-tablet-2"></i>Tablety</a></li>
+                      <li><a href=""><i class="ico-modem-2"></i>Modemy a routery</a></li>
+                      <li><a href=""><i class="ico-laptop"></i>Notebooky</a></li>
+                      <li><a href=""><i class="ico-smartcar"></i>Chytré auto</a></li>
+                      <li><a href=""><i class="ico-house-2"></i>Chytrá domácnost</a></li>
+                      <li><a href=""><i class="ico-watch"></i>Chytré hodinky</a></li>
+                      <li><a href=""><i class="ico-ball"></i>Sport a nositelná zařízení</a></li>
+                      <li class="promo-item"><a href=""><img
+                            src="https://www.t-mobile.cz/dcpublic/megamenu-akvizicni-tarif-410x275.jpg" alt="" /></a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Magenta 1 <i
+                        class="ico-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a href=""><i class="ico-logo-heart"></i>Magenta 1</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Podpora <i
+                        class="ico-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a href=""><i class="ico-document-invoice"></i>Vyúčtování a platby</a></li>
+                      <li><a href=""><i class="ico-swiss-knife"></i>Může se hodit</a></li>
+                      <li><a href=""><i class="ico-operator-2"></i>Obraťte se na nás</a></li>
+                      <li><a href=""><i class="ico-tool"></i>Technická podpora</a></li>
+                      <li><a href=""><i class="ico-document-download-2"></i>Ke stažení</a></li>
+                      <li><a href=""><i class="ico-service-catalog-2"></i>Katalog služeb</a></li>
+                      <li><a href=""><i class="ico-roaming-2"></i>Časté dotazy</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="" class="dropdown-toggle ajax-load-quick-bookmark" data-toggle="dropdown">Můj T-Mobile <i
+                        class="ico-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a href=""><i class="ico-logo-circle"></i>Aplikace do mobilu</a></li>
+                      <li><a href=""><i class="ico-overview-2"></i>Bleskový přehled</a></li>
+                      <li><a href=""><i class="ico-invoice-2"></i>Online vyúčtování</a></li>
+                      <li><a href=""><i class="ico-mobile-internet-2"></i>Mobilní internet</a></li>
+                      <li class="custom-item">
+                        <div class="tile">
+                          <div class="bold">Vstupte do světa T-Mobile</div>
+                          <a href="" class="btn btn-primary btn-lg lightbox" data-lightbox-size="large">Přihlásit se</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <a href="" class="sms">Poslat SMS</a>
+            <ul class="nav-segments">
+              <li class="active"><a href="#TODO">Osobní</a></li>
+              <li><a href="#TODO">Podnikatelé a firmy</a></li>
+            </ul> <!-- /RVCC / NAVIGATION PORTLET -->
+
+            <!-- LWE MINICART PORTLET -->
+            <div
+              class="portlet-boundary portlet-boundary_lweminicart_WAR_lweeshopportlet_ portlet-static portlet-static-end portlet-borderless"
+              id="p_p_id_lweminicart_WAR_lweeshopportlet_">
+              <div class="portlet-borderless-container">
+                <div class="portlet-body">
+                  <a href="" class="cart"><i class="ico-cart"></i>Nákupní košík <span
+                      class="sr-only">Položek:</span><span class="count">2</span></a>
+                </div>
+              </div>
+            </div> <!-- /LWE MINICART PORTLET -->
+
+            <!-- SMALL SEARCH PORTLET -->
+            <div
+              class="portlet-boundary portlet-boundary_searchsmallcorporateportlet_WAR_searchcorporateportlet_ portlet-static portlet-static-end portlet-borderless">
+              <div class="portlet-borderless-container">
+                <div class="portlet-body">
+                  <a href="/podpora/vyhledavani" class="search-toggle" data-toggle="collapse" data-target="#search"><i
+                      class="ico-magnifier"></i>Hledat</a>
+                  <div id="search" class="collapse search-collapse">
+                    <form action="/podpora/vyhledavani" method="get" role="search">
+                      <fieldset>
+                        <div class="form-group searchbox">
+                          <i class="ico-magnifier search-icon"></i>
+                          <label for="q" class="sr-only">Napište, co hledáte...</label>
+                          <input type="search" id="q" name="query" placeholder="Napište, co hledáte..." accesskey="4"
+                            class="form-control input-lg autocomplete"
+                            data-source-url="/tmobile/tmcz/json/states.json" />
+                          <button type="submit" class="btn btn-link btn-lg">Vyhledat</button>
+                        </div>
+                      </fieldset>
+                    </form>
+                    <i class="ico-remove search-close" data-toggle="collapse" data-target="#search"></i>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- /SMALL SEARCH PORTLET -->
+
+            <a href="#TODO" class="language"><i class="ico-earth" aria-hidden="true"></i> English</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="main-content" role="main" class="bs3-grid-1-1">
+    <div class="container">
+      <div class="row portlet-layout">
+        <div id="column-1" class="portlet-column portlet-column-only">
+
+        </div>
+      </div>
+    </div>
+    <div class="portlet-layout">
+      <div id="column-2" class="portlet-column portlet-column-only">
+
+        <!-- NEW THEME -->
+        <script src="../../public/assets/tmobile/t-sign2020/js/t-sign2020.min.js"></script>
+        <link href="../../public/assets/tmobile/t-sign2020/css/t-sign2020.css" rel="stylesheet" type="text/css" />
+        <!-- /NEW THEME -->
+        
+        <!-- CUSTOM STYLE -->
+<style>
+  a > i.fill-blue > svg {
+    fill: #64b9e4;
+  }
+  a:hover > i.fill-blue > svg {
+    fill: #64b9e4;
+  }
+  .row-faq.theme-v1 .panel-faq:last-child a {
+    padding-bottom: 22px;
+  }
+  .row-faq.theme-v1 .panel-faq:last-child a.collapsed {
+    padding-bottom: 0;
+  }
+  @media (min-width: 992px) {
+    .cta-image.theme-v1.pb-80p {
+      padding-bottom: 80%;
+    }
+  }
+  @media (max-width: 768px){
+    .cta-image-wrapper {
+      padding-left:0;
+      padding-right:0;
+    }
+    .cta-image-wrapper .cta-image {
+      border-radius: 0px;
+    }
+    .bg-grey-v1-half {
+      background-color:#F5F5F9;
+    }
+  }
+</style>
+        <!-- /CUSTOM STYLE -->
+        
+        <!-- CUSTOM CONTENT -->
+
+        <!-- Breadcrumb -->
+        <div class="bs-section padding-small d-none d-md-block">
+          <div class="container">
+            <ol class="breadcrumb">
+              <li>
+                <a href="/osobni">T-Mobile</a>
+                <i class="ico-chevron-right"></i>
+              </li>
+              <li>
+                <a href="#start" class="js-scroll">Aplikace Můj T-Mobile</a>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Banner -->
+        <div class="bg-grey-v1-half bs-section padding-xs-small pt-xs-0 pb-md-55">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-5 col-md-6 mt-5 order-2 order-md-1">
+                <h2 class="text-xs-center fs-xs-40 lh-xs-45 fs-md-44 lh-md-54 fs-60 lh-72 font-ultra mt-0">Naši apku máte vždy po&nbsp;ruce</h2>
+                <p class="text-xs-center fs-xs-16 lh-xs-20 fs-22 lh-26 margin-base">Stáhněte si&nbsp;aplikaci Můj&nbsp;T-Mobile <br/>a&nbsp;jednoduše spravujte svá&nbsp;čísla</p>
+                <div class="mt-3 pt-3 text-xs-center d-block d-md-none">
+                  <a href="http://tmo.cz/app" class="btn btn-primary font-ultra fs-18">
+                    Stáhnout aplikaci
+                  </a>
+                </div>
+                <div class="mt-3 pt-3 text-xs-center d-none d-md-block">
+                  <a href="#start" class="btn btn-primary font-ultra fs-18 js-scroll">
+                    Stáhnout aplikaci
+                  </a>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6 mt- mt-md-5 pt-0 pt-md-4 mt-lg-0 pt-lg-0 d-flex justify-content-center justify-content-lg-end order-1 order-md-2 cta-image-wrapper">
+                <div style="background-image: url(https://www.t-mobile.cz/dcpublic/mtm_app_header_banner.png);" class="cta-image theme-v1 pb-80p pos-relative">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Perex -->
+        <div class="bs-section padding-mmd pt-md-170 pb-xs-0 d-none d-md-block" id="start">
+          <div class="container text-center pt-4 pt-md-0">
+            <div class="row justify-content-center">
+              <div class="col-12 col-md-10">
+                <p class="fs-xs-28 lh-xs-38 fs-35 lh-46 color-black font-regular mb-0">
+                  V&nbsp;aplikaci Můj&nbsp;T-Mobile vyřídíte vše, co&nbsp;potřebujete. <br class="d-none d-xl-block"/>
+                  Kdykoli a&nbsp;kdekoli. Apka <strong>nečerpá data</strong>, a&nbsp;to ani&nbsp;v&nbsp;zahraničí. <br class="d-none d-xl-block"/>
+                  Je zdarma ke&nbsp;stažení v&nbsp;<a href="https://itunes.apple.com/cz/app/m%C5%AFj-t-mobile/id1386652007?mt=8">App Store</a> i&nbsp;<a href="https://play.google.com/store/apps/details?id=cz.tmobile.oneapp">Google Play</a> a&nbsp;<a href="https://appgallery.huawei.com/#/app/C101395653?locale=cs_CZ&source=appshare&subsource=C101395653">Huawei&nbsp;AppGallery</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabs/Carousel -->
+        <div class="bs-section padding-xs-b-medium padding-md pt-md-170 bg-grey-v1 pt-3 ">
+          <div class="container">
+            <div class="row pos-relative">
+              <div class="col-lg-4 order-1 order-lg-0 d-none d-md-block mt-5 mt-lg-0">
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="ochrana-auta-img">
+                    <img src="https://www.t-mobile.cz/dcpublic/benefits_mtm_app_tab1.png" alt="ochrana-auta" class="mt-sm-30 img-tel-screen">
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="sdileni-polohy-img">
+                    <img src="https://www.t-mobile.cz/dcpublic/benefits_mtm_app_tab2.png" alt="sdileni-polohy" class="mt-sm-30 img-tel-screen">
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="zdravi-vaseho-auta-img">
+                    <img src="https://www.t-mobile.cz/dcpublic/benefits_mtm_app_tab3.png" alt="zdravi-vaseho-auta" class="mt-sm-30 img-tel-screen">
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="statistiky-vasich-jizd-img">
+                    <img src="https://www.t-mobile.cz/dcpublic/benefits_mtm_app_tab4.png" alt="statistiky-vasich-jizd" class="mt-sm-30 img-tel-screen">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-8 order-0 order-lg-1 mt-lg-5 pt-lg-4">
+                <h2 class="text-xs-center fs-xs-34 lh-xs-38 fs-md-44 fs-50 lh-64 font-ultra mt-0 mb-5">
+                  <span class="d-none d-md-block">S apkou Můj T-Mobile je to&nbsp;snadné</span>
+                  <span class="d-md-none">Funkce Můj&nbsp;T-Mobile</span>
+                </h2>
+                <div class="tabs-holder">
+                  <ul class="d-none d-md-flex flex-wrap justify-content-between tab-list tabs-nav tabs-nav-icon-boxes theme-tnib-v1" role="tablist">
+                    <li role="presentation" class="active">
+                      <a href="#ochrana-auta" class="text-center p-4 square-corners box pos-center no-border" aria-controls="ochrana-auta" role="tab" data-toggle="tab" data-target="#ochrana-auta, #ochrana-auta-img">
+                        <div>
+                          <i class="ico-statement fill-magenta-mix-v1" data-ico-width="35" data-ico-height="45"><svg class="svg-statement" width="35" height="45"><use xlink:href="#statement"></use></svg></i>
+                          <span class="block font-ultra color-black mt-small lh-19">Přehled<br> o&nbsp;službách</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#sdileni-polohy" class="text-center p-4 square-corners box pos-center no-border" aria-controls="sdileni-polohy" role="tab" data-toggle="tab" data-target="#sdileni-polohy, #sdileni-polohy-img">
+                        <div>
+                          <i class="ico-circle-graph fill-magenta-mix-v1" data-ico-width="40" data-ico-height="40"><svg class="svg-circle-graph" width="40" height="40"><use xlink:href="#circle-graph"></use></svg></i>
+                          <span class="block font-ultra color-black mt-small lh-19">Výdaje pod<br> kontrolou</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#zdravi-vaseho-auta" class="text-center p-4 square-corners box pos-center no-border" aria-controls="zdravi-vaseho-auta" role="tab" data-toggle="tab" data-target="#zdravi-vaseho-auta, #zdravi-vaseho-auta-img">
+                        <div>
+                          <i class="ico-lock-mix-v1 fill-magenta-mix-v1" data-ico-width="28" data-ico-height="38"></i>
+                          <span class="block font-ultra color-black mt-small lh-19">Platba rychle<br> a&nbsp;bezpečně</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#statistiky-vasich-jizd" class="text-center p-4 square-corners box pos-center no-border" aria-controls="statistiky-vasich-jizd" role="tab" data-toggle="tab" data-target="#statistiky-vasich-jizd, #statistiky-vasich-jizd-img">
+                        <div>
+                          <i class="ico-icon-gift" data-ico-width="36" data-ico-height="35"><svg class="svg-icon-gift" width="36" height="35"><use xlink:href="#icon-gift"></use></svg></i>
+                          <span class="block font-ultra color-black mt-small lh-19">Odměna<br> za&nbsp;dobití</span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="tab-content theme-tc-xs-v1 js-tab-slider-xs-v2">
+                    <div role="tabpanel" class="tab-pane active" id="ochrana-auta">
+                      <div class="d-md-none tc-image">
+                        <img src="https://www.t-mobile.cz/dcpublic/benefits_mtm_app_tab1.png" alt="ochrana-auta" class="img-tel-screen">
+                      </div>
+                      <div class="tc-content">
+                        <i class="ico-statement tc-icon fill-magenta-mix-v1 d-md-none" data-ico-width="35" data-ico-height="45"><svg class="svg-statement" width="35" height="45"><use xlink:href="#statement"></use></svg></i>
+                        <span class="d-block font-ultra lh-19 mb-3 d-md-none">
+                          Přehled o&nbsp;službách
+                        </span>
+                        <p class="fs-xs-14 lh-xs-16 fs-20 lh-29 color-grey-v3 mb-0 mt-md-5 pt-lg-3">
+                          V&nbsp;apce vidíte všechny své služby pěkně pohromadě. A&nbsp;to&nbsp;hned na&nbsp;úvodním Přehledu v&nbsp;apce nebo s&nbsp;widgetem také na&nbsp;displeji telefonu. Přidejte si&nbsp;do&nbsp;apky všechna čísla, které&nbsp;chcete spravovat.
+                        </p>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="sdileni-polohy">
+                      <div class="d-md-none tc-image">
+                        <img src="https://www.t-mobile.cz/dcpublic/benefits_mtm_app_tab2.png" alt="ochrana-auta" class="img-tel-screen">
+                      </div>
+                      <div class="tc-content">
+                        <i class="ico-circle-graph tc-icon fill-magenta-mix-v1 d-md-none" data-ico-width="40" data-ico-height="40"><svg class="svg-circle-graph" width="40" height="40"><use xlink:href="#circle-graph"></use></svg></i>
+                        <span class="d-block font-ultra lh-19 mb-3 d-md-none">
+                          Výdaje pod kontrolou
+                        </span>
+                        <p class="fs-xs-14 lh-xs-16 fs-20 lh-29 color-grey-v3 mb-0 mt-md-5 pt-lg-3">
+                          Snadno ohlídáte vaši aktuální útratu, spotřebu dat nebo&nbsp;volání a&nbsp;SMS doma i&nbsp;v&nbsp;zahraničí. A&nbsp;pokud vám zrovna dochází navýšení dat, změna tarifu, nebo&nbsp;pořízení dalších balíčků je&nbsp;v&nbsp;apce samozřejmostí a&nbsp;na&nbsp;pár kliknutí.
+                        </p>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="zdravi-vaseho-auta">
+                      <div class="d-md-none tc-image">
+                        <img src="https://www.t-mobile.cz/dcpublic/benefits_mtm_app_tab3.png" alt="ochrana-auta" class="img-tel-screen">
+                      </div>
+                      <div class="tc-content">
+                        <i class="ico-lock-mix-v1 tc-icon fill-magenta-mix-v1 d-md-none" data-ico-width="28" data-ico-height="38"></i>
+                        <span class="d-block font-ultra lh-19 mb-3 d-md-none">
+                          Platba rychle a&nbsp;bezpečně
+                        </span>
+                        <p class="fs-xs-14 lh-xs-16 fs-20 lh-29 color-grey-v3 mb-0 mt-md-5 pt-lg-3">
+                          Bezpečnou platbu vyúčtování i&nbsp;dobití kreditu zvládnete v&nbsp;apce pohodlně hned několika způsoby. Klasická platba kartou je&nbsp;doplněna možností Apple&nbsp;Pay nebo&nbsp;Google&nbsp;Pay.
+                        </p>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="statistiky-vasich-jizd">
+                      <div class="d-md-none tc-image">
+                        <img src="https://www.t-mobile.cz/dcpublic/benefits_mtm_app_tab4.png" alt="ochrana-auta" class="img-tel-screen">
+                      </div>
+                      <div class="tc-content">
+                        <i class="ico-icon-gift tc-icon d-md-none" data-ico-width="36" data-ico-height="35"><svg class="svg-icon-gift" width="36" height="35"><use xlink:href="#icon-gift"></use></svg></i>
+                        <span class="d-block font-ultra lh-19 mb-3 d-md-none">
+                          Odměna za&nbsp;dobití
+                        </span>
+                        <p class="fs-xs-14 lh-xs-16 fs-20 lh-29 color-grey-v3 mb-0 mt-md-5 pt-lg-3">
+                          Nejenže dobití kreditu je&nbsp;v&nbsp;apce rychlé a&nbsp;snadné, ale&nbsp;navíc vás při&nbsp;prvním dobití v&nbsp;měsíci vždy odměníme 25&nbsp;% bonusovým kreditem na&nbsp;volání, SMS a&nbsp;data.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Srdcovky -->
+        <div class="bs-section padding-md">
+          <div class="container pb-lg-3">
+            <div class="row">
+              <div class="col-12 mt-5 col-md-6 col-lg-5 mt-md-0 order-2 order-md-1">
+                <h2 class="fs-xs-34 lh-xs-34 fs-md-50 lh-52 color-black-v1 mt-0 mb-md-3 pb-3 font-ultra">
+                  Srdcovky - vaše výhody v&nbsp;apce
+                </h2>
+                <p class="fs-20 lh-30 fs-xs-16 lh-xs-19 color-grey-v1 font-medium mb-5">
+                  V Srdcovkách najdete vše, co&nbsp;vám dáváme v&nbsp;apce navíc a&nbsp;od&nbsp;srdce. Vyzvedněte si&nbsp;své&nbsp;odměny a&nbsp;řekněte o&nbsp;tom také přátelům.
+                </p>
+                <ul class="checklist color-grey-v3 font-medium mb-0 w-md-350">
+                  <li class="mt-0 mb-4 pb-3 fs-16 lh-20">
+                    <i class="icon ico-heart fill-magenta" data-ico-width="16" data-ico-height="13"></i>
+                    K tarifům "Můj tarif" data navíc každý měsíc k&nbsp;vyzvednutí v&nbsp;apce
+                  </li>
+                  <li class="mt-0 mb-4 pb-3 fs-16 lh-20">
+                    <i class="icon ico-heart fill-blue-v8" data-ico-width="16" data-ico-height="13"></i>
+                    24&nbsp;GB dat navíc za&nbsp;nákup telefonu s&nbsp;tarifem
+                  </li>
+                  <li class="mt-0 mb-4 pb-3 fs-16 lh-20">
+                    <i class="icon ico-heart fill-green-v8" data-ico-width="16" data-ico-height="13"></i>
+                    Neomezená data na&nbsp;30&nbsp;dní při&nbsp;změně tarifu, prodloužení smlouvy nebo&nbsp;přechodu z&nbsp;Twistu
+                  </li>
+                  <li class="mt-0 mb-4 pb-3 fs-16 lh-20">
+                    <i class="icon ico-heart fill-yellow-v4" data-ico-width="16" data-ico-height="13"></i>
+                    Při&nbsp;prvním dobití v&nbsp;měsíci 25&nbsp;% bonusového kreditu na&nbsp;volání, SMS a&nbsp;data
+                  </li>
+                </ul>
+                <div class="mt-5 pt-3">
+                  <a href="https://www.t-mobile.cz/srdcovky" class="font-medium fs-16 lh-20 color-blue">
+                    Více o&nbsp;Srdcovkách <i class="ico-chevron-right fill-blue ml-2" data-ico-width="6" data-ico-height="10"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-md-offset-1 order-1 order-md-2">
+                <img src="https://www.t-mobile.cz/dcpublic/srdcovky_promo_mtm_app.png" class="square-corners">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Výhody v aplikaci -->
+        <div class="bs-section padding-md bg-grey-v1">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-4 col-xl-3">
+                <span class="fs-xs-16 text-xs-center fs-22 color-primary d-block mb-3 font-medium">Další výhody aplikace</span>
+                <h2 class="fs-xs-34 lh-xs-38 text-xs-center fs-md-44 fs-50 lh-62 font-ultra mt-0 mb-md-5 pb-lg-3">V apce vždy <br class="d-md-none">něco navíc</h2>
+                <div class="d-none d-md-block mb-5 pb-5">
+                  <a href="#stahnout" class="btn btn-primary btn-lg btn-px-lg font-ultra fs-18 lh-29 m-w-185 js-scroll">Stáhnout aplikaci</a>
+                </div>
+              </div>
+              <div class="col-12 col-lg-8 col-lg-offset-1 col-xl-8">
+                <div class="row">
+                  <div class="col-12 col-md-6 order-1 order-md-1">
+                    <div class="inner-box">
+                      <div class="icon-box rounded box-shadow">
+                        <svg role="img" class="icon" width="36" height="16">
+                          <use xlink:href="#icon-infinity"></use>
+                        </svg>
+                      </div>
+                      <h3 class="fs-xs-18 font-ultra fs-22 lh-24 color-black-v1 d-block m-w-md-270">Používání aplikace nečerpá data. A&nbsp;to&nbsp;ani v&nbsp;zahraničí.</h3>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 order-2 order-md-2">
+                    <div class="inner-box">
+                      <div class="icon-box rounded box-shadow">
+                        <img src="https://www.t-mobile.cz/dcpublic/bell-notification.svg" alt="Ikona - bell" width="34" height="34">
+                      </div>
+                      <h3 class="fs-xs-18 font-ultra fs-22 lh-24 color-black-v1 d-block m-w-md-270">Upozorníme vás, že&nbsp;máte nově vystavené vyúčtování</h3>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 mt-md-5 pt-md-5 order-3 order-md-3">
+                    <div class="inner-box">
+                      <div class="icon-box rounded box-shadow">
+                        <i class="ico-magenta-one fill-magenta" data-ico-width="32" data-ico-height="38"></i>
+                      </div>
+                      <h3 class="fs-xs-18 font-ultra fs-22 lh-24 color-black-v1 d-block w-md-305">Všechny vaše služby v&nbsp;Magentě&nbsp;1 máte pěkně pohromadě</h3>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 mt-md-5 pt-md-5 order-4 order-md-4">
+                    <div class="inner-box">
+                      <div class="icon-box rounded box-shadow">
+                        <svg role="img" class="icon" width="33" height="31">
+                          <use xlink:href="#icon-gift"></use>
+                        </svg>
+                      </div>
+                      <h3 class="fs-xs-18 font-ultra fs-22 lh-24 color-black-v1 d-block w-md-285">Pravidelné soutěže, speciální&nbsp;nabídky a&nbsp;odměny</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center mt-5 pt-3 d-none">
+                  <a href="http://tmo.cz/app" class="btn btn-primary btn-lg btn-px-lg font-ultra m-w-185">Stáhnout aplikaci</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stáhněte si aplikaci -->
+        <div class="background-magenta bs-section pt-md-0 pb-md-0 d-none d-md-block" id="stahnout">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-6 col-lg-6 v-center order-md-1 order-2 mb-xs-15">
+                <div class="clearfix">
+                  <h1 class="fs-xs-32 lh-xs-38 font-ultra color-white mt-0 fs-50 lh-62 mb-4 text-xs-center">Stáhněte si <br class="d-none d-lg-block">aplikaci zdarma
+                  </h1>
+                  <p class="fs-xs-16 lh-xs-20 fs-22 lh-28 color-white mb-4 mb-sm-5 text-xs-center">Mějte pod&nbsp;kontrolou všechna svá&nbsp;čísla, hlídejte <br class="d-none d-lg-block"/>útratu a&nbsp;bezpečně plaťte na&nbsp;pár kliknutí.
+                  </p>
+                  <div class="my-sm-3 pt-5 pt-xs-0">
+                    <div class="row no-gutters">
+                      <div class="col-xs-4 p-2">
+                        <a href="https://itunes.apple.com/cz/app/m%C5%AFj-t-mobile/id1386652007?mt=8">
+                          <img src="https://www.t-mobile.cz/dcpublic/mtm-app-store.png">
+                        </a>
+                      </div>
+                      <div class="col-xs-4 p-2">
+                        <a href="https://play.google.com/store/apps/details?id=cz.tmobile.oneapp"><img src="https://www.t-mobile.cz/dcpublic/mtm-google-play.png"></a>
+                      </div>
+                      <div class="col-xs-4 p-2">
+                        <a href="https://appgallery.huawei.com/#/app/C101395653?locale=cs_CZ&amp;source=appshare&amp;subsource=C101395653">
+                          <img src="https://www.t-mobile.cz/dcpublic/mtm-app-gallery.png">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-6 mt-2 order-md-2 order-1">
+                <!-- desktop -->
+                <img src="https://www.t-mobile.cz/dcpublic/mtm-telefon_flip.png" class="d-none d-md-block">
+                <!-- mobile -->
+                <img src="https://www.t-mobile.cz/dcpublic/mtm-telefon_flip_mobile.png" class="d-block d-md-none max-w-xs-330 mx-auto w-100">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ's -->
+        <div id="faq" class="bs-section padding-md pb-md-40">
+          <div class="container pb-md-5 mb-md-5">
+            <div class="row row-faq theme-v1">
+              <div class="col-12 col-lg-5">
+                <h2 class="fs-xs-34 lh-xs-40 fs-md-44 fs-50 lh-62 mt-0 mb-md-4 pb-lg-3 font-ultra">Časté dotazy
+                </h2>
+                <p class="fs-16 lh-24 mt-0 text-gray-darker mb-0 main-text">Podívejte se&nbsp;na&nbsp;nejčastější dotazy zákazníků.
+                  Vaši<br class="d-none d-lg-block"> otázku jsme už&nbsp;možná zodpověděli. Zjistěte odpověď<br class="d-none d-lg-block"> bez&nbsp;čekání.
+                </p>
+              </div>
+              <div class="col-12 col-lg-7 mt-5 mt-lg-0">
+                <div class="panel panel-faq mt-md-small mt-xxs-small">
+                  <div class="panel-body">
+                    <h3 class="h4 faq-heading">
+                      <a href="#FaqArticle01" class="collapse-link faq-link v-center" data-toggle="collapse" aria-expanded="true">
+                        <span class="fs-xs-14 lh-xs-17 fs-20 font-bold">Jak stáhnout aplikaci?</span>
+                        <i class="ico-chevron-down collapse-icon right" data-ico-width="17" data-ico-height="17" aria-hidden="true"><svg class="svg-chevron-down" width="17" height="17"><use xlink:href="#chevron-down"></use></svg></i>
+                      </a>
+                    </h3>
+                    <div id="FaqArticle01" class="collapse-content collapse in" aria-expanded="true">
+                      <div class="mb-4 mt-2 pb-lg-3">
+                        <p class="fs-xs-14 lh-xs-21 lh-24 color-black-v1">Aplikaci je&nbsp;zdarma a&nbsp;stačí si&nbsp;ji&nbsp;jednoduše stáhnout. Pro&nbsp;Android zařízení stahujte v&nbsp;<a href="https://play.google.com/store/apps/details?id=cz.tmobile.oneapp">Google Play</a>, pro&nbsp;Apple zařízení stahujte v&nbsp;<a href="https://itunes.apple.com/cz/app/m%C5%AFj-t-mobile/id1386652007?mt=8">App Store</a> a&nbsp;pro&nbsp;zařízení Huawei stáhnete aplikaci v&nbsp;<a href="https://appgallery.huawei.com/#/app/C101395653?locale=cs_CZ&source=appshare&subsource=C101395653">AppGallery</a>.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-faq">
+                  <div class="panel-body">
+                    <h3 class="h4 faq-heading">
+                      <a href="#FaqArticle02" class="collapse-link faq-link v-center collapsed" data-toggle="collapse" aria-expanded="false">
+                        <span class="fs-xs-14 lh-xs-17 fs-20 font-bold">Jak se přihlásit do&nbsp;aplikace?</span>
+                        <i class="ico-chevron-down collapse-icon right" data-ico-width="17" data-ico-height="17" aria-hidden="true"><svg class="svg-chevron-down" width="17" height="17"><use xlink:href="#chevron-down"></use></svg></i>
+                      </a>
+                    </h3>
+                    <div id="FaqArticle02" class="collapse-content collapse" aria-expanded="false" style="height: 0px;">
+                      <div class="mb-4 mt-2 pb-lg-3">
+                        <p class="fs-xs-14 lh-xs-21 lh-24 color-black-v1">Nemám odpověď!</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-faq">
+                  <div class="panel-body">
+                    <h3 class="h4 faq-heading">
+                      <a href="#FaqArticle03" class="collapse-link faq-link v-center collapsed" data-toggle="collapse">
+                        <span class="fs-xs-14 lh-xs-17 fs-20 font-bold">Jaké telefony a&nbsp;OS jsou podporovány?</span>
+                        <i class="ico-chevron-down collapse-icon right" data-ico-width="17" data-ico-height="17" aria-hidden="true"><svg class="svg-chevron-down" width="17" height="17"><use xlink:href="#chevron-down"></use></svg></i>
+                      </a>
+                    </h3>
+                    <div id="FaqArticle03" class="collapse collapse-content">
+                      <div class="mb-4 mt-2 pb-lg-3">
+                        <p class="fs-xs-14 lh-xs-21 lh-24 color-black-v1">Aplikace Můj T-Mobile je k dispozici pro operační systém Android verze 5.0 a vyšší a také pro telefony iPhone (iOS). Doporučujeme aplikaci pravidelně aktualizovat.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-faq">
+                  <div class="panel-body">
+                    <h3 class="h4 faq-heading">
+                      <a href="#FaqArticle04" class="collapse-link faq-link v-center collapsed" data-toggle="collapse">
+                        <span class="fs-xs-14 lh-xs-17 fs-20 font-bold">Neznám heslo do&nbsp;App Store/Google Play, nedokáži si&nbsp;aplikaci stáhnout</span>
+                        <i class="ico-chevron-down collapse-icon right" data-ico-width="17" data-ico-height="17" aria-hidden="true">
+                        <svg class="svg-chevron-down" width="17" height="17"><use xlink:href="#chevron-down"></use></svg></i>
+                      </a>
+                    </h3>
+                    <div id="FaqArticle04" class="collapse collapse-content ">
+                      <div class="mb-4 mt-2 pb-lg-3">
+                          <p class="fs-xs-14 lh-xs-21 lh-24 color-black-v1">O heslo do vašeho Store je možné požádat, funguje to stejně jako pokud obnovujete heslo do jakéhokoliv účtu třeba na webu. Jakmile se vám podaří heslo obnovit, snadno se do svého Store přihlásíte.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-faq">
+                  <div class="panel-body">
+                    <h3 class="h4 faq-heading">
+                      <a href="#FaqArticle05" class="collapse-link faq-link v-center collapsed" data-toggle="collapse">
+                        <span class="fs-xs-14 lh-xs-17 fs-20 font-bold">Musím mít data, abych&nbsp;si&nbsp;aplikaci mohl/a nainstalovat?</span>
+                        <i class="ico-chevron-down collapse-icon right" data-ico-width="17" data-ico-height="17" aria-hidden="true">
+                        <svg class="svg-chevron-down" width="17" height="17"><use xlink:href="#chevron-down"></use></svg></i>
+                      </a>
+                    </h3>
+                    <div id="FaqArticle05" class="collapse collapse-content ">
+                      <div class="mb-4 mt-2 pb-lg-3">
+                          <p class="fs-xs-14 lh-xs-21 lh-24 color-black-v1">Pro nainstalování aplikace je potřeba mít alespoň minimum dat nebo zaskočte na místo, kde je Wi-Fi.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-faq">
+                  <div class="panel-body">
+                    <h3 class="h4 faq-heading">
+                      <a href="#FaqArticle06" class="collapse-link faq-link v-center collapsed" data-toggle="collapse">
+                        <span class="fs-xs-14 lh-xs-17 fs-20 font-bold">Mám plnou paměť v&nbsp;telefonu a&nbsp;nemohu si&nbsp;proto stáhnout aplikaci, co&nbsp;s&nbsp;tím?</span>
+                        <i class="ico-chevron-down collapse-icon right" data-ico-width="17" data-ico-height="17" aria-hidden="true">
+                        <svg class="svg-chevron-down" width="17" height="17"><use xlink:href="#chevron-down"></use></svg></i>
+                      </a>
+                    </h3>
+                    <div id="FaqArticle06" class="collapse collapse-content ">
+                      <div class="mb-4 mt-2 pb-lg-3">
+                          <p class="fs-xs-14 lh-xs-21 lh-24 color-black-v1">Aplikace Můj T-Mobile má cca 70 MB. Zkuste se podívat do telefonu, zda vám místo nezabírají jiné aplikace, které třeba dlouhodobě nevyužíváte. S naší apkou si užijete i po létu spoustu zábavy, ať už to budou soutěže nebo různé super akce. Navíc kontrola služeb, platba vyúčtování, dobití kreditu nebo změna tarifu je v apce raz dva.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-faq">
+                  <div class="panel-body">
+                    <h3 class="h4 faq-heading">
+                      <a href="#FaqArticle07" class="collapse-link faq-link v-center collapsed" data-toggle="collapse">
+                        <span class="fs-xs-14 lh-xs-17 fs-20 font-bold">Jak je&nbsp;aplikace zabezpečená?</span>
+                        <i class="ico-chevron-down collapse-icon right" data-ico-width="17" data-ico-height="17" aria-hidden="true">
+                        <svg class="svg-chevron-down" width="17" height="17"><use xlink:href="#chevron-down"></use></svg></i>
+                      </a>
+                    </h3>
+                    <div id="FaqArticle07" class="collapse collapse-content ">
+                      <div class="mb-4 mt-2 pb-lg-3">
+                          <p class="fs-xs-14 lh-xs-21 lh-24 color-black-v1">Aplikace má několik úrovní zabezpečení. Např. při přihlášení do aplikace je možné využít klasickou ochranu PIN kódem, otisk prstu (TouchID) nebo rozpoznání obličeje (FaceID). Pro bezpečnou platbu aplikace využívá 3D secure. Některé služby v aplikaci podléhají dvojí autentifikaci, tedy je vyžadované potvrzení SMS kódem.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Podmínky
+                <div class="panel bg-transparent panel-faq">
+                  <div class="panel-body">
+                    <h3 class="h4 faq-heading external-link pr-0">
+                      <a href="https://www.t-mobile.cz/dcpublic/OP-Muj-tarif.pdf" class="faq-link collapsed v-center">
+                        <div class="fs-xs-14 fs-21 bold faq-link-text">Podmínky tarifů Můj tarif a&nbsp;Můj svobodný&nbsp;tarif
+                          <div class="d-flex align-items-center d-md-inline-flex mt-2 mt-mt-md-0">
+                          <i class="ico-document-v1 fill-grey-v1 mr-1 mr-md-0" data-ico-height="21" data-ico-width="26"><svg class="svg-document-v1" width="26" height="21"><use xlink:href="#document-v1"></use></svg></i>
+                          <span class="fs-12 color-grey-v1 pl-1 pl-md-0">
+                            (237 kB)
+                          </span>
+                          <span class="d-md-none pl-2 ml-2 fs-xs-14 lh-xs-16 fs-20 lh-23 color-primary font-bold nowrap faq-external-link">Zobrazit
+                            <i class="ico-chevron-right fill-magenta ml-1" data-ico-width="8" data-ico-height="15" aria-hidden="true"><svg class="svg-chevron-right" width="8" height="15"><use xlink:href="#chevron-right"></use></svg></i>
+                          </span>
+                        </div>
+                        </div>
+                        <span class="right d-none d-md-inline-block fs-xs-14 lh-xs-16 fs-20 lh-23 color-primary font-bold nowrap faq-external-link">Zobrazit
+                          <i class="ico-chevron-right pos-relative fill-magenta ml-2" style="top: 1px;" data-ico-width="8" data-ico-height="15" aria-hidden="true"><svg class="svg-chevron-right" width="8" height="15"><use xlink:href="#chevron-right"></use></svg></i>
+                        </span>
+                      </a>
+                    </h3>
+                  </div>
+                </div>
+                <div class="panel bg-transparent panel-faq">
+                  <div class="panel-body">
+                    <h3 class="h4 faq-heading external-link pr-0">
+                      <a href="https://www.t-mobile.cz/dcpublic/OP-balicek-neomezeny-internet-na-30-dnu.pdf" class="faq-link collapsed v-center">
+                        <div class="fs-xs-14 fs-21 bold faq-link-text">Podmínky k&nbsp;balíčku Neomezená data na&nbsp;30&nbsp;dnů
+                          <div class="d-flex align-items-center d-md-inline-flex mt-2 mt-mt-md-0">
+                          <i class="ico-document-v1 fill-grey-v1 mr-1 mr-md-0" data-ico-height="21" data-ico-width="26"><svg class="svg-document-v1" width="26" height="21"><use xlink:href="#document-v1"></use></svg></i>
+                          <span class="fs-12 color-grey-v1 pl-1 pl-md-0">
+                            (52 kB)
+                          </span>
+                          <span class="d-md-none pl-2 ml-2 fs-xs-14 lh-xs-16 fs-20 lh-23 color-primary font-bold nowrap faq-external-link">Zobrazit
+                            <i class="ico-chevron-right fill-magenta ml-1" data-ico-width="8" data-ico-height="15" aria-hidden="true"><svg class="svg-chevron-right" width="8" height="15"><use xlink:href="#chevron-right"></use></svg></i>
+                          </span>
+                        </div>
+                        </div>
+                        <span class="right d-none d-md-inline-block fs-xs-14 lh-xs-16 fs-20 lh-23 color-primary font-bold nowrap faq-external-link">Zobrazit
+                          <i class="ico-chevron-right pos-relative fill-magenta ml-2" style="top: 1px;" data-ico-width="8" data-ico-height="15" aria-hidden="true"><svg class="svg-chevron-right" width="8" height="15"><use xlink:href="#chevron-right"></use></svg></i>
+                        </span>
+                      </a>
+                    </h3>
+                  </div>
+                </div>
+                -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal - stažení -->
+        <div id="stahnout-modal" class="d-none">
+          <div class="mb-3 pt-3">
+            <div class="row">
+              <div class="col-xs-12">
+                <h2 class="fs-18 lh-21">Stáhnout aplikaci</h2>
+              </div>
+              <div class="col-xs-12 p-2">
+                <a href="https://itunes.apple.com/cz/app/m%C5%AFj-t-mobile/id1386652007?mt=8">
+                  <img src="https://www.t-mobile.cz/dcpublic/mtm-app-store.png">
+                </a>
+              </div>
+              <div class="col-xs-12 p-2">
+                <a href="https://play.google.com/store/apps/details?id=cz.tmobile.oneapp"><img src="https://www.t-mobile.cz/dcpublic/mtm-google-play.png"></a>
+              </div>
+              <div class="col-xs-12 p-2">
+                <a href="https://appgallery.huawei.com/#/app/C101395653?locale=cs_CZ&amp;source=appshare&amp;subsource=C101395653">
+                  <img src="https://www.t-mobile.cz/dcpublic/mtm-app-gallery.png">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating button -->
+        <div class="d-md-none pos-fixed pos-left-0 pos-bottom-0 bg-grey-v1 w-100 py-4 text-center fixed-panel js-fixed-panel show" style="z-index: 999;">
+          <a class="btn btn-primary font-ultra py-3 lh-28 my-3 lightbox" href="#stahnout-modal" style="width: 300px;">
+            Stáhnout aplikaci
+          </a>
+        </div>
+
+        <!-- /CUSTOM CONTENT -->
+
+        <!-- CUSTOM SCRIPTS -->
+        <script>
+
+        </script>
+        <!-- /CUSTOM SCRIPTS -->
+
+      </div>
+    </div>
+    <div class="footer" role="contentinfo">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-3">
+            <i class="ico-logo logo"></i>
+          </div>
+          <div class="col-xxs-12 col-xs-4 col-md-3 js-collapsible">
+            <h6><a href="/">Co nejvíc chcete</a></h6>
+            <ul class="collapse" id="navfooterservices-0">
+              <li><a href="">Volání</a></li>
+              <li><a href="">Telefony</a></li>
+              <li><a href="">Internet</a></li>
+              <li><a href="">Poslat SMS</a></li>
+              <li><a href="">Vyzvednout MMS</a></li>
+              <li><a href="">Podpora</a></li>
+            </ul>
+          </div>
+          <div class="col-xxs-12 col-xs-4 col-md-3 js-collapsible">
+            <h6><a href="/">Co potřebujete</a></h6>
+            <ul class="collapse" id="navfooterservices-1">
+              <li><a href="">Kontakty</a></li>
+              <li><a href="">Mapa poboček</a></li>
+              <li><a href="">Kariéra v T-Mobile</a></li>
+              <li><a href="">Pro média</a></li>
+              <li><a href="">Pomáháme</a></li>
+              <li><a href="">Katalog služeb</a></li>
+              <li><a href="">Ochrana soukromí</a></li>
+            </ul>
+          </div>
+          <div class="col-xxs-12 col-xs-4 col-md-3 js-collapsible">
+            <h6><a href="/">Co se může hodit</a></h6>
+            <ul class="collapse" id="navfooterservices-2">
+              <li><a href="">Aplikace Můj T-Mobile</a></li>
+              <li><a href="">T-Mobile TV</a></li>
+              <li><a href="">T-Mobile Info</a></li>
+              <li><a href="">Mapa pokrytí</a></li>
+              <li><a href="">Podmínky a dokumenty</a></li>
+              <li><a href="">Vyúčtování a platby</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="row reverse">
+          <div class="col-xs-12 col-sm-3 social-links">
+            <ul class="list-inline">
+              <li><a href="" class="ico-youtube-square"><span class="sr-only">YouTube</span></a></li>
+              <li><a href="" class="ico-facebook-square"><span class="sr-only">Facebook</span></a></li>
+              <li><a href="" class="ico-twitter-square"><span class="sr-only">Twitter</span></a></li>
+              <li><a href="" class="ico-instagram-square"><span class="sr-only">Instagram</span></a></li>
+              <li><a href="" class="ico-charger-square"><span class="sr-only">Charger</span></a></li>
+              <li><a href="" class="ico-linkedin-square"><span class="sr-only">LinkedIn</span></a></li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-9">
+            <p class="copyright">&copy; 2004-2017 T-Mobile Czech Republic a.s.</p>
+            <p class="legal-statement">Podle zákona o evidenci tržeb je prodávající povinen vystavit kupujícímu účtenku.
+              Zároveň je povinen zaevidovat přijatou tržbu u správce daně on-line; v případě technického výpadku pak
+              nejpozději do 48 hodin.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../../public/assets/tmobile/tmcz-theme/js/main.js"></script>
+</body>
+
+</html>

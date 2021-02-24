@@ -1,0 +1,122 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<div style="width: 100%;">
+  <p></p>
+  <table
+    style="font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; font-size: 12px; width: 847px; background-color: #f0f0f0; margin: auto;"
+    cellspacing="15" cellpadding="0" border="0">
+    <tbody>
+      <tr>
+        <td style="width: 742.40625px;">
+          <h1 style="margin-top: 0;"><span style="color: #00afaa;">Vážený zákazníku,</span></h1>
+          <h2><span style="color: #00afaa;">děkujeme Vám za objednávku!</span></h2>
+        </td>
+        <td style="width: 76.046875px;">{if $logo}<img src="{$logo}" width="auto" height="70px" />{/if}</td>
+      </tr>
+      <tr>
+        <td style="width: 742.40625px;">
+          <p>Vaše objednávka číslo <strong>{$order_number}</strong> byla úspěšně přijata naším automatickým
+            objednávkovým systémem.<br /><strong>Datum a čas přijetí:</strong> {$order_creation_date},
+            {$order_creation_time}<br />Zásilku se budeme snažit co nejdříve vyexpedovat. </p>
+          <p>Co bude následovat a jak zaplatit za objednávku? </p>
+          <p>V případě, že jste zvolil(a) <strong>platbu na dobírku,</strong> uhradíte konkrétní částku včetně
+            doběrečného přímo spediční společnosti. <br />V případě, že jste zvolil(a) <strong>platbu platební kartou či
+              rychlým online převodem na účet</strong>, počkáme na vaši platbu a hned voláme rychlého dopravce.</p>
+          <p style="margin: 0 0 5px 0;">V příloze naleznete <strong>potvrzení o přijetí objednávky</strong> ve formátu
+            HTML. Uvedené ceny jsou včetně DPH. V případě jakýchkoli změn Vás budeme kontaktovat. Aktuální stav Vaší
+            objednávky můžete sledovat <a href="{$domain}/customer/history-detail/{$order_uuid}" target="_blank"
+              rel="noopener"><strong>historii objednávky</strong></a>.</p>
+        </td>
+        <td style="width: 76.046875px;"></td>
+      </tr>
+      <tr n:if="$invoice_address" valign="top">
+        <td style="background-color: #ffffff; padding: 15px; width: 815.015625px;" colspan="2">
+          <h2 style="margin-top: 0;">Fakturační adresa</h2>
+          <p style="margin: 0;">{!$invoice_address}</p>
+        </td>
+      </tr>
+      <tr n:if="$postal_address" valign="top">
+        <td style="background-color: #ffffff; padding: 15px; width: 815.015625px;" colspan="2">
+          <h2 style="margin-top: 0;">Poštovní adresa</h2>
+          <p style="margin: 0;">{!$postal_address}</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td style="background-color: #ffffff; padding: 15px; width: 815.015625px;" colspan="2">
+          <h2 style="margin-top: 0;">Položky objednávky</h2>
+          <table style="line-height: 150%; width: 100%; font-size: 12px;" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr n:foreach="$order_products as $product" valign="middle">
+                <td style="border-bottom: 1px solid #ddd; padding: 15px;">{if $product['image']}<img
+                    src="{$product['image']}" _mce_src="{$product['image']}" width="100" />{/if}</td>
+                <td style="border-bottom: 1px solid #ddd; padding: 15px;"><strong><a href="{!$product['url']}"
+                      n:tag-if="$product['url']">{$product['title']}</a></strong> {if $product['code']}<br />Kód:
+                  {$product['code']}{/if}{if $product['availability']}<br />Dostupnost:
+                  {$product['availability']}{/if}{foreach $product['options'] as $name =&gt; $value}<br />- {$name}:
+                  {$value}{/foreach}</td>
+                <td style="text-align: right; border-bottom: 1px solid #ddd; padding: 15px; white-space: nowrap;">
+                  {$product['quantity']} {$product['unit']}</td>
+                <td style="text-align: right; border-bottom: 1px solid #ddd; padding: 15px;">{$product['price']}</td>
+              </tr>
+              <tr n:if="$order_voucher" valign="middle">
+                <td colspan="2" style="border-bottom: 1px solid #ddd; padding: 15px;"><strong>Slevový
+                    kupón</strong><br />Kód: {$order_voucher['code']} {if $order_voucher['type'] ==
+                  'percent'}({$order_voucher['discount']}%){/if}</td>
+                <td style="border-bottom: 1px solid #ddd; padding: 15px;"></td>
+                <td style="text-align: right; border-bottom: 1px solid #ddd; padding: 15px;">{$order_voucher['price']}
+                </td>
+              </tr>
+              <tr n:if="$order_quantity_discount" valign="middle">
+                <td colspan="2" style="border-bottom: 1px solid #ddd; padding: 15px;"><strong>Množstevní sleva</strong>
+                  {if $order_quantity_discount['type'] == 'percent'}<br />{$order_quantity_discount['discount']} %{/if}
+                </td>
+                <td style="border-bottom: 1px solid #ddd; padding: 15px;"></td>
+                <td style="text-align: right; border-bottom: 1px solid #ddd; padding: 15px;">
+                  {$order_quantity_discount['price']}</td>
+              </tr>
+              <tr n:if="$order_loyalty_points" valign="middle">
+                <td colspan="2" style="border-bottom: 1px solid #ddd; padding: 15px;"><strong>Věrnostní
+                    body</strong><br />Odečteno bodů: {$order_loyalty_points['points']}</td>
+                <td style="border-bottom: 1px solid #ddd; padding: 15px;"></td>
+                <td style="text-align: right; border-bottom: 1px solid #ddd; padding: 15px;">
+                  {$order_loyalty_points['price']}</td>
+              </tr>
+              <tr n:if="$order_shipment_row" valign="middle">
+                <td colspan="2" style="border-bottom: 1px solid #ddd; padding: 15px;"><strong>Doprava</strong>
+                  <br />{$order_shipment_row['name']}{if $order_shipment_row['affiliate_name']} -
+                  {$order_shipment_row['affiliate_name']}{/if}</td>
+                <td style="border-bottom: 1px solid #ddd; padding: 15px;"></td>
+                <td style="text-align: right; border-bottom: 1px solid #ddd; padding: 15px;">
+                  {$order_shipment_row['price']}</td>
+              </tr>
+              <tr n:if="$order_payment_row" valign="middle">
+                <td colspan="2" style="border-bottom: 1px solid #ddd; padding: 15px;"><strong>Platba</strong>
+                  <br />{$order_payment_row['name']}</td>
+                <td style="border-bottom: 1px solid #ddd; padding: 15px;"></td>
+                <td style="text-align: right; border-bottom: 1px solid #ddd; padding: 15px;">
+                  {$order_payment_row['price']}</td>
+              </tr>
+              <tr n:if="$order_total_rest" valign="middle">
+                <td colspan="2" style="border-bottom: 1px solid #ddd; padding: 15px;">Zaokrouhlení</td>
+                <td style="border-bottom: 1px solid #ddd; padding: 15px;"></td>
+                <td style="text-align: right; border-bottom: 1px solid #ddd; padding: 15px; white-space: nowrap;">
+                  {$order_total_rest}</td>
+              </tr>
+              <tr valign="middle">
+                <td colspan="2" style="padding: 15px 15px 0 15px;"><strong>CELKEM</strong><br />{if
+                  $order_vat_removed_yn}bez DPH{else}s DPH{/if}</td>
+                <td></td>
+                <td style="text-align: right; padding: 15px 15px 0 15px; font-size: 18px; white-space: nowrap;">
+                  <strong>{$order_total}</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr n:if="$system_email_signature">
+        <td style="background-color: #ffffff; padding: 15px; width: 815.015625px;" colspan="2">{$system_email_signature}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p></p>
+</div>

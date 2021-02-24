@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html class="ltr no-js no-svg no-fonts" dir="ltr" lang="cs-CZ">
+
+<head>
+  <title>APPLE HW</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="no" name="msapplication-tap-highlight" />
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <meta name="robots" content="noindex, nofollow">
+  <link href="http://localhost:80/public/assets/tmobile/tmcz-theme/images/favicon.ico" rel="Shortcut Icon" />
+  <link href="http://localhost:80/tmobile" rel="canonical" />
+  <link href="http://localhost:80/cs/tmobile" hreflang="cs-CZ" rel="alternate" />
+  <link href="http://localhost:80/tmobile" hreflang="x-default" rel="alternate" />
+  <link href="http://localhost:80/tmobile" hreflang="en-US" rel="alternate" />
+  <script type="module">
+    import { Workbox } from 'https://storage.googleapis.com/workbox-cdn/releases/4.0.0/workbox-window.prod.mjs';
+  </script>
+  <!-- <script>
+  // Check that service workers are registered
+  if ('serviceWorker' in navigator) {
+    // Use the window load event to keep the page load performant
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js');
+      console.log('LOADED');
+    });
+  }
+  </script> -->
+  <script src="../../public/assets/tmobile/shared-libs-theme/js/jquery/jquery-1.11.2.js"></script>
+  <script src="../../public/assets/tmobile/tmcz-theme/js/libs.js"></script>
+  <script>
+    var Liferay = { on: function () { }, Portlet: { ready: function () { } }, Browser: { acceptsGzip: function () { return true }, getMajorVersion: function () { return 26 }, getRevision: function () { return "26.0" }, getVersion: function () { return "26.0" }, isAir: function () { return false }, isChrome: function () { return true }, isFirefox: function () { return false }, isGecko: function () { return false }, isIe: function () { return false }, isIphone: function () { return false }, isLinux: function () { return false }, isMac: function () { return false }, isMobile: function () { return false }, isMozilla: function () { return true }, isOpera: function () { return false }, isRtf: function () { return true }, isSafari: function () { return false }, isSun: function () { return false }, isWap: function () { return false }, isWapXhtml: function () { return false }, isWebKit: function () { return false }, isWindows: function () { return true }, isWml: function () { return false } }, Data: { NAV_SELECTOR: "#navigation", isCustomizationView: function () { return false }, notices: [null] }, ThemeDisplay: { getLayoutId: function () { return "2" }, getLayoutURL: function () { return "http://localhost:8080/web/guest/testovaci" }, getParentLayoutId: function () { return "0" }, isPrivateLayout: function () { return "false" }, isVirtualLayout: function () { return false }, getBCP47LanguageId: function () { return "en-US" }, getCDNBaseURL: function () { return "http://localhost:8080" }, getCDNDynamicResourcesHost: function () { return "" }, getCDNHost: function () { return "" }, getCompanyId: function () { return "10157" }, getCompanyGroupId: function () { return "10197" }, getDefaultLanguageId: function () { return "en_US" }, getDoAsUserIdEncoded: function () { return "" }, getLanguageId: function () { return "en_US" }, getParentGroupId: function () { return "10184" }, getPathContext: function () { return "" }, getPathImage: function () { return "/image" }, getPathJavaScript: function () { return "/html/js" }, getPathMain: function () { return "/c" }, getPathThemeImages: function () { return "http://localhost:8080/tmcz-theme/images" }, getPathThemeRoot: function () { return "/tmcz-theme" }, getPlid: function () { return "11010" }, getPortalURL: function () { return "http://localhost:8080" }, getPortletSetupShowBordersDefault: function () { return false }, getScopeGroupId: function () { return "10184" }, getScopeGroupIdOrLiveGroupId: function () { return "10184" }, getSessionId: function () { return "" }, getSiteGroupId: function () { return "10184" }, getURLControlPanel: function () { return "/group/control_panel?refererPlid=11010" }, getURLHome: function () { return "http\x3a\x2f\x2flocalhost\x3a8080\x2fweb\x2fguest" }, getUserId: function () { return "10161" }, getUserName: function () { return "" }, isAddSessionIdToURL: function () { return false }, isFreeformLayout: function () { return false }, isImpersonated: function () { return false }, isSignedIn: function () { return false }, isStateExclusive: function () { return false }, isStateMaximized: function () { return false }, isStatePopUp: function () { return false } }, PropsValues: { NTLM_AUTH_ENABLED: false } }; var themeDisplay = Liferay.ThemeDisplay; Liferay.AUI = { getAvailableLangPath: function () { return "available_languages.jsp?browserId=firefox&themeId=tmobilethemefull_WAR_tmobiletheme&colorSchemeId=01&minifierType=js&languageId=en_US&b=6200&t=1383330666000" }, getCombine: function () { return true }, getComboPath: function () { return "/combo/?browserId=firefox&minifierType=&languageId=en_US&b=6200&t=1383330666000&" }, getFilter: function () { return "min" }, getJavaScriptRootPath: function () { return "/html/js" }, getLangPath: function () { return "aui_lang.jsp?browserId=firefox&themeId=tmobilethemefull_WAR_tmobiletheme&colorSchemeId=01&minifierType=js&languageId=en_US&b=6200&t=1383330666000" } }; Liferay.authToken = "7fJwxDFg"; Liferay.currentURL = "\x2fweb\x2fguest\x2ftestovaci"; Liferay.currentURLEncoded = "%2Fweb%2Fguest%2Ftestovaci";
+  </script>
+  <script
+    src="https://static2.t-mobile.cz/html/js/barebone.jsp?browserId=other&amp;themeId=tmcz_WAR_tmcztheme&amp;colorSchemeId=01&amp;minifierType=js&amp;minifierBundleId=javascript.barebone.files&amp;languageId=cs_CZ&amp;b=6201&amp;t=1605184626000"
+    type="text/javascript"></script>
+  <link class="lfr-css-file"
+    href="../../public/assets/tmobile/tmcz-theme/css/aui.css&#x3f;browserId&#x3d;other&#x26;themeId&#x3d;tmobile_WAR_tmobiletheme&#x26;languageId&#x3d;cs_CZ&#x26;b&#x3d;6201&#x26;t&#x3d;1421683557000"
+    rel="stylesheet" type="text/css" />
+  <link href="../../public/assets/tmobile/tmcz-theme/css/main.css" rel="stylesheet" type="text/css" />
+  <link class="lfr-css-file" href="../../public/assets/tmobile/tmcz-theme/css/custom.css" rel="stylesheet"
+    type="text/css" />
+</head>
+
+<body class="yui3-skin-sam controls-visible guest-site signed-in public-page site"
+  data-theme-images-folder="/tmcz-theme/images">
+  <div class="header">
+    <div class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/tmobile/tmcz/" class="logo">
+            <svg class="icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use>
+            </svg>
+            <noscript>
+              <img src="../../public/assets/tmobile/tmcz-theme/images/custom/logo-magenta.svg" class="logo-white"
+                alt="T-Mobile" />
+            </noscript>
+          </a>
+          <button type="button" class="toggle js-toggle">
+            <span></span>
+            <span></span>
+            <span>Menu</span>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" preserveAspectRatio="none">
+              <circle cx="8" cy="8" r="6.29" transform="rotate(90 8 8)"></circle>
+            </svg>
+            <!--  <div class="circle">-->
+            <!--    <svg xmlns="http://www.w3.org/2000/svg" width="51" height="51.06" viewBox="0 0 51 51"><path class="a" d="M50,50.5v-25a25,25,0,1,0-50-.37A25,25,0,0,0,50,26.5" transform="translate(0.5 0.25)"/></svg>-->
+            <!--     <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46.5" viewBox="0 0 46 46.5"><path d="M50.5,50.8v-23a23,23,0,1,0-46-.3,23,23,0,0,0,46,1.3" transform="translate(-4.5 -4.6)"/></svg>-->
+            <!--  </div>-->
+          </button>
+        </div>
+        <div class="nav-wrapper">
+          <div class="nav-group">
+
+            <!-- WELCOME PORTLET -->
+            <div
+              class="portlet-boundary portlet-boundary_welcomeportlet_WAR_navigationportlet_ portlet-static portlet-static-end portlet-borderless"
+              id="p_p_id_welcomeportlet_WAR_navigationportlet_">
+              <div class="portlet-borderless-container">
+                <div class="portlet-body">
+                  <div class="dropdown user-info">
+                    <button class="dropdown-toggle" type="button" data-toggle="dropdown" title="Robert Blecha"
+                      aria-haspopup="true" aria-expanded="false">
+                      <i class="ico-user"></i>
+                      <span>Robert Blecha</span>
+                      <i class="ico-chevron-down like-caret"></i>
+                    </button>
+                    <a href="" class="btn btn-primary visible-xs visible-sm">Můj T-Mobile</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="">T-Box</a></li>
+                      <li><a href="">Osobní nastavení</a></li>
+                      <li><a href="">Odhlásit se</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- /WELCOME PORTLET -->
+
+            <!-- RVCC / NAVIGATION PORTLET -->
+            <div id="nav">
+              <div id="navsettings">
+                <ul class="nav navbar-nav" role="navigation">
+                  <li>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Volání <i
+                        class="ico-chevron-down"></i></a>
+                    <ul class="dropdown-menu with-banner rows-1">
+                      <li><a href=""><i class="ico-tariff-summary"></i>Přehled tarifů</a></li>
+                      <li><a href=""><i class="ico-sim-2"></i>Předplacená karta</a></li>
+                      <li><a href=""><i class="ico-roaming-2"></i>Roaming</a></li>
+                      <li><a href=""><i class="ico-suitcase-2"></i>Do zahraničí</a></li>
+                      <li class="promo-item"><a href=""><img
+                            src="https://www.t-mobile.cz/dcpublic/megamenu-akvizicni-tarif-410x275.jpg" alt="" /></a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Internet <i
+                        class="ico-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a href=""><i class="ico-sim-2"></i>Na doma</a></li>
+                      <li><a href=""><i class="ico-roaming-2"></i>Do tabletu a notebooku</a></li>
+                      <li><a href=""><i class="ico-tariff-summary-2"></i>Do mobilu</a></li>
+                      <li><a href=""><i class="ico-suitcase-2"></i>Roaming</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="">Televize</a></li>
+                  <li>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Zařízení <i
+                        class="ico-chevron-down"></i></a>
+                    <ul class="dropdown-menu with-banner rows-2">
+                      <li><a href=""><i class="ico-smartphone-2"></i>Telefony</a></li>
+                      <li><a href=""><i class="ico-tablet-2"></i>Tablety</a></li>
+                      <li><a href=""><i class="ico-modem-2"></i>Modemy a routery</a></li>
+                      <li><a href=""><i class="ico-laptop"></i>Notebooky</a></li>
+                      <li><a href=""><i class="ico-smartcar"></i>Chytré auto</a></li>
+                      <li><a href=""><i class="ico-house-2"></i>Chytrá domácnost</a></li>
+                      <li><a href=""><i class="ico-watch"></i>Chytré hodinky</a></li>
+                      <li><a href=""><i class="ico-ball"></i>Sport a nositelná zařízení</a></li>
+                      <li class="promo-item"><a href=""><img
+                            src="https://www.t-mobile.cz/dcpublic/megamenu-akvizicni-tarif-410x275.jpg" alt="" /></a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Magenta 1 <i
+                        class="ico-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a href=""><i class="ico-logo-heart"></i>Magenta 1</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Podpora <i
+                        class="ico-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a href=""><i class="ico-document-invoice"></i>Vyúčtování a platby</a></li>
+                      <li><a href=""><i class="ico-swiss-knife"></i>Může se hodit</a></li>
+                      <li><a href=""><i class="ico-operator-2"></i>Obraťte se na nás</a></li>
+                      <li><a href=""><i class="ico-tool"></i>Technická podpora</a></li>
+                      <li><a href=""><i class="ico-document-download-2"></i>Ke stažení</a></li>
+                      <li><a href=""><i class="ico-service-catalog-2"></i>Katalog služeb</a></li>
+                      <li><a href=""><i class="ico-roaming-2"></i>Časté dotazy</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="" class="dropdown-toggle ajax-load-quick-bookmark" data-toggle="dropdown">Můj T-Mobile <i
+                        class="ico-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a href=""><i class="ico-logo-circle"></i>Aplikace do mobilu</a></li>
+                      <li><a href=""><i class="ico-overview-2"></i>Bleskový přehled</a></li>
+                      <li><a href=""><i class="ico-invoice-2"></i>Online vyúčtování</a></li>
+                      <li><a href=""><i class="ico-mobile-internet-2"></i>Mobilní internet</a></li>
+                      <li class="custom-item">
+                        <div class="tile">
+                          <div class="bold">Vstupte do světa T-Mobile</div>
+                          <a href="" class="btn btn-primary btn-lg lightbox" data-lightbox-size="large">Přihlásit se</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <a href="" class="sms">Poslat SMS</a>
+            <ul class="nav-segments">
+              <li class="active"><a href="#TODO">Osobní</a></li>
+              <li><a href="#TODO">Podnikatelé a firmy</a></li>
+            </ul> <!-- /RVCC / NAVIGATION PORTLET -->
+
+            <!-- LWE MINICART PORTLET -->
+            <div
+              class="portlet-boundary portlet-boundary_lweminicart_WAR_lweeshopportlet_ portlet-static portlet-static-end portlet-borderless"
+              id="p_p_id_lweminicart_WAR_lweeshopportlet_">
+              <div class="portlet-borderless-container">
+                <div class="portlet-body">
+                  <a href="" class="cart"><i class="ico-cart"></i>Nákupní košík <span
+                      class="sr-only">Položek:</span><span class="count">2</span></a>
+                </div>
+              </div>
+            </div> <!-- /LWE MINICART PORTLET -->
+
+            <!-- SMALL SEARCH PORTLET -->
+            <div
+              class="portlet-boundary portlet-boundary_searchsmallcorporateportlet_WAR_searchcorporateportlet_ portlet-static portlet-static-end portlet-borderless">
+              <div class="portlet-borderless-container">
+                <div class="portlet-body">
+                  <a href="/podpora/vyhledavani" class="search-toggle" data-toggle="collapse" data-target="#search"><i
+                      class="ico-magnifier"></i>Hledat</a>
+                  <div id="search" class="collapse search-collapse">
+                    <form action="/podpora/vyhledavani" method="get" role="search">
+                      <fieldset>
+                        <div class="form-group searchbox">
+                          <i class="ico-magnifier search-icon"></i>
+                          <label for="q" class="sr-only">Napište, co hledáte...</label>
+                          <input type="search" id="q" name="query" placeholder="Napište, co hledáte..." accesskey="4"
+                            class="form-control input-lg autocomplete"
+                            data-source-url="/tmobile/tmcz/json/states.json" />
+                          <button type="submit" class="btn btn-link btn-lg">Vyhledat</button>
+                        </div>
+                      </fieldset>
+                    </form>
+                    <i class="ico-remove search-close" data-toggle="collapse" data-target="#search"></i>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- /SMALL SEARCH PORTLET -->
+
+            <a href="#TODO" class="language"><i class="ico-earth" aria-hidden="true"></i> English</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="main-content" role="main" class="bs3-grid-1-1">
+    <div class="container">
+      <div class="row portlet-layout">
+        <div id="column-1" class="portlet-column portlet-column-only">
+
+        </div>
+      </div>
+    </div>
+    <div class="portlet-layout">
+      <div id="column-2" class="portlet-column portlet-column-only">
+
+        <!-- NEW THEME -->
+        <script src="../../public/assets/tmobile/t-sign2020/js/t-sign2020.min.js"></script>
+        <link href="../../public/assets/tmobile/t-sign2020/css/t-sign2020.css" rel="stylesheet" type="text/css" />
+        <!-- /NEW THEME -->
+        
+        <!-- CUSTOM STYLE -->
+        <style>
+
+        </style>
+        <!-- /CUSTOM STYLE -->
+        
+        <!-- CUSTOM CONTENT -->
+        <div class="bs-section padding-small d-none d-md-block">
+          <div class="container">
+            <ol class="breadcrumb">
+              <li>
+                <a href="/osobni">T-Mobile</a>
+                <i class="ico-chevron-right"><svg class="svg-chevron-right">
+                    <use xlink:href="#chevron-right"></use>
+                  </svg></i>
+              </li>
+              <li>
+                <a href="/telefony">Telefony</a>
+                <i class="ico-chevron-right"><svg class="svg-chevron-right">
+                    <use xlink:href="#chevron-right"></use>
+                  </svg>
+                </i>
+              </li>
+              <li>
+                <a href="#start" class="js-scroll">Apple</a>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="bs-section pos-relative pb-xs-0 padding-md-65 pb-md-55">
+          <div class="bg-grey-v1-quarter-box pos-absolute pos-left-0 pos-top-0 z-index-4">
+            <div class="bg-dots d-none d-lg-block">
+              <i class="icon ico-dots-rounded fill-magenta" data-ico-width="84" data-ico-height="115"></i>
+            </div>
+          </div>
+          <div class="container pos-relative z-index-6">
+            <div class="row">
+              <div class="col-12 col-lg-6">
+                <h1 class="fs-xs-40 fs-md-44 fs-62 font-ultra mt-0 mt-lg-5 pt-lg-5">Telefony Apple</h1>
+                <p class="fs-xs-16 fs-20 mb-0 color-grey-v3">Prozkoumejte naší výhodnou nabídku smartphonů od Applu.</p>
+              </div>
+              <div class="col-12 col-md-8 offset-md-2 offset-lg-0 col-lg-6 mt-5 pt-5 pt-lg-0 mt-lg-0 text-xs-center">
+                <div class="pos-relative d-inline-block">
+                  <div class="pos-absolute z-index-4 dots-wrap theme-dw-v1 d-lg-none">
+                    <i class="ico-dots-rounded fill-magenta" data-ico-width="84" data-ico-height="115"></i>
+                  </div>
+                  <img src="https://www.t-mobile.cz/dcpublic/seo-hw-apple-header.png" alt="Alt"
+                    class="js-resizable pos-relative z-index-5" data-width-xs="181" data-width-md="340">
+                  <div
+                    class="badge theme-badge-v1 theme-badge-xs-v2 pos-absolute z-index-6 pos-left-n-xs-55 pos-bottom-n-xs-10 pos-bottom-n-md-25 pos-right-n-md-90">
+                    <span class="badge-text fs-xs-16 lh-xs-24 fs-24 lh-30 font-medium">
+                      K telefonu <br/><span class="font-ultra">24 GB dat</span> navíc
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="scroll-arrow-wrap pos-absolute w-100 pos-left-0 pos-bottom-32 pos-bottom-n-xs-9 z-index-6">
+              <div class="container">
+                <div class="scroll-arrow d-flex justify-content-end justify-content-md-start">
+                  <a href="#telefony-samsung"
+                    class="d-flex justify-content-center align-items-center bg-white box-shadow-v5 square-corners-full scroll-link js-scroll">
+                    <img src="https://www.t-mobile.cz/dcpublic/arrow-down.png"
+                      srcset="https://www.t-mobile.cz/dcpublic/arrow-down.png, https://www.t-mobile.cz/dcpublic/arrow-down@2x.png 2x"
+                      alt="Ikona - šipka dolů" class="anim-jump">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bs-section padding-md" id="start">
+          <div class="container">
+            <span class="fs-xs-16 text-center fs-22 color-primary d-block mb-3">Proč si pořídit telefon u T-Mobile?</span>
+            <h2 class="fs-xs-34 fs-55 text-center font-ultra my-0">Výhody nákupu</h2>
+            <div class="row pt-5 mt-md-5">
+              <div class="col-12 col-lg-4 order-2 pt-5 mt-5 pt-lg-0 mt-lg-0 order-lg-1">
+                <div class="d-flex align-items-start">
+                  <div class="icon-box size-md rounded box-shadow flex-grow-0 flex-shrink-0">
+                    <i class="ico-card-in-hand-color-mix fill-magenta-mix-v1" data-ico-width="50" data-ico-height="33"></i>
+                  </div>
+                  <div class="flex-grow-0 pl-4">
+                    <h3 class="mt-0 fs-xs-20 fs-24 lh-27 mb-2 font-ultra">Nákup na splátky</h3>
+                    <p class="mb-0 fs-16 lh-xs-22 lh-20 color-grey-v3">Telefon si můžete zakoupit na splátky a splácet bez
+                      navýšení.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4 order-1 order-lg-2">
+                <div class="d-flex align-items-start">
+                  <div class="icon-box size-md rounded box-shadow flex-grow-0 flex-shrink-0">
+                    <i class="ico-smartphone-check-color fill-magenta" data-ico-width="40" data-ico-height="46"></i>
+                  </div>
+                  <div class="flex-grow-0 pl-4">
+                    <h3 class="mt-0 fs-xs-20 fs-24 lh-27 mb-2 font-ultra">Možnost pojištění</h3>
+                    <p class="mb-0 fs-16 lh-xs-22 lh-20 color-grey-v3">Už se nemusíte bát možných závad na telefonu. Výměnu
+                      provedeme do 2 dnů.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4 pt-5 mt-5 pt-lg-0 mt-lg-0 order-3">
+                <div class="d-flex align-items-start">
+                  <div class="icon-box size-md rounded box-shadow flex-grow-0 flex-shrink-0">
+                    <i class="ico-device-discount-1000 fill-magenta" data-ico-width="35" data-ico-height="46"></i>
+                  </div>
+                  <div class="flex-grow-0 pl-4">
+                    <h3 class="mt-0 fs-xs-20 fs-24 lh-27 mb-2 font-ultra">S tarifem výhodněji</h3>
+                    <p class="mb-0 fs-16 lh-xs-22 lh-20 color-grey-v3">Při zakoupení telefonu s tarifem od nás dostanete slevu
+                      na zařízení.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bs-section bg-grey-v1 padding-md">
+          <div class="container" id="telefony-samsung">
+            <h2 class="fs-xs-34 lh-xs-39 fs-44 font-ultra mt-0 mb-5 pb-lg-5 text-center">Udělejte si radost novým Apple telefonem</h2>
+            <div class="py-lg-5"></div>
+            <div class="row">
+              <div class="col-12 col-lg-5 text-left text-xs-center">
+                <div class="d-lg-none text-xs-left">
+                  <div>
+                    <span class="fs-18 font-ultra color-grey-v3 text-uppercase">Apple</span>
+                  </div>
+                  <h3 class="fs-34 font-ultra lh-36 mt-0 mb-5 pb-5">iPhone 12 - 64 GB</h3>
+                </div>
+                <div class="pos-relative d-inline-block">
+                  <div class="pos-absolute z-index-4 dots-wrap theme-dw-v1">
+                    <i class="ico-dots-rounded fill-magenta" data-ico-width="84" data-ico-height="115"></i>
+                  </div>
+                  <img src="https://www.t-mobile.cz/dcpublic/seo-hw-iphone-12.png" alt="Apple iPhone 12"
+                    data-width-xs="250" data-width-md="400" class="js-resizable pos-relative z-index-5">
+                  <div class="badge theme-badge-v2 theme-badge-xs-v2 bg-green-v1 pos-absolute pos-left-0 pos-top-0 z-index-6">
+                    <span class="badge-text pt-2 font-medium fs-16 lh-24">
+                      Rychlé <span class="font-ultra">5G&nbsp;připojení</span>
+                    </span>
+                  </div>
+        
+                </div>
+              </div>
+              <div class="col-12 col-lg-7 mt-5 pt-4 mt-lg-0 pt-lg-0">
+                <div class="d-none d-lg-block">
+                  <div>
+                    <span class="fs-18 font-ultra color-grey-v3 text-uppercase">Apple</span>
+                  </div>
+                  <h3 class="fs-34 font-ultra lh-36 mt-0 mb-5">iPhone 12 - 64 GB</h3>
+                </div>
+                <p class="fs-20 lh-28 color-grey-v3 mb-5 pb-md-4">#TODO</p>
+                <ul class="checklist d-flex flex-wrap theme-v1 mb-0 color-grey-v3">
+                  <li class="mb-4">
+                    #TODO
+                  </li>
+                  <li class="mb-4">
+                    #TODO
+                  </li>
+                  <li class="mb-4">
+                    #TODO
+                  </li>
+                  <li>
+                    #TODO
+                  </li>
+                </ul>
+                <div class="row mt-5 pt-md-4">
+                  <div class="col-12 col-md-6 col-lg-5">
+                    <span class="fs-16 color-grey-v3 lh-18 text-uppercase d-block font-bold">S tarifem od</span>
+                    <span class="fs-34 color-black-v2 lh-44 d-block font-bold">19 999 Kč</span>
+                    <span class="fs-16 color-grey-v3 lh-18 text-uppercase d-block font-bold">Běžně od <del class="">24 999 Kč</del></span>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-7 mt-5 mt-md-0">
+                    <div class="ml-lg-4 pl-lg-2">
+                      <a class="btn btn-primary btn-lg font-ultra d-block d-md-inline-block  w-md-275" href="https://www.t-mobile.cz/telefony/detail-zarizeni/--/apple-iphone-12">Přejít na
+                        detail</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bs-section padding-md">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-5 text-right text-xs-center order-lg-2">
+                <div class="d-lg-none text-xs-left">
+                  <div>
+                    <span class="fs-18 font-ultra color-grey-v3 text-uppercase">Apple</span>
+                  </div>
+                  <h3 class="fs-34 font-ultra lh-36 mt-0 mb-5 pb-5">iPhone SE (2020) - 64 GB</h3>
+                </div>
+                <div class="pos-relative d-inline-block">
+                  <div class="pos-absolute z-index-4 dots-wrap theme-dw-v1">
+                    <i class="ico-dots-rounded fill-magenta" data-ico-width="84" data-ico-height="115"></i>
+                  </div>
+                  <img src="https://www.t-mobile.cz/dcpublic/seo-hw-iphone-se-2020.png" alt="Apple iPhone SE (2020)"
+                    data-width-xs="250" data-width-md="400" class="js-resizable pos-relative z-index-5">
+                </div>
+              </div>
+              <div class="col-12 col-lg-7 order-lg-1 mt-5 pt-4 mt-lg-0 pt-lg-0">
+                <div class="d-none d-lg-block">
+                  <div>
+                    <span class="fs-18 font-ultra color-grey-v3 text-uppercase">Apple</span>
+                  </div>
+                  <h3 class="fs-34 font-ultra lh-36 mt-0 mb-5">iPhone SE (2020) - 64 GB</h3>
+                </div>
+                <p class="fs-20 lh-28 color-grey-v3 mb-5 pb-md-4">#TODO</p>
+                <ul class="checklist d-flex flex-wrap theme-v1 mb-0 color-grey-v3">
+                  <li class="mb-4">
+                    #TODO
+                  </li>
+                  <li class="mb-4">
+                    #TODO
+                  </li>
+                  <li class="mb-4">
+                    #TODO
+                  </li>
+                  <li>
+                    #TODO
+                  </li>
+                </ul>
+                <div class="row mt-5 pt-md-4">
+                  <div class="col-12 col-md-6 col-lg-5">
+                    <span class="fs-16 color-grey-v3 lh-18 text-uppercase d-block font-bold">S tarifem od</span>
+                    <span class="fs-34 color-black-v2 lh-44 d-block font-bold">7 999 Kč</span>
+                    <span class="fs-16 color-grey-v3 lh-18 text-uppercase d-block font-bold">Běžně od <del class="">12 999 Kč</del></span>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-7 mt-5 mt-md-0">
+                    <div class="ml-lg-4 pl-lg-2">
+                      <a class="btn btn-primary btn-lg font-ultra d-block d-md-inline-block  w-md-275  w-md-275"
+                        href="https://www.t-mobile.cz/telefony/detail-zarizeni/--/apple-iphone-se-64gb-bily-1">Přejít
+                        na detail</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bs-section bg-grey-v1 padding-md">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-5 text-left text-xs-center">
+                <div class="d-lg-none text-xs-left">
+                  <div>
+                    <span class="fs-18 font-ultra color-grey-v3 text-uppercase">Apple</span>
+                  </div>
+                  <h3 class="fs-34 font-ultra lh-36 mt-0 mb-5 pb-5">iPhone 11 - 64 GB</h3>
+                </div>
+                <div class="pos-relative d-inline-block">
+                  <div class="pos-absolute z-index-4 dots-wrap">
+                    <i class="ico-dots-rounded fill-magenta" data-ico-width="84" data-ico-height="115"></i>
+                  </div>
+                  <img src="https://www.t-mobile.cz/dcpublic/seo-hw-iphone-11.png" alt="Apple iPhone 11" data-width-xs="250"
+                    data-width-md="400" class="js-resizable pos-relative z-index-5">
+                </div>
+              </div>
+              <div class="col-12 col-lg-7 mt-5 pt-4 mt-lg-0 pt-lg-0">
+                <div class="d-none d-lg-block">
+                  <div>
+                    <span class="fs-18 font-ultra color-grey-v3 text-uppercase">Apple</span>
+                  </div>
+                  <h3 class="fs-34 font-ultra lh-36 mt-0 mb-5">iPhone 11 - 64 GB</h3>
+                </div>
+                <p class="fs-20 lh-28 color-grey-v3 mb-5 pb-md-4">#TODO</p>
+                <ul class="checklist d-flex flex-wrap theme-v1 mb-0 color-grey-v3">
+                  <li class="mb-4">
+                    #TODO
+                  </li>
+                  <li class="mb-4">
+                    #TODO
+                  </li>
+                  <li class="mb-4">
+                    #TODO
+                  </li>
+                  <li>
+                    #TODO
+                  </li>
+                </ul>
+                <div class="row mt-5 pt-md-4">
+                  <div class="col-12 col-md-6 col-lg-5">
+                    <span class="fs-16 color-grey-v3 lh-18 text-uppercase d-block font-bold">S tarifem od</span>
+                    <span class="fs-34 color-black-v2 lh-44 d-block font-bold">13 499 Kč</span>
+                    <span class="fs-16 color-grey-v3 lh-18 text-uppercase d-block font-bold">Běžně od <del class="">18 499 Kč</del></span>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-7 mt-5 mt-md-0">
+                    <div class="ml-lg-4 pl-lg-2">
+                      <a class="btn btn-primary btn-lg font-ultra d-block d-md-inline-block w-md-275" href="https://www.t-mobile.cz/telefony/detail-zarizeni/--/apple-iphone-11-64gb-cerny-1-1">Přejít na
+                        detail</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bs-section padding-md">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-5 text-right text-xs-center order-lg-2">
+                <div class="d-lg-none text-xs-left">
+                  <div>
+                    <span class="fs-18 font-ultra color-grey-v3 text-uppercase">Apple</span>
+                  </div>
+                  <h3 class="fs-34 font-ultra lh-36 mt-0 mb-5 pb-5">iPhone 12 Pro Max - 128 GB</h3>
+                </div>
+                <div class="pos-relative d-inline-block">
+                  <div class="pos-absolute z-index-4 dots-wrap theme-dw-v2">
+                    <i class="ico-dots-rounded fill-magenta" data-ico-width="84" data-ico-height="115"></i>
+                  </div>
+                  <img src="https://www.t-mobile.cz/dcpublic/seo-hw-iphone-12-pro-max.png" alt="Apple iPhone 12 Pro Max" data-width-xs="250"
+                    data-width-md="400" class="js-resizable pos-relative z-index-5">
+                </div>
+              </div>
+              <div class="col-12 col-lg-7 order-lg-1 mt-5 pt-4 mt-lg-0 pt-lg-0">
+                <div class="d-none d-lg-block">
+                  <div>
+                    <span class="fs-18 font-ultra color-grey-v3 text-uppercase">Apple</span>
+                  </div>
+                  <h3 class="fs-34 font-ultra lh-36 mt-0 mb-5">iPhone 12 Pro Max - 128 GB</h3>
+                </div>
+                <p class="fs-20 lh-28 color-grey-v3 mb-5 pb-md-4">#TODO</p>
+                <ul class="checklist d-flex flex-wrap theme-v1 mb-0 color-grey-v3">
+                  <li class="mb-4">
+                    #TODO
+                  </li>
+                  <li class="mb-4">
+                    #TODO
+                  </li>
+                  <li class="mb-4">
+                    #TODO
+                  </li>
+                  <li>
+                    #TODO
+                  </li>
+                </ul>
+                <div class="row mt-5 pt-md-4">
+                  <div class="col-12 col-md-6 col-lg-5">
+                    <span class="fs-16 color-grey-v3 lh-18 text-uppercase d-block font-bold">S tarifem od</span>
+                    <span class="fs-34 color-black-v2 lh-44 d-block font-bold">28 999 Kč</span>
+                    <span class="fs-16 color-grey-v3 lh-18 text-uppercase d-block font-bold">Běžně od <del class="">33 999 Kč</del></span>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-7 mt-5 mt-md-0">
+                    <div class="ml-lg-4 pl-lg-2">
+                      <a class="btn btn-primary btn-lg font-ultra d-block d-md-inline-block  w-md-275" href="https://www.t-mobile.cz/telefony/detail-zarizeni/--/apple-iphone-12-pro-max-128gb-zlaty">Přejít na
+                        detail</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bs-section bg-grey-v1 padding-md">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-5 text-left text-xs-center">
+                <div class="d-lg-none text-xs-left">
+                  <div>
+                    <span class="fs-18 font-ultra color-grey-v3 text-uppercase">Apple</span>
+                  </div>
+                  <h3 class="fs-34 font-ultra lh-36 mt-0 mb-5 pb-5">iPhone 12 mini - 64GB</h3>
+                </div>
+                <div class="pos-relative d-inline-block">
+                  <div class="pos-absolute z-index-4 dots-wrap">
+                    <i class="ico-dots-rounded fill-magenta" data-ico-width="84" data-ico-height="115"></i>
+                  </div>
+                  <img src="https://www.t-mobile.cz/dcpublic/seo-hw-iphone-12-mini.png" alt="Apple iPhone 12 mini - 64GB" data-width-xs="250"
+                    data-width-md="400" class="js-resizable pos-relative z-index-5">
+                </div>
+              </div>
+              <div class="col-12 col-lg-7 mt-5 pt-4 mt-lg-0 pt-lg-0">
+                <div class="d-none d-lg-block">
+                  <div>
+                    <span class="fs-18 font-ultra color-grey-v3 text-uppercase">Apple</span>
+                  </div>
+                  <h3 class="fs-34 font-ultra lh-36 mt-0 mb-5">iPhone 12 mini - 64GB</h3>
+                </div>
+                <p class="fs-20 lh-28 color-grey-v3 mb-5 pb-md-4">
+                  #TODO
+                </p>
+                <ul class="checklist d-flex flex-wrap theme-v1 mb-0 color-grey-v3">
+                  <li class="mb-4">
+                    #TODO
+                  </li>
+                  <li class="mb-4">
+                    #TODO
+                  </li>
+                  <li class="mb-4">
+                    #TODO
+                  </li>
+                  <li>
+                    #TODO
+                  </li>
+                </ul>
+                <div class="row mt-5 pt-md-4">
+                  <div class="col-12 col-md-6 col-lg-5">
+                    <span class="fs-16 color-grey-v3 lh-18 text-uppercase d-block font-bold">S tarifem od</span>
+                    <span class="fs-34 color-black-v2 lh-44 d-block font-bold">16 999 Kč</span>
+                    <span class="fs-16 color-grey-v3 lh-18 text-uppercase d-block font-bold">Běžně od <del class="">21 999 Kč</del></span>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-7 mt-5 mt-md-0">
+                    <div class="ml-lg-4 pl-lg-2">
+                      <a class="btn btn-primary btn-lg font-ultra d-block d-md-inline-block  w-md-275" href="https://www.t-mobile.cz/telefony/detail-zarizeni/--/apple-iphone-12-mini-64gb-cerny">Přejít na
+                        detail</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bs-section bg-grey-half-top-v1 padding-md">
+          <div class="container">
+            <div class="inner-content theme-ic-v6 inner-content-xs bg-white box-shadow-v5 square-corners">
+              <div class="row align-items-center justify-content-start">
+                <div class="col-5 col-lg-3">
+                  <img src="https://www.t-mobile.cz/dcpublic/seo-hw-samsungs-smartphones-vertical-row.png" width="180">
+                </div>
+                <div class="col-7 col-lg-5 p-md-0">
+                  <p class="fs-xs-16 lh-xs-26 fs-22 lh-34 mb-0 bold">
+                    Chcete se podívat na celou nabídku telefonů Apple? Navštivte náš e-shop.
+                  </p>
+                </div>
+                <div class="col-12 col-lg-4 mt-5 pt-2 pt-lg-0 mt-lg-0 d-flex justify-content-center justify-content-lg-end">
+                  <a class="btn btn-third btn-lg btn-block-sm font-ultra px-4" href="https://eshop.t-mobile.cz/category/Devices-Mobile/list/product_listing?filter%5B%5D=filter.brand%5B%5D=Apple&currentPage=1&tariffId=POF918&itemPerPage=60&excludedCurrentPage=1">
+                    <span class="px-2">Zobrazit všechny telefony</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bs-section padding-md pt-0">
+          <div class="container">
+            <span class="fs-xs-16 text-center fs-22 color-primary d-block mb-3">Máte zájem i o jiné telefony?</span>
+            <h2 class="fs-xs-34 font-ultra fs-55 text-center mt-0 mb-5 pb-4 pb-lg-5">Další značky telefonů</h2>
+            <div class="row">
+              <div class="col-12 offset-md-3 col-md-6 offset-lg-0 col-lg-12">
+                <div class="row">
+                  <div class="col-12 col-lg-4">
+                    <div
+                      class="inner-content inner-content-xs theme-ic-v5 bg-grey-v1 square-corners-v1 box-shadow-xs-none overflow-md-hidden hover-box-shadow-v5">
+                      <div class="row align-items-center align-items-lg-start h-100">
+                        <div class="col-6 col-lg-7">
+                          <div class="pos-relative pos-b-n-md-38 pl-4 ml-2 pl-lg-0 ml-lg-0">
+                            <img src="https://www.t-mobile.cz/dcpublic/seo-hw-apple-smarthpone.png" alt="Alt"
+                              class="pos-absolute pos-top-n-xs-57 js-resizable" data-width-xs="91" data-width-md="122">
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-5 text-right">
+                          <div class="d-flex align-items-center justify-content-between d-lg-block">
+                            <div class="text-right">
+                              <img src="https://www.t-mobile.cz/dcpublic/seo-hw-apple-logo.png" class="filter-sepia-gray js-resizable"
+                                alt="Apple" data-width-xs="40" data-width-md="60">
+                            </div>
+                            <div class="mt-lg-5 pt-lg-4">
+                              <a href="https://eshop.t-mobile.cz/category/Devices-Mobile/list/product_listing?filter%5B%5D=filter.brand%5B%5D=Apple&currentPage=1&tariffId=POF918&loyalty=agreement24&itemPerPage=60&excludedCurrentPage=1" class="fs-xs-16 lh-xs-17 fs-20 font-ultra">Přejít <i
+                                  class="ico-chevron-right fill-magenta ml-2" data-ico-width="7" data-ico-height="12"
+                                  aria-hidden="true"></i></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <a href="https://eshop.t-mobile.cz/category/Devices-Mobile/list/product_listing?filter%5B%5D=filter.brand%5B%5D=Apple&currentPage=1&tariffId=POF918&loyalty=agreement24&itemPerPage=60&excludedCurrentPage=1" class="inner-link"></a>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-4 mt-5 pt-4 mt-lg-0 pt-lg-0">
+                    <div
+                      class="inner-content inner-content-xs theme-ic-v5 bg-grey-v1 square-corners-v1 box-shadow-xs-none overflow-md-hidden hover-box-shadow-v5">
+                      <div class="row align-items-center align-items-lg-start h-100">
+                        <div class="col-6 col-lg-7">
+                          <div class="pos-relative pos-b-n-md-38 pl-4 ml-2 pl-lg-0 ml-lg-0">
+                            <img src="https://www.t-mobile.cz/dcpublic/seo-hw-huawei-phone.png" alt="Alt"
+                              class="pos-absolute pos-top-n-xs-57 js-resizable" data-width-xs="91" data-width-md="122">
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-5 text-right">
+                          <div class="d-flex align-items-center justify-content-between d-lg-block">
+                            <div class="text-right">
+                              <img src="https://www.t-mobile.cz/dcpublic/seo-hw-Huawei-Standard_logo.png"
+                                class="filter-sepia-gray js-resizable" alt="Huawei" data-width-xs="41" data-width-md="61">
+                            </div>
+                            <div class="mt-lg-5 pt-lg-4">
+                              <a href="https://eshop.t-mobile.cz/category/Devices-Mobile/list/product_listing?filter%5B%5D=filter.brand%5B%5D=Huawei&currentPage=1&tariffId=POF918&loyalty=agreement24&itemPerPage=60&excludedCurrentPage=1" class="fs-xs-16 lh-xs-17 fs-20 font-ultra">Přejít <i
+                                  class="ico-chevron-right fill-magenta ml-2" data-ico-width="7" data-ico-height="12"
+                                  aria-hidden="true"></i></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <a href="https://eshop.t-mobile.cz/category/Devices-Mobile/list/product_listing?filter%5B%5D=filter.brand%5B%5D=Huawei&currentPage=1&tariffId=POF918&loyalty=agreement24&itemPerPage=60&excludedCurrentPage=1" class="inner-link"></a>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-4 mt-5 pt-4 mt-lg-0 pt-lg-0">
+                    <div
+                      class="inner-content inner-content-xs theme-ic-v5 bg-grey-v1 square-corners-v1 box-shadow-xs-none overflow-md-hidden hover-box-shadow-v5">
+                      <div class="row align-items-center align-items-lg-start h-100">
+                        <div class="col-6 col-lg-7">
+                          <div class="pos-relative pos-b-n-md-38 pl-4 ml-2 pl-lg-0 ml-lg-0">
+                            <img src="https://www.t-mobile.cz/dcpublic/seo-hw-nokia-phone.png" alt="Alt"
+                              class="pos-absolute pos-top-n-xs-57 js-resizable" data-width-xs="91" data-width-md="126">
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-5 pl-0 text-right">
+                          <div class="d-flex align-items-center justify-content-between d-lg-block">
+                            <div class="text-right mt-lg-4 pb-lg-3">
+                              <img src="https://www.t-mobile.cz/dcpublic/seo-hw-nokia-logo.png" class="filter-sepia-gray js-resizable"
+                                data-width-xs="76" data-width-md="120" alt="Huawei">
+                            </div>
+                            <div class="mt-lg-5 pt-lg-5">
+                              <a href="https://eshop.t-mobile.cz/category/Devices-Mobile/list/product_listing?filter%5B%5D=filter.brand%5B%5D=Nokia&currentPage=1&tariffId=POI393&loyalty=agreement24&discountId=&itemPerPage=60&excludedCurrentPage=1" class="fs-xs-16 lh-xs-17 fs-20 font-ultra">Přejít <i
+                                  class="ico-chevron-right fill-magenta ml-2" data-ico-width="7" data-ico-height="12"
+                                  aria-hidden="true"></i></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <a href="https://eshop.t-mobile.cz/category/Devices-Mobile/list/product_listing?filter%5B%5D=filter.brand%5B%5D=Nokia&currentPage=1&tariffId=POI393&loyalty=agreement24&discountId=&itemPerPage=60&excludedCurrentPage=1" class="inner-link"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bs-section bg-grey-v1 padding-md pb-md-0 overflow-hidden">
+          <div class="container">
+            <h2 class="fs-xs-34 lh-xs-39 fs-44 font-ultra lh-50 text-center mt-0 mb-4 pb-md-3">Svět mobilních telefonů Apple
+            </h2>
+            <div class="row">
+              <div class="col-12 mt-md-5 order-md-2 text-center">
+                <div class="pos-relative vr-image">
+                  <img src="https://www.t-mobile.cz/dcpublic/seo-hw-smarthpone-vertical-row.png">
+                </div>
+              </div>
+              <div class="col-12 order-md-1">
+                <div class="show-more-wrap js-show-more-wrap">
+                  <div class="show-more-content theme-smc-v1">
+                    <p class="fs-16 lh-28 color-grey-v3 text-center text-perrex-v2 mb-4">
+                      #TODO
+                    </p>
+                  </div>
+                  <div class="mt-5 pt-3 show-more-button d-block d-md-none">
+                    <div class="d-flex justify-content-center">
+                      <a href="#" class="btn btn-third font-ultra js-show-more-button">Zobrazit <span
+                          class="btn-show-more-text">více</span><span class="btn-show-less-text">méně</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="faq" class="bs-section">
+          <div class="container pb-md-5 mb-md-5">
+            <div class="row row-faq theme-v1">
+              <div class="col-12 col-lg-5">
+                <h2 class="fs-xs-34 lh-xs-40 fs-md-44 fs-50 lh-62 mt-0 mb-md-4 pb-lg-3 font-ultra">Časté dotazy
+                </h2>
+                <p class="fs-16 mt-0 text-gray-darker mb-0 main-text">Najděte ihned odpověď na svou otázku. Bez čekání a
+                  <br class="d-none d-lg-block"> zbytečných formalit.</p>
+              </div>
+              <div class="col-12 col-lg-7 mt-5 mt-lg-0">
+                <div class="panel panel-faq mt-md-small mt-xxs-small">
+                  <div class="panel-body">
+                    <h3 class="h4 faq-heading">
+                      <a href="#FaqArticle01" class="collapse-link faq-link v-center collapsed" data-toggle="collapse"
+                        aria-expanded="false">
+                        <span class="fs-xs-14 lh-xs-17 fs-20 font-bold">Kde si můžu zařídit telefon na splátky?
+                        </span>
+                        <i class="ico-chevron-down collapse-icon right" data-ico-width="17" data-ico-height="17"
+                          aria-hidden="true"></i>
+                      </a>
+                    </h3>
+                    <div id="FaqArticle01" class="collapse-content collapse" aria-expanded="false" style="height: 0px;">
+                      <div class="mb-4 mt-2 pb-lg-3">
+                        <p class="fs-xs-14 lh-xs-21 lh-24 color-black-v1">Jednoduše tady na webu nebo se stačí za námi stavit v <a href="/prodejny-t-mobile">kterékoliv prodejně T-Mobile</a>.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-faq">
+                  <div class="panel-body">
+                    <h3 class="h4 faq-heading">
+                      <a href="#FaqArticle02" class="collapse-link faq-link v-center collapsed" data-toggle="collapse"
+                        aria-expanded="false">
+                        <span class="fs-xs-14 lh-xs-17 fs-20 font-bold">Je třeba platit zálohu u telefonů na splátky?
+                        </span>
+                        <i class="ico-chevron-down collapse-icon right" data-ico-width="17" data-ico-height="17"
+                          aria-hidden="true"></i>
+                      </a>
+                    </h3>
+                    <div id="FaqArticle02" class="collapse-content collapse" aria-expanded="false" style="height: 0px;">
+                      <div class="mb-4 mt-2 pb-lg-3">
+                        <p class="fs-xs-14 lh-xs-21 lh-24 color-black-v1">Při koupi telefonu se hradí akontace – tedy první splátka ceny telefonu, která je nevratná.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-faq">
+                  <div class="panel-body">
+                    <h3 class="h4 faq-heading">
+                      <a href="#FaqArticle03" class="collapse-link faq-link v-center collapsed" data-toggle="collapse">
+                        <span class="fs-xs-14 lh-xs-17 fs-20 font-bold">Mohu si při využití Splátkování měnit hlasový tarif?
+                        </span>
+                        <i class="ico-chevron-down collapse-icon right" data-ico-width="17" data-ico-height="17"
+                          aria-hidden="true"></i>
+                      </a>
+                    </h3>
+                    <div id="FaqArticle03" class="collapse collapse-content">
+                      <div class="mb-4 mt-2 pb-lg-3">
+                        <p class="fs-xs-14 lh-xs-21 lh-24 color-black-v1">Určitě. Splátkování na možnost změny tarifu nemá žádný vliv.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-faq">
+                  <div class="panel-body">
+                    <h3 class="h4 faq-heading">
+                      <a href="#FaqArticle04" class="collapse-link faq-link v-center collapsed" data-toggle="collapse">
+                        <span class="fs-xs-14 lh-xs-17 fs-20 font-bold">Jakým způsobem mohu platit měsíční splátky za telefon?
+                        </span>
+                        <i class="ico-chevron-down collapse-icon right" data-ico-width="17" data-ico-height="17"
+                          aria-hidden="true">
+                        </i>
+                      </a>
+                    </h3>
+                    <div id="FaqArticle04" class="collapse collapse-content ">
+                      <div class="mb-4 mt-2 pb-lg-3">
+                        <p class="fs-xs-14 lh-xs-21 lh-24 color-black-v1">Měsíční splátky za telefon jsou vám standardně účtovány ve Vyúčtování služeb. Nejjednodušší cestou je nastavit si inkasní platbu na náš účet (a také zkontrolovat limit inkasní platby).</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /CUSTOM CONTENT -->
+
+        <!-- CUSTOM SCRIPTS -->
+        <script>
+
+        </script>
+        <!-- /CUSTOM SCRIPTS -->
+
+      </div>
+    </div>
+    <div class="footer" role="contentinfo">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-3">
+            <i class="ico-logo logo"></i>
+          </div>
+          <div class="col-xxs-12 col-xs-4 col-md-3 js-collapsible">
+            <h6><a href="/">Co nejvíc chcete</a></h6>
+            <ul class="collapse" id="navfooterservices-0">
+              <li><a href="">Volání</a></li>
+              <li><a href="">Telefony</a></li>
+              <li><a href="">Internet</a></li>
+              <li><a href="">Poslat SMS</a></li>
+              <li><a href="">Vyzvednout MMS</a></li>
+              <li><a href="">Podpora</a></li>
+            </ul>
+          </div>
+          <div class="col-xxs-12 col-xs-4 col-md-3 js-collapsible">
+            <h6><a href="/">Co potřebujete</a></h6>
+            <ul class="collapse" id="navfooterservices-1">
+              <li><a href="">Kontakty</a></li>
+              <li><a href="">Mapa poboček</a></li>
+              <li><a href="">Kariéra v T-Mobile</a></li>
+              <li><a href="">Pro média</a></li>
+              <li><a href="">Pomáháme</a></li>
+              <li><a href="">Katalog služeb</a></li>
+              <li><a href="">Ochrana soukromí</a></li>
+            </ul>
+          </div>
+          <div class="col-xxs-12 col-xs-4 col-md-3 js-collapsible">
+            <h6><a href="/">Co se může hodit</a></h6>
+            <ul class="collapse" id="navfooterservices-2">
+              <li><a href="">Aplikace Můj T-Mobile</a></li>
+              <li><a href="">T-Mobile TV</a></li>
+              <li><a href="">T-Mobile Info</a></li>
+              <li><a href="">Mapa pokrytí</a></li>
+              <li><a href="">Podmínky a dokumenty</a></li>
+              <li><a href="">Vyúčtování a platby</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="row reverse">
+          <div class="col-xs-12 col-sm-3 social-links">
+            <ul class="list-inline">
+              <li><a href="" class="ico-youtube-square"><span class="sr-only">YouTube</span></a></li>
+              <li><a href="" class="ico-facebook-square"><span class="sr-only">Facebook</span></a></li>
+              <li><a href="" class="ico-twitter-square"><span class="sr-only">Twitter</span></a></li>
+              <li><a href="" class="ico-instagram-square"><span class="sr-only">Instagram</span></a></li>
+              <li><a href="" class="ico-charger-square"><span class="sr-only">Charger</span></a></li>
+              <li><a href="" class="ico-linkedin-square"><span class="sr-only">LinkedIn</span></a></li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-9">
+            <p class="copyright">&copy; 2004-2017 T-Mobile Czech Republic a.s.</p>
+            <p class="legal-statement">Podle zákona o evidenci tržeb je prodávající povinen vystavit kupujícímu účtenku.
+              Zároveň je povinen zaevidovat přijatou tržbu u správce daně on-line; v případě technického výpadku pak
+              nejpozději do 48 hodin.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../../public/assets/tmobile/tmcz-theme/js/main.js"></script>
+</body>
+
+</html>
